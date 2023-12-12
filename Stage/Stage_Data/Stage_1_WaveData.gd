@@ -3,11 +3,8 @@ extends Node
 @export var money : int = 200
 
 @export var wave_data = {
-	"Wave_0" = 
-	[["Spider_Basic",1],["Spider_Basic",1]],
-	
 	"Wave_1" = 
-	[["Spider_Basic",1],["Spider_Basic",1],["Spider_Basic",1],["Spider_Basic",1]],
+	[["Basic",1,1],["Basic",1,2],["Basic",1,3],["Basic",1,1]],
 
 	"Wave_2" = 
 	[],
@@ -17,13 +14,13 @@ extends Node
 	
 	"Wave_4" = 
 	[],
-
 	}
 
-func wavedata():
+func get_wave_data():
 	return wave_data
 
+func get_wave_count():
+	return wave_data.size()
 
-func starting_money():
+func get_starting_money():
 	return money
-

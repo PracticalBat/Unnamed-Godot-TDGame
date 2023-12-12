@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqi6yu88pmgdw"]
+[gd_scene load_steps=6 format=3 uid="uid://dqi6yu88pmgdw"]
 
 [ext_resource type="TileSet" uid="uid://cnou6u87b171k" path="res://tileset.tres/main.tres" id="1_dechn"]
 [ext_resource type="PackedScene" uid="uid://b5mqjtrue3qmf" path="res://unsorted.tscn/main.tscn" id="2_lj0po"]
+[ext_resource type="Script" path="res://Stage/Stage_Data/Stage_4_WaveData.gd" id="3_77g5e"]
 
 [sub_resource type="Curve2D" id="Curve2D_oelmy"]
 
@@ -36,8 +37,10 @@ unique_name_in_owner = true
 modulate = Color(1, 0.811765, 1, 1)
 curve = SubResource("Curve2D_v7a86")
 
-[node name="GameScene" parent="." node_paths=PackedStringArray("TowerExclusion", "Ground", "Path", "PathTank") instance=ExtResource("2_lj0po")]
+[node name="GameScene" parent="." node_paths=PackedStringArray("TowerExclusion", "Ground") instance=ExtResource("2_lj0po")]
 TowerExclusion = NodePath("../TowerExclusion")
 Ground = NodePath("../Ground")
-Path = NodePath("../Path")
-PathTank = NodePath("../Path_Tank")
+
+[node name="Level_Data" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_77g5e")

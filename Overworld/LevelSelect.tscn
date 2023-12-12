@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://myfoj8vfgve6"]
 
-[ext_resource type="Script" path="res://Level Select/level_select.gd" id="1_wgwi4"]
-[ext_resource type="PackedScene" uid="uid://b6ltvadwssowd" path="res://Level Select/level_icon.tscn" id="2_iagtp"]
+[ext_resource type="Script" path="res://Overworld/level_select.gd" id="1_wgwi4"]
+[ext_resource type="PackedScene" uid="uid://b6ltvadwssowd" path="res://Overworld/level_icon.tscn" id="2_iagtp"]
 [ext_resource type="Texture2D" uid="uid://cm4dq42cbsagn" path="res://Assets/colored_packed.png" id="2_vqpom"]
 [ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/colored-transparent_packed.png" id="3_hc28m"]
 [ext_resource type="Texture2D" uid="uid://c3bufloj14d6g" path="res://Assets/2d_lights_and_shadows_neutral_point_light.png" id="4_v66f7"]
@@ -1153,7 +1153,7 @@ offset_left = 72.0
 offset_top = 120.0
 offset_right = 72.0
 offset_bottom = 120.0
-next_scene_path = "res://maps/Stage_1.tscn"
+next_scene_path = "res://Stage/Stage_1.tscn"
 next_level_down = NodePath("../DEBUG")
 next_level_right = NodePath("../2")
 
@@ -1173,7 +1173,7 @@ offset_top = 120.0
 offset_right = 152.0
 offset_bottom = 120.0
 level_name = "2"
-next_scene_path = "res://maps/Stage_2.tscn"
+next_scene_path = "res://Stage/Stage_2.tscn"
 next_level_up = NodePath("../2a")
 next_level_left = NodePath("../1")
 next_level_right = NodePath("../3")
@@ -1186,15 +1186,16 @@ offset_bottom = 64.0
 level_name = "2a"
 next_level_down = NodePath("../2")
 
-[node name="3" parent="." node_paths=PackedStringArray("next_level_down", "next_level_left") instance=ExtResource("2_iagtp")]
+[node name="3" parent="." node_paths=PackedStringArray("next_level_down", "next_level_left", "next_level_right") instance=ExtResource("2_iagtp")]
 offset_left = 232.0
 offset_top = 120.0
 offset_right = 232.0
 offset_bottom = 120.0
 level_name = "3"
-next_scene_path = "res://maps/Stage_1.tscn"
+next_scene_path = "res://Stage/Stage_3.tscn"
 next_level_down = NodePath("../3b")
 next_level_left = NodePath("../2")
+next_level_right = NodePath("../4")
 
 [node name="3b" parent="." node_paths=PackedStringArray("next_level_up") instance=ExtResource("2_iagtp")]
 offset_left = 232.0
@@ -1203,6 +1204,15 @@ offset_right = 232.0
 offset_bottom = 168.0
 level_name = "3b"
 next_level_up = NodePath("../3")
+
+[node name="4" parent="." node_paths=PackedStringArray("next_level_left") instance=ExtResource("2_iagtp")]
+offset_left = 408.0
+offset_top = 120.0
+offset_right = 408.0
+offset_bottom = 120.0
+level_name = "4"
+next_scene_path = "res://Stage/Stage_4.tscn"
+next_level_left = NodePath("../3")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 position = Vector2(72, 120)

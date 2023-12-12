@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://3p4wq7g45pud"]
 
-[ext_resource type="Script" path="res://Level Select/world_icon.gd" id="1_lh63k"]
-[ext_resource type="PackedScene" uid="uid://myfoj8vfgve6" path="res://Level Select/LevelSelect.tscn" id="2_ot31k"]
+[ext_resource type="Script" path="res://Overworld/world_icon.gd" id="1_lh63k"]
+[ext_resource type="PackedScene" uid="uid://myfoj8vfgve6" path="res://Overworld/LevelSelect.tscn" id="2_ot31k"]
 [ext_resource type="Theme" uid="uid://dwaociqi4fggd" path="res://Assets/Pixel_Theme.tres" id="2_y5irf"]
 [ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/colored-transparent_packed.png" id="4_woo84"]
 
