@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn6v7o45jkq77"]
+
+[ext_resource type="Script" path="res://credits.gd" id="1_14qds"]
+[ext_resource type="Theme" uid="uid://dwaociqi4fggd" path="res://Assets/Pixel_Theme.tres" id="1_vp5yq"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_14qds")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -11.0
+offset_top = -6.0
+offset_right = 589.0
+offset_bottom = 336.0
+color = Color(0, 0, 0.152941, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 89.0
+offset_right = 197.0
+offset_bottom = 224.0
+theme = ExtResource("1_vp5yq")
+text = "Assets: www.kenney.nl, Oscar Zeise
+
+Musik: tohomoko
+
+Idee : Oscar Zeise
+
+Level Design : Oscar Zeise
+
+Programmierung: Oscar Zeise"
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 280.0
+offset_right = 568.0
+offset_bottom = 312.0
+theme = ExtResource("1_vp5yq")
+theme_override_font_sizes/font_size = 16
+text = "Hauptmenue"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

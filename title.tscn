@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://45tw4pfalruc"]
+
+[ext_resource type="Script" path="res://gd/node.gd" id="1_sxvdx"]
+[ext_resource type="Theme" uid="uid://dwaociqi4fggd" path="res://Assets/Pixel_Theme.tres" id="3_w0q4x"]
+[ext_resource type="FontFile" path="res://Fonts/Minecraft-Regular.otf" id="4_e83cd"]
+[ext_resource type="FontFile" path="res://Fonts/NotJamScrawl12.ttf" id="4_on4bh"]
+
+[sub_resource type="Theme" id="Theme_7gbpi"]
+default_font = ExtResource("4_on4bh")
+default_font_size = 120
+Fonts/fonts/large = ExtResource("4_e83cd")
+Fonts/fonts/normal = ExtResource("4_e83cd")
+
+[node name="Title_Screen" type="Node"]
+script = ExtResource("1_sxvdx")
+target_path = "res://debug_room.tscn"
+
+[node name="Credits" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -136.0
+offset_right = 235.0
+grow_vertical = 0
+theme = ExtResource("3_w0q4x")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Credits
+Programmcode:
+Oscar Zeise 
+Assets: Kenny"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -344.0
+offset_right = 344.0
+offset_bottom = 247.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_7gbpi")
+text = "BoardGame"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_w0q4x")
+theme_override_font_sizes/font_size = 50
+toggle_mode = true
+text = "Start
+"
+text_direction = 2
+
+[connection signal="toggled" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_2_toggled"]

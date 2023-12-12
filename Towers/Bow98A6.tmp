@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1hd35et8ir15"]
+
+[ext_resource type="Script" path="res://Towers/Bow_T1.gd" id="1_y14ab"]
+[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://colored-transparent_packed.png" id="2_x3mro"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i4ii7"]
+radius = 100.0
+
+[node name="Bow_T1" type="Node2D"]
+script = ExtResource("1_y14ab")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_x3mro")
+region_enabled = true
+region_rect = Rect2(32, 304, 16, 16)
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_i4ii7")
+
+[connection signal="area_entered" from="Range" to="." method="_on_range_area_entered"]
+[connection signal="area_exited" from="Range" to="." method="_on_range_area_exited"]
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
