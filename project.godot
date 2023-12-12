@@ -14,7 +14,7 @@ config/name="Tower-Defense-Project"
 config/description="2D Tower Defense Game originally started out as a school project, but slowly turning into more than that x3
 "
 config/version="0.03"
-run/main_scene="res://haupt_menue.tscn"
+run/main_scene="res://unsorted.tscn/haupt_menue.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://Assets/stop.png"
 

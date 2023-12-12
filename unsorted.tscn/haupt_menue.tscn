@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://bljohf4oxf00w"]
+
+[ext_resource type="Script" path="res://unsorted.gd/haupt_menue.gd" id="1_xv4bu"]
+[ext_resource type="Texture2D" uid="uid://mroke7ye0php" path="res://Assets/Screenshot 2023-12-10 143021.png" id="2_d866f"]
+[ext_resource type="Theme" uid="uid://dwaociqi4fggd" path="res://Assets/Pixel_Theme.tres" id="2_lgja2"]
+[ext_resource type="Texture2D" uid="uid://coqbhb2kfksl0" path="res://Assets/Title.png" id="3_82aex"]
+
+[node name="HauptMenue" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xv4bu")
+Level_Select = "res://Level Select/WorldSelect.tscn"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -14.0
+offset_right = 685.0
+offset_bottom = 506.0
+texture = ExtResource("2_d866f")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 16.0
+offset_right = 566.0
+offset_bottom = 200.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_82aex")
+
+[node name="NewGame" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_lgja2")
+theme_override_font_sizes/font_size = 20
+text = "New Game"
+
+[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_lgja2")
+theme_override_font_sizes/font_size = 20
+text = "Credits"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_lgja2")
+theme_override_font_sizes/font_size = 20
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 513.0
+offset_top = 309.0
+offset_right = 608.0
+offset_bottom = 335.0
+theme = ExtResource("2_lgja2")
+text = "Coarse V 0.2"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

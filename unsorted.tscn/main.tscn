@@ -1,0 +1,301 @@
+[gd_scene load_steps=27 format=3 uid="uid://b5mqjtrue3qmf"]
+
+[ext_resource type="Script" path="res://unsorted.gd/main.gd" id="1_f137u"]
+[ext_resource type="Texture2D" uid="uid://cvp22ibthwvje" path="res://Assets/Sprite-0001.png" id="4_giy0u"]
+[ext_resource type="Texture2D" uid="uid://buirwrk7ntfvy" path="res://Assets/card.png" id="4_lh0x2"]
+[ext_resource type="Script" path="res://unsorted.gd/UI.gd" id="4_s1bsp"]
+[ext_resource type="Texture2D" uid="uid://bew35vd86nytk" path="res://Assets/Sprite-0003.png" id="5_xu23v"]
+[ext_resource type="Texture2D" uid="uid://ur8ivyale4cf" path="res://Assets/Button_textures/F_Button.png" id="6_34f80"]
+[ext_resource type="Texture2D" uid="uid://cog4cxw7ib7x0" path="res://Assets/Button_textures/P_Button.png" id="7_01m4p"]
+[ext_resource type="Texture2D" uid="uid://drkjj4kluno5" path="res://Assets/Bee_tower_preview.png" id="7_o2ehp"]
+[ext_resource type="Texture2D" uid="uid://rtqufa5pn2r4" path="res://Assets/Button_textures/FF_Button.png" id="8_s3b7o"]
+[ext_resource type="Theme" uid="uid://dwaociqi4fggd" path="res://Assets/Pixel_Theme.tres" id="11_1jkot"]
+[ext_resource type="Texture2D" uid="uid://oi38fwbgg14w" path="res://Assets/Bone.png" id="11_5x7k6"]
+[ext_resource type="Script" path="res://unsorted.gd/Menue.gd" id="11_dr7di"]
+[ext_resource type="PackedScene" uid="uid://b2sveifvvuhbm" path="res://unsorted.tscn/trail.tscn" id="11_n2ubj"]
+[ext_resource type="AudioStream" uid="uid://jcm3hknna6df" path="res://Sounds.wav/Pause.wav" id="14_1nhxf"]
+[ext_resource type="AudioStream" uid="uid://ch34iunsvgl4s" path="res://Music/tohomoko_grain.mp3" id="14_op65f"]
+[ext_resource type="AudioStream" uid="uid://dtse5f38d5rmn" path="res://Sounds.wav/Hurt.wav" id="15_smxhu"]
+[ext_resource type="AudioStream" uid="uid://cplfoxemwuqqr" path="res://Sounds.wav/Monster_Scream.wav" id="16_8dkql"]
+[ext_resource type="AudioStream" uid="uid://cbpraalv8ptjo" path="res://Sounds.wav/Bump.wav" id="17_t87a7"]
+[ext_resource type="AudioStream" uid="uid://bqnw1p5t36x4g" path="res://Sounds.wav/Menu_In.wav" id="18_6yfku"]
+[ext_resource type="AudioStream" uid="uid://cv8fna41s1fs7" path="res://Sounds.wav/Click.wav" id="18_yunjg"]
+[ext_resource type="AudioStream" uid="uid://0plefw62au2w" path="res://Sounds.wav/Menu_Out.wav" id="19_eoi36"]
+[ext_resource type="Script" path="res://unsorted.gd/Camera2D.gd" id="21_6na3e"]
+
+[sub_resource type="Gradient" id="Gradient_k4anj"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_u2h3f"]
+gradient = SubResource("Gradient_k4anj")
+
+[sub_resource type="Gradient" id="Gradient_0p21t"]
+offsets = PackedFloat32Array(0, 0.148387)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gjnii"]
+gradient = SubResource("Gradient_0p21t")
+
+[node name="Game_Logic+UI" type="Node2D" node_paths=PackedStringArray("next_wave_timer", "HealthBar")]
+script = ExtResource("1_f137u")
+next_wave_timer = NodePath("next_wave_check")
+HealthBar = NodePath("UI/Control/HealthBar")
+
+[node name="Trail" parent="." instance=ExtResource("11_n2ubj")]
+points = PackedVector2Array(517, 8)
+MAX_LENGHT = 100
+
+[node name="Turrets" type="Node2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("4_s1bsp")
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+
+[node name="Hud_mini" type="Control" parent="UI/Control"]
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 7.0
+offset_right = 1.0
+offset_bottom = 7.0
+
+[node name="Rect" type="ColorRect" parent="UI/Control/Hud_mini"]
+layout_mode = 0
+offset_left = 7.0
+offset_right = 135.0
+offset_bottom = 25.0
+color = Color(0.12549, 0.0509804, 0.2, 0.6)
+
+[node name="Rect2" type="ColorRect" parent="UI/Control/Hud_mini"]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 249.0
+offset_right = 374.0
+offset_bottom = 321.0
+color = Color(0.380392, 0.32549, 0.556863, 0.423529)
+
+[node name="Rect3" type="ColorRect" parent="UI/Control/Hud_mini"]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 265.0
+offset_right = 567.0
+offset_bottom = 305.0
+color = Color(0.380392, 0.32549, 0.556863, 0.423529)
+
+[node name="Card" type="Sprite2D" parent="UI/Control/Hud_mini"]
+position = Vector2(226, 280)
+rotation = -0.301753
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_lh0x2")
+
+[node name="Card2" type="Sprite2D" parent="UI/Control/Hud_mini"]
+position = Vector2(284, 281)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_lh0x2")
+
+[node name="Card3" type="Sprite2D" parent="UI/Control/Hud_mini"]
+position = Vector2(340, 282)
+rotation = 0.285914
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_lh0x2")
+
+[node name="Tower_1" type="TextureButton" parent="UI/Control/Hud_mini"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 279.0
+offset_right = 241.0
+offset_bottom = 311.0
+rotation = -0.337354
+texture_normal = ExtResource("5_xu23v")
+stretch_mode = 0
+
+[node name="Tower_2" type="TextureButton" parent="UI/Control/Hud_mini"]
+layout_mode = 0
+offset_left = 266.0
+offset_top = 274.0
+offset_right = 298.0
+offset_bottom = 306.0
+texture_normal = ExtResource("4_giy0u")
+stretch_mode = 0
+
+[node name="Tower_3" type="TextureButton" parent="UI/Control/Hud_mini"]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 269.0
+offset_right = 359.0
+offset_bottom = 301.0
+rotation = 0.385891
+scale = Vector2(0.153191, 0.156667)
+texture_normal = ExtResource("7_o2ehp")
+stretch_mode = 0
+
+[node name="Pause_Play" type="TextureButton" parent="UI/Control/Hud_mini"]
+process_mode = 3
+layout_mode = 2
+offset_left = 508.0
+offset_top = 283.0
+offset_right = 524.0
+offset_bottom = 299.0
+toggle_mode = true
+texture_normal = ExtResource("6_34f80")
+texture_pressed = ExtResource("7_01m4p")
+stretch_mode = 0
+
+[node name="Speed_UP" type="TextureButton" parent="UI/Control/Hud_mini"]
+layout_mode = 2
+offset_left = 547.0
+offset_top = 283.0
+offset_right = 563.0
+offset_bottom = 299.0
+texture_normal = ExtResource("8_s3b7o")
+texture_pressed = ExtResource("11_5x7k6")
+stretch_mode = 0
+
+[node name="Money_counter" type="RichTextLabel" parent="UI/Control/Hud_mini"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 89.0
+offset_top = -1.0
+offset_right = 131.0
+offset_bottom = 21.0
+theme = ExtResource("11_1jkot")
+bbcode_enabled = true
+text = "[Money]"
+scroll_active = false
+
+[node name="Wellen_Lable" type="Label" parent="UI/Control/Hud_mini"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 506.0
+offset_top = 267.0
+offset_right = 564.0
+offset_bottom = 279.0
+theme = ExtResource("11_1jkot")
+text = "Wave : 1 / 8"
+
+[node name="HealthBar" type="TextureProgressBar" parent="UI/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 87.0
+offset_bottom = 16.0
+value = 100.0
+nine_patch_stretch = true
+texture_under = SubResource("GradientTexture1D_u2h3f")
+texture_progress = SubResource("GradientTexture1D_gjnii")
+tint_under = Color(0.117647, 0.0627451, 0.156863, 1)
+tint_progress = Color(0.152941, 0.541176, 0.282353, 1)
+
+[node name="HealthBarLabel" type="Label" parent="UI/Control/HealthBar"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 42.0
+offset_top = 6.0
+offset_right = 86.0
+offset_bottom = 18.0
+theme = ExtResource("11_1jkot")
+text = "10 / 10
+"
+
+[node name="Menue" type="Control" parent="UI/Control"]
+anchors_preset = 0
+offset_left = 515.0
+offset_top = 9.0
+offset_right = 515.0
+offset_bottom = 9.0
+script = ExtResource("11_dr7di")
+
+[node name="Menue_Button" type="Button" parent="UI/Control/Menue"]
+layout_mode = 0
+offset_left = -507.0
+offset_top = 283.0
+offset_right = -467.0
+offset_bottom = 303.0
+theme = ExtResource("11_1jkot")
+text = "Menue"
+
+[node name="Menue_Container" type="VBoxContainer" parent="UI/Control/Menue/Menue_Button"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 180.0
+offset_top = -180.0
+offset_right = 424.0
+offset_bottom = -128.0
+
+[node name="Exit" type="Button" parent="UI/Control/Menue/Menue_Button/Menue_Container"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Hauptmenue" type="Button" parent="UI/Control/Menue/Menue_Button/Menue_Container"]
+layout_mode = 2
+text = "Main Menue"
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Theme_Song" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("14_op65f")
+volume_db = -31.09
+autoplay = true
+
+[node name="Pause" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("14_1nhxf")
+volume_db = -25.341
+
+[node name="Hurt" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("15_smxhu")
+volume_db = -18.571
+
+[node name="Cat" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("15_smxhu")
+volume_db = -18.571
+
+[node name="Monster_Scream" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("16_8dkql")
+volume_db = -41.682
+
+[node name="Bump" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("17_t87a7")
+volume_db = -18.571
+
+[node name="Click" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("18_yunjg")
+volume_db = -18.571
+
+[node name="Menu_In" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("18_6yfku")
+volume_db = -18.571
+
+[node name="Menu_Out" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("19_eoi36")
+volume_db = -18.571
+
+[node name="Camera" type="Camera2D" parent="."]
+unique_name_in_owner = true
+anchor_mode = 0
+script = ExtResource("21_6na3e")
+
+[node name="next_wave_check" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 5.0
+one_shot = true
+
+[connection signal="pressed" from="UI/Control/Hud_mini/Tower_1" to="." method="_on_tower_1_pressed"]
+[connection signal="pressed" from="UI/Control/Hud_mini/Tower_2" to="." method="_on_tower_2_pressed"]
+[connection signal="pressed" from="UI/Control/Hud_mini/Tower_3" to="." method="_on_tower_3_pressed"]
+[connection signal="pressed" from="UI/Control/Hud_mini/Pause_Play" to="UI" method="_on_pause_play_pressed"]
+[connection signal="pressed" from="UI/Control/Hud_mini/Speed_UP" to="UI" method="_on_speed_up_pressed"]
+[connection signal="pressed" from="UI/Control/Menue/Menue_Button" to="UI/Control/Menue" method="_on_menue_button_pressed"]
+[connection signal="pressed" from="UI/Control/Menue/Menue_Button/Menue_Container/Exit" to="UI/Control/Menue" method="_on_exit_pressed"]
+[connection signal="pressed" from="UI/Control/Menue/Menue_Button/Menue_Container/Hauptmenue" to="UI/Control/Menue" method="_on_hauptmenue_pressed"]
+[connection signal="timeout" from="next_wave_check" to="." method="_on_next_wave_check_timeout"]
