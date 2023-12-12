@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://cnou6u87b171k" path="res://tileset.tres/main.tres" id="1_0lrfx"]
 [ext_resource type="PackedScene" uid="uid://b5mqjtrue3qmf" path="res://unsorted.tscn/main.tscn" id="2_bfeo0"]
-[ext_resource type="Script" path="res://Stage/Level_Data/Stage_4_WaveData.gd" id="3_g572v"]
+[ext_resource type="Script" path="res://Stage/Stage_Data/Stage_4_WaveData.gd" id="3_g572v"]
 
 [sub_resource type="Curve2D" id="Curve2D_oelmy"]
 _data = {
@@ -53,9 +53,13 @@ unique_name_in_owner = true
 self_modulate = Color(0.654902, 0.627451, 0, 1)
 curve = SubResource("Curve2D_imlts")
 
-[node name="GameScene" parent="." node_paths=PackedStringArray("TowerExclusion", "Ground") instance=ExtResource("2_bfeo0")]
+[node name="GameScene" parent="." node_paths=PackedStringArray("TowerExclusion", "Ground", "Path1", "Path2", "Path3", "Stage_Data") instance=ExtResource("2_bfeo0")]
 TowerExclusion = NodePath("../TowerExclusion")
 Ground = NodePath("../Ground")
+Path1 = NodePath("../Path_1")
+Path2 = NodePath("../Path_2")
+Path3 = NodePath("../Path_3")
+Stage_Data = NodePath("../Level_Data")
 
 [node name="Level_Data" type="Node" parent="."]
 unique_name_in_owner = true

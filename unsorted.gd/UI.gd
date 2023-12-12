@@ -8,13 +8,13 @@ func _process(delta):
 
 func set_tower_preview(towertype, mouse_position):
 	%Click.play()
-	var drag_tower = load("res://Towers/"+towertype+".tscn").instantiate()
+	var drag_tower = load("res://Tower.tscn/"+towertype+".tscn").instantiate()
 	drag_tower.set_name("DragTower")
 	drag_tower.modulate= Color.GREEN
 	var range_texture = Sprite2D.new()
 	range_texture.position = Vector2()
 	var scaling = GameData.tower_data[towertype]["range"] / 620
-	var texture = load("res://range_overlay.png")
+	var texture = load("res://Assets/range_overlay.png")
 	range_texture.texture = texture
 	range_texture.modulate = Color.GREEN
 	range_texture.scale = Vector2(scaling, scaling)

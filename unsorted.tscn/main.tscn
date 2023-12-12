@@ -35,6 +35,7 @@ offsets = PackedFloat32Array(0, 0.148387)
 gradient = SubResource("Gradient_0p21t")
 
 [node name="Game_Logic+UI" type="Node2D" node_paths=PackedStringArray("next_wave_timer", "HealthBar")]
+process_mode = 1
 script = ExtResource("1_f137u")
 next_wave_timer = NodePath("next_wave_check")
 HealthBar = NodePath("UI/Control/HealthBar")
@@ -200,6 +201,7 @@ text = "10 / 10
 "
 
 [node name="Menue" type="Control" parent="UI/Control"]
+visible = false
 anchors_preset = 0
 offset_left = 515.0
 offset_top = 9.0
@@ -207,30 +209,39 @@ offset_right = 515.0
 offset_bottom = 9.0
 script = ExtResource("11_dr7di")
 
-[node name="Menue_Button" type="Button" parent="UI/Control/Menue"]
-layout_mode = 0
-offset_left = -507.0
-offset_top = 283.0
-offset_right = -467.0
-offset_bottom = 303.0
-theme = ExtResource("11_1jkot")
-text = "Menue"
-
-[node name="Menue_Container" type="VBoxContainer" parent="UI/Control/Menue/Menue_Button"]
+[node name="ColorRect" type="ColorRect" parent="UI/Control/Menue"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 180.0
-offset_top = -180.0
-offset_right = 424.0
-offset_bottom = -128.0
+offset_left = -553.0
+offset_top = -23.0
+offset_right = 73.0
+offset_bottom = 320.0
+color = Color(0.0313726, 0, 0.188235, 0.231373)
 
-[node name="Exit" type="Button" parent="UI/Control/Menue/Menue_Button/Menue_Container"]
+[node name="Menue_Container" type="VBoxContainer" parent="UI/Control/Menue"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -327.0
+offset_top = 103.0
+offset_right = -83.0
+offset_bottom = 169.0
+
+[node name="Exit" type="Button" parent="UI/Control/Menue/Menue_Container"]
 layout_mode = 2
 text = "Quit"
 
-[node name="Hauptmenue" type="Button" parent="UI/Control/Menue/Menue_Button/Menue_Container"]
+[node name="Hauptmenue" type="Button" parent="UI/Control/Menue/Menue_Container"]
 layout_mode = 2
 text = "Main Menue"
+
+[node name="Menue_Button" type="Button" parent="UI/Control"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 292.0
+offset_right = 48.0
+offset_bottom = 312.0
+theme = ExtResource("11_1jkot")
+text = "Menue"
 
 [node name="Audio" type="Node" parent="."]
 
@@ -295,7 +306,7 @@ one_shot = true
 [connection signal="pressed" from="UI/Control/Hud_mini/Tower_3" to="." method="_on_tower_3_pressed"]
 [connection signal="pressed" from="UI/Control/Hud_mini/Pause_Play" to="UI" method="_on_pause_play_pressed"]
 [connection signal="pressed" from="UI/Control/Hud_mini/Speed_UP" to="UI" method="_on_speed_up_pressed"]
-[connection signal="pressed" from="UI/Control/Menue/Menue_Button" to="UI/Control/Menue" method="_on_menue_button_pressed"]
-[connection signal="pressed" from="UI/Control/Menue/Menue_Button/Menue_Container/Exit" to="UI/Control/Menue" method="_on_exit_pressed"]
-[connection signal="pressed" from="UI/Control/Menue/Menue_Button/Menue_Container/Hauptmenue" to="UI/Control/Menue" method="_on_hauptmenue_pressed"]
+[connection signal="pressed" from="UI/Control/Menue/Menue_Container/Exit" to="UI/Control/Menue" method="_on_exit_pressed"]
+[connection signal="pressed" from="UI/Control/Menue/Menue_Container/Hauptmenue" to="UI/Control/Menue" method="_on_hauptmenue_pressed"]
+[connection signal="pressed" from="UI/Control/Menue_Button" to="UI/Control/Menue" method="_on_menue_button_pressed"]
 [connection signal="timeout" from="next_wave_check" to="." method="_on_next_wave_check_timeout"]

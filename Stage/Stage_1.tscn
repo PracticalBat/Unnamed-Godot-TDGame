@@ -1,20 +1,20 @@
 [gd_scene load_steps=6 format=3 uid="uid://cuncuiixgnlqp"]
 
 [ext_resource type="TileSet" uid="uid://cnou6u87b171k" path="res://tileset.tres/main.tres" id="1_li3mn"]
-[ext_resource type="Texture2D" uid="uid://b786r3d16l70k" path="res://Assets/Portal-export.png" id="2_hhijp"]
 [ext_resource type="PackedScene" uid="uid://b5mqjtrue3qmf" path="res://unsorted.tscn/main.tscn" id="3_2g4nx"]
-
-[sub_resource type="Curve2D" id="Curve2D_vw753"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 8, 168, 0, 0, 0, 0, 568, 168)
-}
-point_count = 2
+[ext_resource type="Script" path="res://Stage/Stage_Data/Stage_1_WaveData.gd" id="3_kn57c"]
 
 [sub_resource type="Curve2D" id="Curve2D_16jji"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 8, 168, 0, 0, 0, 0, 168, 168, 0, 0, 0, 0, 168, 88, 0, 0, 0, 0, 264, 88, 0, 0, 0, 0, 264, 296, 0, 0, 0, 0, 328, 296, 0, 0, 0, 0, 328, 168, 0, 0, 0, 0, 568, 168)
 }
 point_count = 8
+
+[sub_resource type="Curve2D" id="Curve2D_vw753"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 8, 168, 0, 0, 0, 0, 568, 168)
+}
+point_count = 2
 
 [node name="Stage" type="Node2D"]
 
@@ -33,21 +33,21 @@ layer_0/tile_data = PackedInt32Array(1048592, 655364, 262149, 1114128, 524292, 6
 layer_1/name = "Over"
 layer_1/tile_data = PackedInt32Array(655373, 1048580, 5, 655374, 1048580, 5, 851984, 1048580, 65541, 917520, 1048580, 65541, 983056, 1048580, 65541, 655372, 1048580, 5, 1048592, 1048580, 65541, 786448, 1048580, 65541, 327692, 1048580, 5, 327693, 1048580, 5)
 
-[node name="Path_Tank" type="Path2D" parent="."]
-self_modulate = Color(0.654902, 0.627451, 0, 1)
-curve = SubResource("Curve2D_vw753")
-
-[node name="Path" type="Path2D" parent="."]
+[node name="Path_1" type="Path2D" parent="."]
 modulate = Color(1, 0.811765, 1, 1)
 curve = SubResource("Curve2D_16jji")
 
-[node name="Portal-export" type="Sprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0.662745)
-position = Vector2(8, 168)
-texture = ExtResource("2_hhijp")
+[node name="Path_2" type="Path2D" parent="."]
+self_modulate = Color(0.654902, 0.627451, 0, 1)
+curve = SubResource("Curve2D_vw753")
 
-[node name="GameScene" parent="." node_paths=PackedStringArray("TowerExclusion", "Ground", "Path", "PathTank") instance=ExtResource("3_2g4nx")]
+[node name="GameScene" parent="." node_paths=PackedStringArray("TowerExclusion", "Ground", "Path1", "Path2", "Path3", "Stage_Data") instance=ExtResource("3_2g4nx")]
 TowerExclusion = NodePath("../TowerExclusion")
 Ground = NodePath("../Ground")
-Path = NodePath("../Path")
-PathTank = NodePath("../Path_Tank")
+Path1 = NodePath("../Path_1")
+Path2 = NodePath("../Path_2")
+Path3 = NodePath("../Path_1")
+Stage_Data = NodePath("../Stage_Data")
+
+[node name="Stage_Data" type="Node" parent="."]
+script = ExtResource("3_kn57c")

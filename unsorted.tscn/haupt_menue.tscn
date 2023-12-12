@@ -9,7 +9,7 @@
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_xv4bu")
-Level_Select = "res://Level Select/WorldSelect.tscn"
+Level_Select = "res://Overworld/WorldSelect.tscn"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0

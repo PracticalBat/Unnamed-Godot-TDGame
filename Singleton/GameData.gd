@@ -16,79 +16,71 @@ var health_points = 10
 
 # Tower Attributes
 var tower_data = {
+
 	"Tower_1": {
 		"damage": 10,
 		"rof": 1,
 		"range": 30,
-		"cost" : 55
+		"cost" : 50
 },
 	"Tower_2": {
-		"damage": 30,
+		"damage": 50,
 		"rof": 5,
 		"range": 20,
-		"cost" : 250
+		"cost" : 150
 },
 	"Tower_3_Bee": {
-		"damage": 1,
-		"rof": 1,
+		"damage": 5,
+		"rof": 2,
 		"range": 200,
-		"cost" : 0
-} 
+		"cost" : 100
 }
-# Mob Attributes
+
+}
+# B : Basic 
+# F : Fast 
+# H : Heavy 
+# T : Tank
+# SB : Spider Basic
+# SBoss : Spider Boss 
 var mob_data = {
+
 	"Basic": {
-		"speed": 2 *10,
+		"speed" :20,
+		"hp": 50,
+		"money": 5,
+		},
+
+	"Fast": {
+		"speed": 40,
 		"hp": 25,
 		"money": 5,
 		},
-	"Fast": {
-		"speed": 4 *10,
-		"hp": 15,
-		"money": 10,
-		},
-	"Bulky": {
+
+	"Heavy": {
 		"speed": 10,
-		"hp": 50,
+		"hp": 150,
+		"money": 20,
+		},
+
+	"Tank": {
+		"speed": 10,
+		"hp": 500,
 		"money": 20,
 		},
 		
-	"Tank": {
-		"speed": 5,
+
+	"Spider_Basic": {
+		"speed": 30,
 		"hp": 50,
-		"money": 25,
+		"money": 5,
+		},
+
+	"Spider_Boss": {
+		"speed": 5,
+		"hp": 1000,
+		"money": 200,
 		}
-		
+
 }
 
-
-
-
-
-# String to Spawn Enemys
-# We Have Basic ; Bulky ; Fast
-var wave_data = {
-	"Wave_0" = 
-	[["Basic",1]],
-	
-	"Wave_1" = [["Fast",2],["Bulky",2],["Tank",2],["Basic",2]],
-
-	"Wave_2" = 
-	[["Basic",1], ["Basic",2],
-	 ["Basic",1], ["Basic",2],
-	 ["Basic",1], ["Basic",2],
-	 ["Basic",1], ["Basic",2]],
-
-	"Wave_3" = 
-	[["Basic",1], ["Basic",2],
-	 ["Basic",1], ["Basic",2],
-	 ["Basic",1], ["Basic",2],
-	 ["Basic",1], ["Basic",2]],
-	
-	"Wave_4" = 
-	[["Basic",1], ["Basic",2],
-	 ["Basic",1], ["Basic",2],
-	 ["Basic",1], ["Basic",2],
-	 ["Basic",1], ["Basic",2]],
-
-	}
