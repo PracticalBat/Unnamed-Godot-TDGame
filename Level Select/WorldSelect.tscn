@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Level Select/world_select.gd" id="1_yyku0"]
 [ext_resource type="PackedScene" uid="uid://3p4wq7g45pud" path="res://Level Select/World_icon.tscn" id="2_8jxy5"]
-[ext_resource type="Texture2D" uid="uid://cm4dq42cbsagn" path="res://colored_packed.png" id="2_nenas"]
-[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://colored-transparent_packed.png" id="3_l5h7g"]
+[ext_resource type="Texture2D" uid="uid://cm4dq42cbsagn" path="res://Assets/colored_packed.png" id="2_nenas"]
+[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/colored-transparent_packed.png" id="3_l5h7g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hc1k"]
 texture = ExtResource("2_nenas")

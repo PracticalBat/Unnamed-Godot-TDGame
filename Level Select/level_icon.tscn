@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Level Select/level_icon.gd" id="1_0fdoe"]
 [ext_resource type="Theme" uid="uid://dwaociqi4fggd" path="res://Assets/Pixel_Theme.tres" id="2_auckp"]
-[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://colored-transparent_packed.png" id="3_h2bvm"]
+[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/colored-transparent_packed.png" id="3_h2bvm"]
 
 [node name="LevelIcon" type="Control"]
 layout_mode = 3

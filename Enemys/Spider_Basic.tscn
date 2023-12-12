@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://by58d7hxgjokc"]
 
 [ext_resource type="Script" path="res://Logic/Enemy_Logic.gd" id="1_lgeqe"]
-[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://colored-transparent_packed.png" id="2_xp1ww"]
-[ext_resource type="Texture2D" uid="uid://crwxqd0jdm6pb" path="res://HP.png" id="3_m7b4i"]
-[ext_resource type="PackedScene" uid="uid://b4lu3ggo6k1af" path="res://explosion.tscn" id="4_k0da5"]
+[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/colored-transparent_packed.png" id="2_xp1ww"]
+[ext_resource type="Texture2D" uid="uid://crwxqd0jdm6pb" path="res://Assets/HP.png" id="3_m7b4i"]
+[ext_resource type="PackedScene" uid="uid://b4lu3ggo6k1af" path="res://unsorted.tscn/explosion.tscn" id="4_k0da5"]
 [ext_resource type="Animation" uid="uid://b5oe3di4pd4ng" path="res://Enemy_Animations/DEATH.res" id="5_ayumy"]
 [ext_resource type="Animation" uid="uid://q3gnrxl2to08" path="res://Enemy_Animations/WALK.res" id="6_r8htg"]
-[ext_resource type="AudioStream" uid="uid://qmg8vcmuedow" path="res://WAV/Crunch.wav" id="7_ywht5"]
+[ext_resource type="AudioStream" uid="uid://qmg8vcmuedow" path="res://Sounds.wav/Crunch.wav" id="7_ywht5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5dkrb"]
 radius = 7.0
