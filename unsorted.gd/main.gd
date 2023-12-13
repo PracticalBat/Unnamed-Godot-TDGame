@@ -21,6 +21,7 @@ var build_location
 @export_category("Extra Category")
 @export var next_wave_timer: Timer
 @export var HealthBar: TextureProgressBar
+@export var HealthLabel: Label
 
 @export_category("Wave Settings")
 @export var Stage_Data: Node
@@ -106,7 +107,7 @@ func get_wave_data():
 func start_next_wave():
 	print("DEBUG : + 25 $ START NEXT WAVE")
 	GameData.money += 25
-	%Wellen_Lable.text =  str("Wave: "+str(current_wave)+" / "+str(wave_num))
+	HealthLabel.text =  str("Wave: "+str(current_wave)+" / "+str(wave_num))
 	var wave_data = get_wave_data()
 	await get_tree().create_timer(0.2).timeout
 	spawn_en(wave_data)
@@ -141,8 +142,8 @@ func lose():
 func update_healthbar():
 	if GameData.health_points <= 0:
 		lose()
-	%HealthBar.set_value_no_signal(GameData.health_points * 10)
-	%HealthBarLabel.text = str(GameData.health_points) +" / 10"
+	HealthBar.set_value_no_signal(GameData.health_points * 10)
+	HealthLabel.text = str(GameData.health_points)
 
 
 func _on_next_wave_check_timeout():

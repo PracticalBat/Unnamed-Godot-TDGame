@@ -2,9 +2,16 @@ extends CanvasLayer
 
 
 
+@export_category("Settings")
+@export var MoneyLable: Label
+@export var Pause: TextureButton
+@export var FF: TextureButton
+
 
 func _process(delta):
 	set_money()
+
+
 
 func set_tower_preview(towertype, mouse_position):
 	%Click.play()
@@ -56,13 +63,14 @@ func _on_pause_play_pressed():
 func _on_speed_up_pressed():
 	if get_parent().build_mode:
 		get_parent().cancel_build_mode()
-	if Engine.get_time_scale() == 4:
-		%Menu_Out.play()
-		Engine.set_time_scale(1)
-	else:
-		%Menu_In.play()
+
+	if Engine.get_time_scale() == 1:
+		Engine.set_time_scale(2)
+	elif  Engine.get_time_scale() == 2:
 		Engine.set_time_scale(4)
+	else:
+		Engine.set_time_scale(1)
 
 func set_money():
-	%Money_counter.text = " Money "+str(GameData.money)
+	MoneyLable.text = str(GameData.money)
 
