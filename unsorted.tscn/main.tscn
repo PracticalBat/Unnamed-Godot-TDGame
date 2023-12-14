@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b5mqjtrue3qmf"]
+[gd_scene load_steps=27 format=3 uid="uid://b5mqjtrue3qmf"]
 
 [ext_resource type="Script" path="res://unsorted.gd/main.gd" id="1_f137u"]
 [ext_resource type="Texture2D" uid="uid://cvp22ibthwvje" path="res://Assets/Sprite-0001.png" id="4_giy0u"]
@@ -8,8 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://b72xolu65rbbx" path="res://Assets/Transparent_Rocks.png" id="6_meqbv"]
 [ext_resource type="Texture2D" uid="uid://cog4cxw7ib7x0" path="res://Assets/Button_textures/P_Button.png" id="7_01m4p"]
 [ext_resource type="Texture2D" uid="uid://rtqufa5pn2r4" path="res://Assets/Button_textures/FF_Button.png" id="8_s3b7o"]
+[ext_resource type="LabelSettings" uid="uid://bbivsvoj7lke6" path="res://Assets/Lable_Shadow.tres" id="9_ersej"]
 [ext_resource type="Theme" uid="uid://dwaociqi4fggd" path="res://Assets/Pixel_Theme.tres" id="11_1jkot"]
 [ext_resource type="Script" path="res://unsorted.gd/Menue.gd" id="11_dr7di"]
+[ext_resource type="Texture2D" uid="uid://bwplsxqgug3s7" path="res://Assets/Kenny Fantasy UI/Vector/fantasy-ui-borders.svg" id="11_gto2j"]
 [ext_resource type="PackedScene" uid="uid://b2sveifvvuhbm" path="res://unsorted.tscn/trail.tscn" id="11_n2ubj"]
 [ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/colored-transparent_packed.png" id="12_ary5q"]
 [ext_resource type="Texture2D" uid="uid://0q47mjq75w7f" path="res://Assets/Dollar Icon.png" id="13_p25gx"]
@@ -29,8 +31,8 @@
 process_mode = 1
 script = ExtResource("1_f137u")
 next_wave_timer = NodePath("next_wave_check")
-HealthBar = NodePath("UI/Control/Health_Icon")
-HealthLabel = NodePath("UI/Control/Health_Icon/Health_Number")
+HealthBar = NodePath("UI/Control/GUI/Status_Panel/Health_Icon")
+HealthLabel = NodePath("UI/Control/GUI/Status_Panel/Health_Icon/Health_Number")
 metadata/_edit_lock_ = true
 
 [node name="Trail" parent="." instance=ExtResource("11_n2ubj")]
@@ -45,55 +47,32 @@ metadata/_edit_lock_ = true
 
 [node name="UI" type="CanvasLayer" parent="." node_paths=PackedStringArray("MoneyLable", "Pause", "FF")]
 script = ExtResource("4_s1bsp")
-MoneyLable = NodePath("Control/Hud_mini/Coin_Icon/Money_Label")
-Pause = NodePath("Control/Hud_mini/Pause_Play")
-FF = NodePath("Control/Hud_mini/Speed_UP")
+MoneyLable = NodePath("Control/GUI/Status_Panel/Coin_Icon/Money_Label")
+Pause = NodePath("Control/GUI/Settings_Panel/Pause_Play")
+FF = NodePath("Control/GUI/Settings_Panel/Speed_UP")
 
-[node name="Control" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 0
+[node name="Control" type="MarginContainer" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 
-[node name="Hud_mini" type="Control" parent="UI/Control"]
-anchors_preset = 0
-offset_left = 1.0
-offset_top = 7.0
-offset_right = 1.0
-offset_bottom = 7.0
+[node name="GUI" type="Control" parent="UI/Control"]
+layout_mode = 2
 
-[node name="Rect" type="ColorRect" parent="UI/Control/Hud_mini"]
-layout_mode = 0
-offset_left = -1.0
-offset_top = -7.0
-offset_right = 111.0
-offset_bottom = 10.0
-color = Color(0.0392157, 0, 0.156863, 0.431373)
-
-[node name="Rect4" type="ColorRect" parent="UI/Control/Hud_mini"]
-layout_mode = 0
-offset_left = -1.0
-offset_top = 9.0
-offset_right = 31.0
-offset_bottom = 25.0
-color = Color(0.0392157, 0, 0.156863, 0.431373)
-
-[node name="Rect3" type="ColorRect" parent="UI/Control/Hud_mini"]
-layout_mode = 0
-offset_left = 503.0
-offset_top = -7.0
-offset_right = 575.0
-offset_bottom = 9.0
-color = Color(0.0392157, 0, 0.156863, 0.431373)
-
-[node name="Panel" type="Panel" parent="UI/Control/Hud_mini"]
-layout_mode = 0
-offset_left = 209.0
-offset_top = 235.0
-offset_right = 404.0
-offset_bottom = 301.0
+[node name="Tower_Panel" type="Panel" parent="UI/Control/GUI"]
+layout_mode = 2
+offset_left = 224.0
+offset_top = 232.0
+offset_right = 560.0
+offset_bottom = 344.0
+scale = Vector2(0.5, 0.5)
 theme = ExtResource("25_fykvu")
 
-[node name="Tower_1" type="TextureButton" parent="UI/Control/Hud_mini/Panel"]
+[node name="Tower_1" type="TextureButton" parent="UI/Control/GUI/Tower_Panel"]
+self_modulate = Color(0.0980392, 0.101961, 0.156863, 1)
 layout_mode = 0
 offset_left = 35.0
 offset_top = 17.0
@@ -102,7 +81,17 @@ offset_bottom = 49.0
 texture_normal = ExtResource("5_xu23v")
 stretch_mode = 0
 
-[node name="Tower_2" type="TextureButton" parent="UI/Control/Hud_mini/Panel"]
+[node name="Label" type="Label" parent="UI/Control/GUI/Tower_Panel/Tower_1"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 31.0
+offset_right = 37.0
+offset_bottom = 43.0
+text = "Tower"
+label_settings = ExtResource("9_ersej")
+
+[node name="Tower_2" type="TextureButton" parent="UI/Control/GUI/Tower_Panel"]
+self_modulate = Color(0.0980392, 0.101961, 0.156863, 1)
 layout_mode = 0
 offset_left = 83.0
 offset_top = 17.0
@@ -111,7 +100,17 @@ offset_bottom = 49.0
 texture_normal = ExtResource("4_giy0u")
 stretch_mode = 0
 
-[node name="Tower_3" type="TextureButton" parent="UI/Control/Hud_mini/Panel"]
+[node name="Label2" type="Label" parent="UI/Control/GUI/Tower_Panel/Tower_2"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 31.0
+offset_right = 41.0
+offset_bottom = 43.0
+text = "Tower"
+label_settings = ExtResource("9_ersej")
+
+[node name="Tower_3" type="TextureButton" parent="UI/Control/GUI/Tower_Panel"]
+self_modulate = Color(0.0980392, 0.101961, 0.156863, 1)
 layout_mode = 0
 offset_left = 131.0
 offset_top = 17.0
@@ -120,36 +119,37 @@ offset_bottom = 49.0
 texture_normal = ExtResource("6_meqbv")
 stretch_mode = 0
 
-[node name="Pause_Play" type="TextureButton" parent="UI/Control/Hud_mini"]
-process_mode = 3
-layout_mode = 2
-offset_left = 503.0
-offset_top = -7.0
-offset_right = 519.0
-offset_bottom = 9.0
-toggle_mode = true
-texture_normal = ExtResource("6_34f80")
-texture_pressed = ExtResource("7_01m4p")
-texture_hover = ExtResource("7_01m4p")
-stretch_mode = 0
+[node name="Label3" type="Label" parent="UI/Control/GUI/Tower_Panel/Tower_3"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 31.0
+offset_right = 41.0
+offset_bottom = 43.0
+text = "Tower"
+label_settings = ExtResource("9_ersej")
 
-[node name="Speed_UP" type="TextureButton" parent="UI/Control/Hud_mini"]
-layout_mode = 2
-offset_left = 527.0
-offset_top = -7.0
-offset_right = 543.0
-offset_bottom = 9.0
-texture_normal = ExtResource("8_s3b7o")
-texture_pressed = ExtResource("6_34f80")
-stretch_mode = 0
+[node name="Status_Panel" type="Panel" parent="UI/Control/GUI"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 48.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("25_fykvu")
 
-[node name="Skull_Icon" type="Sprite2D" parent="UI/Control/Hud_mini"]
-position = Vector2(79, 1)
+[node name="Fade Right2" type="Sprite2D" parent="UI/Control/GUI/Status_Panel"]
+position = Vector2(206, 24)
+texture = ExtResource("11_gto2j")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(820, 708, 96, 22)
+
+[node name="Skull_Icon" type="Sprite2D" parent="UI/Control/GUI/Status_Panel"]
+position = Vector2(120, 22)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("12_ary5q")
 region_enabled = true
 region_rect = Rect2(608, 176, 16, 16)
 
-[node name="Wellen_Lable" type="Label" parent="UI/Control/Hud_mini/Skull_Icon"]
+[node name="Wellen_Lable" type="Label" parent="UI/Control/GUI/Status_Panel/Skull_Icon"]
 unique_name_in_owner = true
 offset_left = 8.0
 offset_top = -3.0
@@ -157,27 +157,32 @@ offset_right = 28.0
 offset_bottom = 9.0
 theme = ExtResource("25_fykvu")
 text = "0 0"
+label_settings = ExtResource("9_ersej")
 
-[node name="Coin_Icon" type="Sprite2D" parent="UI/Control/Hud_mini"]
-position = Vector2(39, 1)
+[node name="Coin_Icon" type="Sprite2D" parent="UI/Control/GUI/Status_Panel"]
+position = Vector2(64, 22)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("13_p25gx")
 region_rect = Rect2(357, 69, 6, 6)
 
-[node name="Money_Label" type="Label" parent="UI/Control/Hud_mini/Coin_Icon"]
-offset_left = 8.0
-offset_right = 48.0
-offset_bottom = 23.0
+[node name="Money_Label" type="Label" parent="UI/Control/GUI/Status_Panel/Coin_Icon"]
+offset_left = 7.0
+offset_top = -2.0
+offset_right = 31.0
+offset_bottom = 10.0
 theme = ExtResource("25_fykvu")
 text = "999
 "
+label_settings = ExtResource("9_ersej")
 
-[node name="Health_Icon" type="TextureProgressBar" parent="UI/Control"]
+[node name="Health_Icon" type="TextureProgressBar" parent="UI/Control/GUI/Status_Panel"]
 unique_name_in_owner = true
-layout_mode = 2
-offset_left = -7.0
-offset_top = -7.0
-offset_right = 33.0
-offset_bottom = 33.0
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 38.0
+offset_bottom = 36.0
+scale = Vector2(1.2, 1.2)
 value = 100.0
 fill_mode = 4
 nine_patch_stretch = true
@@ -186,60 +191,95 @@ texture_progress = ExtResource("14_hpla3")
 tint_under = Color(0.117647, 0.0627451, 0.156863, 1)
 tint_progress = Color(0.576471, 0.0509804, 0.227451, 1)
 
-[node name="Health_Number" type="Label" parent="UI/Control/Health_Icon"]
+[node name="Health_Number" type="Label" parent="UI/Control/GUI/Status_Panel/Health_Icon"]
 unique_name_in_owner = true
 layout_mode = 2
-offset_left = 26.0
-offset_top = 21.0
-offset_right = 38.0
-offset_bottom = 33.0
+offset_left = 23.0
+offset_top = 15.0
+offset_right = 35.0
+offset_bottom = 27.0
 theme = ExtResource("25_fykvu")
 text = "10
 "
+label_settings = ExtResource("9_ersej")
 
-[node name="Menue" type="Control" parent="UI/Control"]
-process_mode = 3
-visible = false
-anchors_preset = 0
-offset_left = 515.0
-offset_top = 9.0
-offset_right = 515.0
-offset_bottom = 9.0
-script = ExtResource("11_dr7di")
+[node name="StageName_Panel" type="Panel" parent="UI/Control/GUI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -587.0
+offset_right = -443.0
+offset_bottom = 48.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("25_fykvu")
 
-[node name="ColorRect" type="ColorRect" parent="UI/Control/Menue"]
-unique_name_in_owner = true
+[node name="Fade Left" type="Sprite2D" parent="UI/Control/GUI/StageName_Panel"]
+position = Vector2(-46, 24)
+texture = ExtResource("11_gto2j")
+region_enabled = true
+region_rect = Rect2(820, 708, 96, 22)
+
+[node name="Fade Right" type="Sprite2D" parent="UI/Control/GUI/StageName_Panel"]
+position = Vector2(190, 26)
+texture = ExtResource("11_gto2j")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(820, 708, 96, 22)
+
+[node name="Label" type="Label" parent="UI/Control/GUI/StageName_Panel"]
 layout_mode = 0
-offset_left = -553.0
-offset_top = -23.0
-offset_right = 73.0
-offset_bottom = 320.0
-color = Color(0.0313726, 0, 0.188235, 0.231373)
-
-[node name="Menue_Container" type="VBoxContainer" parent="UI/Control/Menue"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = -327.0
-offset_top = 103.0
-offset_right = -83.0
-offset_bottom = 169.0
-
-[node name="Exit" type="Button" parent="UI/Control/Menue/Menue_Container"]
-layout_mode = 2
+offset_left = 6.0
+offset_top = 12.0
+offset_right = 138.0
+offset_bottom = 36.0
 theme = ExtResource("11_1jkot")
-text = "Quit"
+text = "Weiki Weiki"
+label_settings = ExtResource("9_ersej")
 
-[node name="Hauptmenue" type="Button" parent="UI/Control/Menue/Menue_Container"]
+[node name="Settings_Panel" type="Panel" parent="UI/Control/GUI"]
+layout_mode = 0
+offset_left = 516.0
+offset_right = 636.0
+offset_bottom = 48.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("25_fykvu")
+
+[node name="Pause_Play" type="TextureButton" parent="UI/Control/GUI/Settings_Panel"]
+process_mode = 3
+self_modulate = Color(0.0980392, 0.101961, 0.156863, 1)
 layout_mode = 2
-text = "Main Menue"
+offset_left = 14.0
+offset_top = 12.0
+offset_right = 30.0
+offset_bottom = 28.0
+scale = Vector2(1.5, 1.5)
+toggle_mode = true
+texture_normal = ExtResource("6_34f80")
+texture_pressed = ExtResource("7_01m4p")
+texture_hover = ExtResource("7_01m4p")
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/Control"]
-position = Vector2(560, 8)
+[node name="Speed_UP" type="TextureButton" parent="UI/Control/GUI/Settings_Panel"]
+self_modulate = Color(0.0980392, 0.101961, 0.156863, 1)
+layout_mode = 2
+offset_left = 48.0
+offset_top = 12.0
+offset_right = 64.0
+offset_bottom = 28.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("8_s3b7o")
+texture_pressed = ExtResource("6_34f80")
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Control/GUI/Settings_Panel"]
+self_modulate = Color(0.0980392, 0.101961, 0.156863, 1)
+position = Vector2(94, 24)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("12_ary5q")
 region_enabled = true
 region_rect = Rect2(656, 256, 16, 16)
 
-[node name="Menue_Button" type="Button" parent="UI/Control/Sprite2D"]
+[node name="Menue_Button" type="Button" parent="UI/Control/GUI/Settings_Panel/Sprite2D"]
 offset_left = -7.0
 offset_top = -7.0
 offset_right = 7.0
@@ -248,6 +288,44 @@ theme = ExtResource("11_1jkot")
 flat = true
 text_direction = 1
 metadata/_edit_lock_ = true
+
+[node name="Fade Left2" type="Sprite2D" parent="UI/Control/GUI/Settings_Panel"]
+position = Vector2(-46, 24)
+texture = ExtResource("11_gto2j")
+region_enabled = true
+region_rect = Rect2(820, 708, 96, 22)
+
+[node name="Home_Menu" type="Control" parent="UI/Control/GUI"]
+process_mode = 3
+visible = false
+layout_mode = 2
+anchors_preset = 0
+offset_right = 1728.0
+offset_bottom = 960.0
+script = ExtResource("11_dr7di")
+
+[node name="Panel" type="Panel" parent="UI/Control/GUI/Home_Menu"]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 450.0
+theme = ExtResource("25_fykvu")
+
+[node name="Menue_Container" type="VBoxContainer" parent="UI/Control/GUI/Home_Menu"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 250.0
+offset_top = 128.0
+offset_right = 355.0
+offset_bottom = 195.0
+
+[node name="Exit" type="Button" parent="UI/Control/GUI/Home_Menu/Menue_Container"]
+layout_mode = 2
+theme = ExtResource("11_1jkot")
+text = "Quit"
+
+[node name="Hauptmenue" type="Button" parent="UI/Control/GUI/Home_Menu/Menue_Container"]
+layout_mode = 2
+text = "Main Menue"
 
 [node name="Audio" type="Node" parent="."]
 
@@ -316,20 +394,12 @@ offset_bottom = 206.0
 theme = ExtResource("25_fykvu")
 disabled = true
 
-[node name="Panel" type="Panel" parent="."]
-visible = false
-offset_left = 208.0
-offset_top = 10.0
-offset_right = 404.0
-offset_bottom = 50.0
-theme = ExtResource("25_fykvu")
-
-[connection signal="pressed" from="UI/Control/Hud_mini/Panel/Tower_1" to="." method="_on_tower_1_pressed"]
-[connection signal="pressed" from="UI/Control/Hud_mini/Panel/Tower_2" to="." method="_on_tower_2_pressed"]
-[connection signal="pressed" from="UI/Control/Hud_mini/Panel/Tower_3" to="." method="_on_tower_3_pressed"]
-[connection signal="pressed" from="UI/Control/Hud_mini/Pause_Play" to="UI" method="_on_pause_play_pressed"]
-[connection signal="pressed" from="UI/Control/Hud_mini/Speed_UP" to="UI" method="_on_speed_up_pressed"]
-[connection signal="pressed" from="UI/Control/Menue/Menue_Container/Exit" to="UI/Control/Menue" method="_on_exit_pressed"]
-[connection signal="pressed" from="UI/Control/Menue/Menue_Container/Hauptmenue" to="UI/Control/Menue" method="_on_hauptmenue_pressed"]
-[connection signal="pressed" from="UI/Control/Sprite2D/Menue_Button" to="UI/Control/Menue" method="_on_menue_button_pressed"]
+[connection signal="pressed" from="UI/Control/GUI/Tower_Panel/Tower_1" to="." method="_on_tower_1_pressed"]
+[connection signal="pressed" from="UI/Control/GUI/Tower_Panel/Tower_2" to="." method="_on_tower_2_pressed"]
+[connection signal="pressed" from="UI/Control/GUI/Tower_Panel/Tower_3" to="." method="_on_tower_3_pressed"]
+[connection signal="pressed" from="UI/Control/GUI/Settings_Panel/Pause_Play" to="UI" method="_on_pause_play_pressed"]
+[connection signal="pressed" from="UI/Control/GUI/Settings_Panel/Speed_UP" to="UI" method="_on_speed_up_pressed"]
+[connection signal="pressed" from="UI/Control/GUI/Settings_Panel/Sprite2D/Menue_Button" to="UI/Control/GUI/Home_Menu" method="_on_menue_button_pressed"]
+[connection signal="pressed" from="UI/Control/GUI/Home_Menu/Menue_Container/Exit" to="UI/Control/GUI/Home_Menu" method="_on_exit_pressed"]
+[connection signal="pressed" from="UI/Control/GUI/Home_Menu/Menue_Container/Hauptmenue" to="UI/Control/GUI/Home_Menu" method="_on_hauptmenue_pressed"]
 [connection signal="timeout" from="next_wave_check" to="." method="_on_next_wave_check_timeout"]
