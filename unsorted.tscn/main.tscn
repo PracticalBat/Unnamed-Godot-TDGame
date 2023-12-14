@@ -43,8 +43,9 @@ metadata/_edit_lock_ = true
 process_mode = 1
 metadata/_edit_lock_ = true
 
-[node name="UI" type="CanvasLayer" parent="." node_paths=PackedStringArray("Pause", "FF")]
+[node name="UI" type="CanvasLayer" parent="." node_paths=PackedStringArray("MoneyLable", "Pause", "FF")]
 script = ExtResource("4_s1bsp")
+MoneyLable = NodePath("Control/Hud_mini/Coin_Icon/Money_Label")
 Pause = NodePath("Control/Hud_mini/Pause_Play")
 FF = NodePath("Control/Hud_mini/Speed_UP")
 
@@ -307,6 +308,7 @@ wait_time = 5.0
 one_shot = true
 
 [node name="Button" type="Button" parent="."]
+visible = false
 offset_left = 212.0
 offset_top = 175.0
 offset_right = 342.0
@@ -315,6 +317,7 @@ theme = ExtResource("25_fykvu")
 disabled = true
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 offset_left = 208.0
 offset_top = 10.0
 offset_right = 404.0
