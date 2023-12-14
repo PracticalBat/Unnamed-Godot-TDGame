@@ -3,7 +3,7 @@ extends Node
 # just checking
 var enemys_alive = 0
 # Do you have stupid ? 
-var money = 10000
+var money = 100
 var health_points = 10
 
 

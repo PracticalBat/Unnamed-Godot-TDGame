@@ -11,7 +11,6 @@ var starting_positon : Vector2
 
 @export_category("Level_Movement")
 @export var Projectile: Sprite2D
-@export var Anima: AnimationPlayer
 
 func _ready():
 	#$Range/CollisionShape2DGameData.get_shape().radius= GameData.tower_data[type]["range"]
@@ -30,12 +29,8 @@ func tween_bullet():
 	var currentposition = enemy.global_position
 	print("Tween")
 	move_tween = get_tree().create_tween()
-	move_tween.tween_property(Projectile, "global_position", currentposition,0.2).set_trans(Tween.TRANS_BOUNCE)
+	move_tween.tween_property(Projectile, "global_position", currentposition,0.1).set_trans(Tween.TRANS_ELASTIC)
 
-func move_back():
-	Anima.play("idle")
-	move_tween = get_tree().create_tween()
-	move_tween.tween_property(Projectile, "global_position", starting_positon,0.2).set_trans(Tween.TRANS_EXPO)
 
 
 
@@ -52,9 +47,7 @@ func fire():
 	tween_bullet()
 	fire_ready = false
 	enemy.on_hit(GameData.tower_data[type]["damage"])
-	Anima.play("attack")
 	await get_tree().create_timer(GameData.tower_data[type]["rof"]).timeout
-	move_back()
 	fire_ready = true
 
 
@@ -67,5 +60,8 @@ func _on_range_body_entered(body):
 
 func _on_range_body_exited(body):
 	enemy_array.erase(body.get_parent())
-#	print("exited")
-#	print(enemy_array)
+	print("exited")
+	print(enemy_array)
+	if enemy_array.is_empty():
+		move_tween = get_tree().create_tween()
+		move_tween.tween_property(Projectile, "global_position", starting_positon,0.5).set_trans(Tween.TRANS_ELASTIC)

@@ -24,9 +24,11 @@ GameData="*res://Singleton/GameData.gd"
 
 [display]
 
-window/size/viewport_width=576
-window/size/viewport_height=320
+window/size/viewport_width=1728
+window/size/viewport_height=960
 window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
+window/stretch/scale=3.0
 mouse_cursor/custom_image="res://Assets/Cursor_New_B.png"
 window/icon="res://Assets/Screenshot 2023-11-16 201340.png"
 window/version=""
