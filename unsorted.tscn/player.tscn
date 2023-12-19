@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://xwa0bjy5kwm2"]
 
 [ext_resource type="Script" path="res://unsorted.gd/player.gd" id="1_bsxgo"]
-[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/colored-transparent_packed.png" id="1_pk87u"]
+[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/Kenny/Tilemap/colored-transparent_packed.png" id="1_pk87u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ietow"]
 radius = 16.0

@@ -1,8 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvjyxcg3j8vph"]
+[gd_scene load_steps=10 format=3 uid="uid://cvjyxcg3j8vph"]
 
 [ext_resource type="Script" path="res://unsorted.gd/gold_rock.gd" id="1_ox85f"]
-[ext_resource type="Texture2D" uid="uid://b72xolu65rbbx" path="res://Assets/Transparent_Rocks.png" id="2_hmwly"]
-[ext_resource type="AudioStream" uid="uid://dtse5f38d5rmn" path="res://Sounds.wav/Hurt.wav" id="3_a54f2"]
+[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/Kenny/Tilemap/colored-transparent_packed.png" id="2_nodrn"]
+[ext_resource type="AudioStream" uid="uid://dtse5f38d5rmn" path="res://Sounds/Hurt.wav" id="3_a54f2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8n6hl"]
+atlas = ExtResource("2_nodrn")
+region = Rect2(416, 64, 16, 16)
 
 [sub_resource type="Gradient" id="Gradient_2jwwy"]
 colors = PackedColorArray(0.811765, 0.776471, 0.721569, 1, 1, 1, 1, 0)
@@ -67,7 +71,7 @@ offset_left = -8.0
 offset_top = -8.0
 offset_right = 8.0
 offset_bottom = 8.0
-texture_normal = ExtResource("2_hmwly")
+texture_normal = SubResource("AtlasTexture_8n6hl")
 
 [node name="Explosion" type="GPUParticles2D" parent="."]
 unique_name_in_owner = true

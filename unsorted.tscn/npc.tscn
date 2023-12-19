@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dttp7akou2ksh"]
 
-[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/colored-transparent_packed.png" id="1_50yqb"]
+[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/Kenny/Tilemap/colored-transparent_packed.png" id="1_50yqb"]
 [ext_resource type="Script" path="res://unsorted.gd/Sprite2D.gd" id="2_fnwdx"]
 
 [sub_resource type="Animation" id="Animation_x4o6b"]

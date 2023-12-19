@@ -56,6 +56,10 @@ func _on_tower_2_pressed():
 func _on_tower_3_pressed():
 	var type = "Tower_3_Bee"
 	init_build_mode(type)
+	
+func _on_tower_4_pressed():
+	var type = "Tower_4"
+	init_build_mode(type)
 
 
 func init_build_mode(type):
@@ -91,7 +95,7 @@ func veryfy_and_build():
 	if GameData.tower_data[build_type]["cost"] <= GameData.money:
 		GameData.money -= GameData.tower_data[build_type]["cost"]
 		%Bump.play()
-		var new_tower = load("res://Tower.tscn/"+build_type+".tscn").instantiate()
+		var new_tower = load("res://_Tower/"+build_type+".tscn").instantiate()
 		new_tower.position = build_location
 		new_tower.built = true
 		new_tower.type = build_type
@@ -105,8 +109,6 @@ func get_wave_data():
 	return wave_data
 
 func start_next_wave():
-	print("DEBUG : + 25 $ START NEXT WAVE")
-	GameData.money += 25
 	HealthLabel.text =  str("Wave: "+str(current_wave)+" / "+str(wave_num))
 	var wave_data = get_wave_data()
 	await get_tree().create_timer(0.2).timeout
@@ -115,7 +117,7 @@ func start_next_wave():
 func spawn_en(wave_data):
 	for i in wave_data:
 		GameData.enemys_alive += 1
-		var enemy = load("res://Enemys/"+i[0]+".tscn").instantiate()
+		var enemy = load("res://_Enemy/"+i[0]+".tscn").instantiate()
 		match i[2]: #Lane match
 			1: Path1.add_child(enemy, true)
 			2: Path2.add_child(enemy, true)
@@ -124,10 +126,6 @@ func spawn_en(wave_data):
 	print("DEBUG: Enemys Alive "+str(GameData.enemys_alive))
 	next_wave_timer.start()
 
-func next_wave():
-	start_next_wave()
-	print(current_wave)
-	current_wave += 1
 
 
 #func victory():
@@ -151,7 +149,14 @@ func _on_next_wave_check_timeout():
 	if GameData.enemys_alive <= 0: 
 		print("DEBUG: Enemys Alive Start Next Wave "+str(GameData.enemys_alive))
 		if current_wave >= wave_num:
-			#victory() 
+			print("YOU WON")
 			pass
-		else: next_wave()
+		else:
+			print("DEBUG : + 25 $ START NEXT WAVE")
+			GameData.money += 25
+			current_wave += 1
+			start_next_wave()
 	else: next_wave_timer.start()
+
+
+

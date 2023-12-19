@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cydlkauh5300r"]
 
-[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/colored-transparent_packed.png" id="1_bd2nj"]
+[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/Kenny/Tilemap/colored-transparent_packed.png" id="1_bd2nj"]
 
 [sub_resource type="Curve2D" id="Curve2D_tdnf3"]
 

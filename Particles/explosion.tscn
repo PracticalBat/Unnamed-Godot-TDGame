@@ -1,33 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bo4gufyvggshh"]
+[gd_scene load_steps=2 format=3 uid="uid://0o17kiuexige"]
 
-[sub_resource type="Gradient" id="Gradient_2jwwy"]
-colors = PackedColorArray(0.811765, 0.776471, 0.721569, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_vqgei"]
-gradient = SubResource("Gradient_2jwwy")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ef70e"]
-particle_flag_disable_z = true
-direction = Vector3(0, -200, 0)
-spread = 52.1
-gravity = Vector3(0, 100, 0)
-initial_velocity_min = 20.0
-initial_velocity_max = 60.0
-angular_velocity_min = 100.0
-angular_velocity_max = 500.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-radial_accel_min = -28.94
-radial_accel_max = -23.69
-scale_min = 0.5
-scale_max = 2.0
-color_ramp = SubResource("GradientTexture1D_vqgei")
-turbulence_noise_strength = 14.95
-turbulence_noise_speed_random = 2.94
+[ext_resource type="Material" uid="uid://dk56cjw18qah2" path="res://Particles/explosion.tres" id="1_6qwwo"]
 
 [node name="Explosion" type="GPUParticles2D"]
 emitting = false
 amount = 10
-process_material = SubResource("ParticleProcessMaterial_ef70e")
+process_material = ExtResource("1_6qwwo")
 one_shot = true
 explosiveness = 1.0

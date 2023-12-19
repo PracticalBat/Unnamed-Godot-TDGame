@@ -15,7 +15,7 @@ func _process(delta):
 
 func set_tower_preview(towertype, mouse_position):
 	%Click.play()
-	var drag_tower = load("res://Tower.tscn/"+towertype+".tscn").instantiate()
+	var drag_tower = load("res://_Tower/"+towertype+".tscn").instantiate()
 	drag_tower.set_name("DragTower")
 	drag_tower.modulate= Color.GREEN
 	var range_texture = Sprite2D.new()

@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://b1d1q4s4fbegc"]
+
+[ext_resource type="Script" path="res://_Tower/Script/Tower_4.gd" id="1_aqbxo"]
+[ext_resource type="Texture2D" uid="uid://cpmxs30skfr8r" path="res://Assets/Aseprite_made_by_Bowz/Tower_Sprites.png" id="2_3kf76"]
+[ext_resource type="PackedScene" uid="uid://chyvt3rslmmf7" path="res://_Tower/projectile.tscn" id="2_adh83"]
+[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/Kenny/Tilemap/colored-transparent_packed.png" id="4_anbrj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l72eo"]
+atlas = ExtResource("2_3kf76")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_571vo"]
+atlas = ExtResource("2_3kf76")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8uen"]
+atlas = ExtResource("2_3kf76")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fhha8"]
+animations = [{
+"frames": [{
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_l72eo")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_571vo")
+}, {
+"duration": 1.3,
+"texture": SubResource("AtlasTexture_q8uen")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_571vo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i4ii7"]
+radius = 100.0
+
+[node name="Bow_T4_Leech" type="Node2D" groups=["turret"]]
+script = ExtResource("1_aqbxo")
+ammo = ExtResource("2_adh83")
+
+[node name="TowerSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fhha8")
+autoplay = "default"
+frame_progress = 0.141376
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_i4ii7")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(472, 8)
+texture = ExtResource("4_anbrj")
+region_enabled = true
+region_rect = Rect2(592, 336, 16, 16)
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
