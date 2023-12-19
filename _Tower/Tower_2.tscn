@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfo7xxqwd8qel"]
+
+[ext_resource type="Script" path="res://_Tower/Script/Turret_Logic.gd" id="1_56x3q"]
+[ext_resource type="Texture2D" uid="uid://cpmxs30skfr8r" path="res://Assets/Aseprite_made_by_Bowz/Tower_Sprites.png" id="2_2j3o2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x01ds"]
+radius = 50.0
+
+[node name="Tower_2" type="Node2D"]
+script = ExtResource("1_56x3q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_2j3o2")
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_x01ds")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

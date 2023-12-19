@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://drypnsjcfctik"]
+
+[ext_resource type="Script" path="res://_Enemy/Script/Enemy_Logic.gd" id="1_sdbdl"]
+[ext_resource type="Texture2D" uid="uid://bqi71g3i1ctaq" path="res://Assets/Aseprite_made_by_Bowz/Spider_Boss.png" id="2_otda5"]
+[ext_resource type="PackedScene" uid="uid://b4lu3ggo6k1af" path="res://unsorted.tscn/explosion.tscn" id="4_w8ubk"]
+[ext_resource type="Animation" uid="uid://b5oe3di4pd4ng" path="res://_Enemy/Animation/DEATH.res" id="5_dc0it"]
+[ext_resource type="Animation" uid="uid://dbv7xj6pp75rx" path="res://_Enemy/Animation/Spider_Walk.res" id="5_p5h1f"]
+[ext_resource type="AudioStream" uid="uid://qmg8vcmuedow" path="res://Sounds/Crunch.wav" id="7_q37ra"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5dkrb"]
+radius = 7.0
+
+[sub_resource type="Gradient" id="Gradient_p31hf"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xoye2"]
+gradient = SubResource("Gradient_p31hf")
+
+[sub_resource type="Gradient" id="Gradient_kseho"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fljgd"]
+gradient = SubResource("Gradient_kseho")
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yqla4"]
+_data = {
+"DEATH": ExtResource("5_dc0it"),
+"WALK": ExtResource("5_p5h1f")
+}
+
+[node name="Spider_Boss" type="PathFollow2D" node_paths=PackedStringArray("Healthbar", "AnimP", "HurtS", "DeathS", "Collision", "Body", "Sprite") groups=["enemy"]]
+rotates = false
+loop = false
+script = ExtResource("1_sdbdl")
+Healthbar = NodePath("CharacterBody2D/HealthBar")
+AnimP = NodePath("AnimationPlayer")
+HurtS = NodePath("Hurt")
+DeathS = NodePath("AudioStreamPlayer")
+Collision = NodePath("CharacterBody2D/CollisionShape2D")
+Body = NodePath("CharacterBody2D")
+Sprite = NodePath("CharacterBody2D/Sprite2D")
+Type = "Spider_Boss"
+metadata/_edit_horizontal_guides_ = [-23.0]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_otda5")
+region_rect = Rect2(416, 128, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_5dkrb")
+debug_color = Color(1, 0, 0.701961, 0)
+
+[node name="HealthBar" type="TextureProgressBar" parent="CharacterBody2D"]
+unique_name_in_owner = true
+offset_left = -16.0
+offset_top = -19.0
+offset_right = 16.0
+offset_bottom = -17.0
+nine_patch_stretch = true
+texture_under = SubResource("GradientTexture1D_xoye2")
+texture_progress = SubResource("GradientTexture1D_fljgd")
+tint_under = Color(0.117647, 0.0627451, 0.156863, 1)
+tint_progress = Color(1, 0.360784, 0.592157, 1)
+
+[node name="Explosion" parent="." instance=ExtResource("4_w8ubk")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yqla4")
+}
+autoplay = "WALK"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_q37ra")
+volume_db = -33.016
+
+[node name="Hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_q37ra")
+volume_db = -30.0

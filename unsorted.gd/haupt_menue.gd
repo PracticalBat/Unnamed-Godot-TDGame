@@ -9,7 +9,7 @@ func _on_new_game_pressed():
 
 
 func _on_credits_pressed():
-	get_tree().change_scene_to_file("res://credits.tscn")
+	get_tree().change_scene_to_file("res://unsorted.tscn/credits.tscn")
 
 
 func _on_exit_pressed():

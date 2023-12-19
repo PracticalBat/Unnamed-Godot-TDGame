@@ -1,38 +1,123 @@
-[gd_scene load_steps=27 format=3 uid="uid://b5mqjtrue3qmf"]
+[gd_scene load_steps=41 format=3 uid="uid://b5mqjtrue3qmf"]
 
 [ext_resource type="Script" path="res://unsorted.gd/main.gd" id="1_f137u"]
-[ext_resource type="Texture2D" uid="uid://cvp22ibthwvje" path="res://Assets/Sprite-0001.png" id="4_giy0u"]
+[ext_resource type="Theme" uid="uid://mhdwkcecl1i4" path="res://Assets/Theme/Fantasy_theme.tres" id="4_n3cl7"]
 [ext_resource type="Script" path="res://unsorted.gd/UI.gd" id="4_s1bsp"]
-[ext_resource type="Texture2D" uid="uid://bew35vd86nytk" path="res://Assets/Sprite-0003.png" id="5_xu23v"]
-[ext_resource type="Texture2D" uid="uid://ur8ivyale4cf" path="res://Assets/Button_textures/F_Button.png" id="6_34f80"]
-[ext_resource type="Texture2D" uid="uid://b72xolu65rbbx" path="res://Assets/Transparent_Rocks.png" id="6_meqbv"]
-[ext_resource type="Texture2D" uid="uid://cog4cxw7ib7x0" path="res://Assets/Button_textures/P_Button.png" id="7_01m4p"]
-[ext_resource type="Texture2D" uid="uid://rtqufa5pn2r4" path="res://Assets/Button_textures/FF_Button.png" id="8_s3b7o"]
-[ext_resource type="LabelSettings" uid="uid://bbivsvoj7lke6" path="res://Assets/Lable_Shadow.tres" id="9_ersej"]
-[ext_resource type="Theme" uid="uid://dwaociqi4fggd" path="res://Assets/Pixel_Theme.tres" id="11_1jkot"]
+[ext_resource type="Texture2D" uid="uid://cpmxs30skfr8r" path="res://Assets/Aseprite_made_by_Bowz/Tower_Sprites.png" id="5_corbn"]
+[ext_resource type="FontFile" uid="uid://27idn2k1vkqn" path="res://Assets/Theme/Renogare-Regular.otf" id="6_qubbl"]
+[ext_resource type="Texture2D" uid="uid://bwplsxqgug3s7" path="res://Assets/Kenny/Kenny Fantasy UI/fantasy-ui-borders.svg" id="7_3v510"]
+[ext_resource type="Texture2D" uid="uid://cpm1qnjtjfsvl" path="res://Assets/Aseprite_made_by_Bowz/Skull.png" id="8_6tojb"]
+[ext_resource type="Texture2D" uid="uid://cfbc01ig1l8lj" path="res://Assets/Aseprite_made_by_Bowz/Dollar_Icon.png" id="9_3u1xu"]
+[ext_resource type="Texture2D" uid="uid://c6axvvabni1oo" path="res://Assets/Aseprite_made_by_Bowz/Heart.png" id="10_je27x"]
 [ext_resource type="Script" path="res://unsorted.gd/Menue.gd" id="11_dr7di"]
-[ext_resource type="Texture2D" uid="uid://bwplsxqgug3s7" path="res://Assets/Kenny Fantasy UI/Vector/fantasy-ui-borders.svg" id="11_gto2j"]
 [ext_resource type="PackedScene" uid="uid://b2sveifvvuhbm" path="res://unsorted.tscn/trail.tscn" id="11_n2ubj"]
-[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/colored-transparent_packed.png" id="12_ary5q"]
-[ext_resource type="Texture2D" uid="uid://0q47mjq75w7f" path="res://Assets/Dollar Icon.png" id="13_p25gx"]
-[ext_resource type="AudioStream" uid="uid://jcm3hknna6df" path="res://Sounds.wav/Pause.wav" id="14_1nhxf"]
-[ext_resource type="Texture2D" uid="uid://ca78q08f6ekfr" path="res://Assets/Heart.png" id="14_hpla3"]
-[ext_resource type="AudioStream" uid="uid://ch34iunsvgl4s" path="res://Music/tohomoko_grain.mp3" id="14_op65f"]
-[ext_resource type="AudioStream" uid="uid://dtse5f38d5rmn" path="res://Sounds.wav/Hurt.wav" id="15_smxhu"]
-[ext_resource type="AudioStream" uid="uid://cplfoxemwuqqr" path="res://Sounds.wav/Monster_Scream.wav" id="16_8dkql"]
-[ext_resource type="AudioStream" uid="uid://cbpraalv8ptjo" path="res://Sounds.wav/Bump.wav" id="17_t87a7"]
-[ext_resource type="AudioStream" uid="uid://bqnw1p5t36x4g" path="res://Sounds.wav/Menu_In.wav" id="18_6yfku"]
-[ext_resource type="AudioStream" uid="uid://cv8fna41s1fs7" path="res://Sounds.wav/Click.wav" id="18_yunjg"]
-[ext_resource type="AudioStream" uid="uid://0plefw62au2w" path="res://Sounds.wav/Menu_Out.wav" id="19_eoi36"]
+[ext_resource type="Texture2D" uid="uid://bgxg0qrdopt0h" path="res://Assets/Aseprite_made_by_Bowz/Play&Pause_Button.png" id="11_wy2bc"]
+[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/Kenny/Tilemap/colored-transparent_packed.png" id="12_ary5q"]
+[ext_resource type="AudioStream" uid="uid://jcm3hknna6df" path="res://Sounds/Pause.wav" id="14_1nhxf"]
+[ext_resource type="AudioStream" uid="uid://ch34iunsvgl4s" path="res://Assets/Music/tohomoko_grain.mp3" id="14_op65f"]
+[ext_resource type="AudioStream" uid="uid://dtse5f38d5rmn" path="res://Sounds/Hurt.wav" id="15_smxhu"]
+[ext_resource type="AudioStream" uid="uid://cplfoxemwuqqr" path="res://Sounds/Monster_Scream.wav" id="16_8dkql"]
+[ext_resource type="AudioStream" uid="uid://cbpraalv8ptjo" path="res://Sounds/Bump.wav" id="17_t87a7"]
+[ext_resource type="AudioStream" uid="uid://bqnw1p5t36x4g" path="res://Sounds/Menu_In.wav" id="18_6yfku"]
+[ext_resource type="AudioStream" uid="uid://cv8fna41s1fs7" path="res://Sounds/Click.wav" id="18_yunjg"]
+[ext_resource type="AudioStream" uid="uid://0plefw62au2w" path="res://Sounds/Menu_Out.wav" id="19_eoi36"]
 [ext_resource type="Script" path="res://unsorted.gd/Camera2D.gd" id="21_6na3e"]
-[ext_resource type="Theme" uid="uid://mhdwkcecl1i4" path="res://Assets/Kenny Fantasy UI/Fantasy_theme.tres" id="25_fykvu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccyif"]
+atlas = ExtResource("5_corbn")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dwkyg"]
+font = ExtResource("6_qubbl")
+font_size = 8
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jtjw"]
+atlas = ExtResource("5_corbn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2m6g"]
+atlas = ExtResource("5_corbn")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxmpr"]
+atlas = ExtResource("5_corbn")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrjom"]
+atlas = ExtResource("8_6tojb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr5gs"]
+atlas = ExtResource("8_6tojb")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p4ij2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrjom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr5gs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjjb5"]
+atlas = ExtResource("11_wy2bc")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dq4ai"]
+atlas = ExtResource("11_wy2bc")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v03ub"]
+atlas = ExtResource("11_wy2bc")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0xn0"]
+atlas = ExtResource("11_wy2bc")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yykgw"]
+atlas = ExtResource("11_wy2bc")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4uwa"]
+atlas = ExtResource("11_wy2bc")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idqtt"]
+atlas = ExtResource("11_wy2bc")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7v1o"]
+atlas = ExtResource("11_wy2bc")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55l3j"]
+atlas = ExtResource("7_3v510")
+region = Rect2(29, 17, 1032, 833)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dy1r4"]
+texture = SubResource("AtlasTexture_55l3j")
+texture_margin_left = 16.0
+texture_margin_top = 18.0
+texture_margin_right = 17.0
+texture_margin_bottom = 17.0
+region_rect = Rect2(11, 23, 48, 48)
+modulate_color = Color(0, 0, 0, 1)
 
 [node name="Game_Logic+UI" type="Node2D" node_paths=PackedStringArray("next_wave_timer", "HealthBar", "HealthLabel")]
 process_mode = 1
 script = ExtResource("1_f137u")
 next_wave_timer = NodePath("next_wave_check")
-HealthBar = NodePath("UI/Control/GUI/Status_Panel/Health_Icon")
-HealthLabel = NodePath("UI/Control/GUI/Status_Panel/Health_Icon/Health_Number")
+HealthBar = NodePath("UI/GUI/Status_Panel/Health_Icon")
+HealthLabel = NodePath("UI/GUI/Status_Panel/Skull_Icon/Wellen_Lable")
 metadata/_edit_lock_ = true
 
 [node name="Trail" parent="." instance=ExtResource("11_n2ubj")]
@@ -47,208 +132,214 @@ metadata/_edit_lock_ = true
 
 [node name="UI" type="CanvasLayer" parent="." node_paths=PackedStringArray("MoneyLable", "Pause", "FF")]
 script = ExtResource("4_s1bsp")
-MoneyLable = NodePath("Control/GUI/Status_Panel/Coin_Icon/Money_Label")
-Pause = NodePath("Control/GUI/Settings_Panel/Pause_Play")
-FF = NodePath("Control/GUI/Settings_Panel/Speed_UP")
+MoneyLable = NodePath("GUI/Status_Panel/Coin_Icon/Money_Label")
+Pause = NodePath("GUI/Settings_Panel/Pause_Play")
+FF = NodePath("GUI/Settings_Panel/Speed_UP")
 
-[node name="Control" type="MarginContainer" parent="UI"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
+[node name="GUI" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 1
 
-[node name="GUI" type="Control" parent="UI/Control"]
-layout_mode = 2
-
-[node name="Tower_Panel" type="Panel" parent="UI/Control/GUI"]
+[node name="Tower_Panel" type="Panel" parent="UI/GUI"]
 layout_mode = 2
 offset_left = 224.0
 offset_top = 232.0
 offset_right = 560.0
 offset_bottom = 344.0
 scale = Vector2(0.5, 0.5)
-theme = ExtResource("25_fykvu")
+theme = ExtResource("4_n3cl7")
 
-[node name="Tower_1" type="TextureButton" parent="UI/Control/GUI/Tower_Panel"]
-self_modulate = Color(0.0980392, 0.101961, 0.156863, 1)
+[node name="Tower_1" type="TextureButton" parent="UI/GUI/Tower_Panel"]
 layout_mode = 0
-offset_left = 35.0
-offset_top = 17.0
-offset_right = 67.0
-offset_bottom = 49.0
-texture_normal = ExtResource("5_xu23v")
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 64.0
+offset_bottom = 48.0
+texture_normal = SubResource("AtlasTexture_ccyif")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="UI/Control/GUI/Tower_Panel/Tower_1"]
+[node name="Label" type="Label" parent="UI/GUI/Tower_Panel/Tower_1"]
 layout_mode = 0
-offset_left = -3.0
-offset_top = 31.0
-offset_right = 37.0
-offset_bottom = 43.0
+offset_top = 32.0
+offset_right = 32.0
+offset_bottom = 42.0
 text = "Tower"
-label_settings = ExtResource("9_ersej")
+label_settings = SubResource("LabelSettings_dwkyg")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Tower_2" type="TextureButton" parent="UI/Control/GUI/Tower_Panel"]
-self_modulate = Color(0.0980392, 0.101961, 0.156863, 1)
+[node name="Tower_2" type="TextureButton" parent="UI/GUI/Tower_Panel"]
 layout_mode = 0
-offset_left = 83.0
-offset_top = 17.0
-offset_right = 115.0
-offset_bottom = 49.0
-texture_normal = ExtResource("4_giy0u")
+offset_left = 80.0
+offset_top = 16.0
+offset_right = 112.0
+offset_bottom = 48.0
+texture_normal = SubResource("AtlasTexture_2jtjw")
 stretch_mode = 0
 
-[node name="Label2" type="Label" parent="UI/Control/GUI/Tower_Panel/Tower_2"]
+[node name="Label2" type="Label" parent="UI/GUI/Tower_Panel/Tower_2"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 31.0
-offset_right = 41.0
-offset_bottom = 43.0
+offset_top = 32.0
+offset_right = 32.0
+offset_bottom = 44.0
 text = "Tower"
-label_settings = ExtResource("9_ersej")
+label_settings = SubResource("LabelSettings_dwkyg")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Tower_3" type="TextureButton" parent="UI/Control/GUI/Tower_Panel"]
-self_modulate = Color(0.0980392, 0.101961, 0.156863, 1)
+[node name="Tower_3" type="TextureButton" parent="UI/GUI/Tower_Panel"]
 layout_mode = 0
-offset_left = 131.0
-offset_top = 17.0
-offset_right = 163.0
-offset_bottom = 49.0
-texture_normal = ExtResource("6_meqbv")
-stretch_mode = 0
-
-[node name="Label3" type="Label" parent="UI/Control/GUI/Tower_Panel/Tower_3"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 31.0
-offset_right = 41.0
-offset_bottom = 43.0
-text = "Tower"
-label_settings = ExtResource("9_ersej")
-
-[node name="Status_Panel" type="Panel" parent="UI/Control/GUI"]
-layout_mode = 0
+offset_left = 128.0
+offset_top = 16.0
 offset_right = 160.0
 offset_bottom = 48.0
+texture_normal = SubResource("AtlasTexture_v2m6g")
+stretch_mode = 0
+
+[node name="Label3" type="Label" parent="UI/GUI/Tower_Panel/Tower_3"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 32.0
+offset_bottom = 44.0
+text = "Tower"
+label_settings = SubResource("LabelSettings_dwkyg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tower_4" type="TextureButton" parent="UI/GUI/Tower_Panel"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 16.0
+offset_right = 208.0
+offset_bottom = 48.0
+texture_normal = SubResource("AtlasTexture_nxmpr")
+stretch_mode = 0
+
+[node name="Label3" type="Label" parent="UI/GUI/Tower_Panel/Tower_4"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 32.0
+offset_bottom = 44.0
+text = "Tower"
+label_settings = SubResource("LabelSettings_dwkyg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Status_Panel" type="Panel" parent="UI/GUI"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 80.0
 scale = Vector2(0.5, 0.5)
-theme = ExtResource("25_fykvu")
+theme = ExtResource("4_n3cl7")
 
-[node name="Fade Right2" type="Sprite2D" parent="UI/Control/GUI/Status_Panel"]
-position = Vector2(206, 24)
-texture = ExtResource("11_gto2j")
-flip_h = true
-region_enabled = true
-region_rect = Rect2(820, 708, 96, 22)
+[node name="Skull_Icon" type="AnimatedSprite2D" parent="UI/GUI/Status_Panel"]
+position = Vector2(16, 64)
+sprite_frames = SubResource("SpriteFrames_p4ij2")
+autoplay = "default"
 
-[node name="Skull_Icon" type="Sprite2D" parent="UI/Control/GUI/Status_Panel"]
-position = Vector2(120, 22)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("12_ary5q")
-region_enabled = true
-region_rect = Rect2(608, 176, 16, 16)
-
-[node name="Wellen_Lable" type="Label" parent="UI/Control/GUI/Status_Panel/Skull_Icon"]
+[node name="Wellen_Lable" type="Label" parent="UI/GUI/Status_Panel/Skull_Icon"]
 unique_name_in_owner = true
 offset_left = 8.0
 offset_top = -3.0
-offset_right = 28.0
-offset_bottom = 9.0
-theme = ExtResource("25_fykvu")
-text = "0 0"
-label_settings = ExtResource("9_ersej")
+offset_right = 24.0
+offset_bottom = 8.0
+theme = ExtResource("4_n3cl7")
+text = "XX
+"
+horizontal_alignment = 1
+vertical_alignment = 2
 
-[node name="Coin_Icon" type="Sprite2D" parent="UI/Control/GUI/Status_Panel"]
-position = Vector2(64, 22)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("13_p25gx")
+[node name="Coin_Icon" type="Sprite2D" parent="UI/GUI/Status_Panel"]
+position = Vector2(16, 40)
+texture = ExtResource("9_3u1xu")
 region_rect = Rect2(357, 69, 6, 6)
 
-[node name="Money_Label" type="Label" parent="UI/Control/GUI/Status_Panel/Coin_Icon"]
+[node name="Money_Label" type="Label" parent="UI/GUI/Status_Panel/Coin_Icon"]
 offset_left = 7.0
 offset_top = -2.0
 offset_right = 31.0
 offset_bottom = 10.0
-theme = ExtResource("25_fykvu")
+theme = ExtResource("4_n3cl7")
 text = "999
 "
-label_settings = ExtResource("9_ersej")
 
-[node name="Health_Icon" type="TextureProgressBar" parent="UI/Control/GUI/Status_Panel"]
+[node name="Health_Icon" type="TextureProgressBar" parent="UI/GUI/Status_Panel"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 6.0
-offset_top = 4.0
-offset_right = 38.0
-offset_bottom = 36.0
-scale = Vector2(1.2, 1.2)
-value = 100.0
-fill_mode = 4
-nine_patch_stretch = true
-texture_under = ExtResource("14_hpla3")
-texture_progress = ExtResource("14_hpla3")
-tint_under = Color(0.117647, 0.0627451, 0.156863, 1)
-tint_progress = Color(0.576471, 0.0509804, 0.227451, 1)
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 24.0
+offset_bottom = 24.0
+value = 60.0
+texture_under = ExtResource("10_je27x")
+texture_progress = ExtResource("10_je27x")
+tint_under = Color(0, 0, 0, 1)
 
-[node name="Health_Number" type="Label" parent="UI/Control/GUI/Status_Panel/Health_Icon"]
+[node name="Health_Number" type="Label" parent="UI/GUI/Status_Panel/Health_Icon"]
 unique_name_in_owner = true
 layout_mode = 2
-offset_left = 23.0
-offset_top = 15.0
-offset_right = 35.0
-offset_bottom = 27.0
-theme = ExtResource("25_fykvu")
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 28.0
+offset_bottom = 18.0
+theme = ExtResource("4_n3cl7")
 text = "10
 "
-label_settings = ExtResource("9_ersej")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="StageName_Panel" type="Panel" parent="UI/Control/GUI"]
+[node name="StageName_Panel" type="Panel" parent="UI/GUI"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -587.0
-offset_right = -443.0
+offset_left = -36.0
+offset_right = 108.0
 offset_bottom = 48.0
 grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
-theme = ExtResource("25_fykvu")
+theme = ExtResource("4_n3cl7")
 
-[node name="Fade Left" type="Sprite2D" parent="UI/Control/GUI/StageName_Panel"]
-position = Vector2(-46, 24)
-texture = ExtResource("11_gto2j")
+[node name="Fade Left" type="Sprite2D" parent="UI/GUI/StageName_Panel"]
+position = Vector2(-44, 24)
+texture = ExtResource("7_3v510")
 region_enabled = true
 region_rect = Rect2(820, 708, 96, 22)
 
-[node name="Fade Right" type="Sprite2D" parent="UI/Control/GUI/StageName_Panel"]
-position = Vector2(190, 26)
-texture = ExtResource("11_gto2j")
+[node name="Fade Right" type="Sprite2D" parent="UI/GUI/StageName_Panel"]
+self_modulate = Color(0.654902, 0.678431, 0.854902, 1)
+position = Vector2(188, 26)
+texture = ExtResource("7_3v510")
 flip_h = true
 region_enabled = true
 region_rect = Rect2(820, 708, 96, 22)
 
-[node name="Label" type="Label" parent="UI/Control/GUI/StageName_Panel"]
+[node name="Stage_Name" type="Label" parent="UI/GUI/StageName_Panel"]
 layout_mode = 0
-offset_left = 6.0
+offset_left = 8.0
 offset_top = 12.0
-offset_right = 138.0
+offset_right = 136.0
 offset_bottom = 36.0
-theme = ExtResource("11_1jkot")
-text = "Weiki Weiki"
-label_settings = ExtResource("9_ersej")
+theme = ExtResource("4_n3cl7")
+theme_override_font_sizes/font_size = 16
+text = "Stage Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
-[node name="Settings_Panel" type="Panel" parent="UI/Control/GUI"]
+[node name="Settings_Panel" type="Panel" parent="UI/GUI"]
 layout_mode = 0
-offset_left = 516.0
-offset_right = 636.0
+offset_left = 580.0
+offset_right = 700.0
 offset_bottom = 48.0
 scale = Vector2(0.5, 0.5)
-theme = ExtResource("25_fykvu")
+theme = ExtResource("4_n3cl7")
 
-[node name="Pause_Play" type="TextureButton" parent="UI/Control/GUI/Settings_Panel"]
+[node name="Pause_Play" type="TextureButton" parent="UI/GUI/Settings_Panel"]
 process_mode = 3
-self_modulate = Color(0.0980392, 0.101961, 0.156863, 1)
 layout_mode = 2
 offset_left = 14.0
 offset_top = 12.0
@@ -256,22 +347,21 @@ offset_right = 30.0
 offset_bottom = 28.0
 scale = Vector2(1.5, 1.5)
 toggle_mode = true
-texture_normal = ExtResource("6_34f80")
-texture_pressed = ExtResource("7_01m4p")
-texture_hover = ExtResource("7_01m4p")
+texture_normal = SubResource("AtlasTexture_fjjb5")
+texture_pressed = SubResource("AtlasTexture_dq4ai")
+texture_hover = SubResource("AtlasTexture_v03ub")
 
-[node name="Speed_UP" type="TextureButton" parent="UI/Control/GUI/Settings_Panel"]
-self_modulate = Color(0.0980392, 0.101961, 0.156863, 1)
+[node name="Speed_UP" type="TextureButton" parent="UI/GUI/Settings_Panel"]
 layout_mode = 2
 offset_left = 48.0
 offset_top = 12.0
 offset_right = 64.0
 offset_bottom = 28.0
 scale = Vector2(1.5, 1.5)
-texture_normal = ExtResource("8_s3b7o")
-texture_pressed = ExtResource("6_34f80")
+texture_normal = SubResource("AtlasTexture_c0xn0")
+texture_pressed = SubResource("AtlasTexture_yykgw")
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/Control/GUI/Settings_Panel"]
+[node name="Sprite2D" type="Sprite2D" parent="UI/GUI/Settings_Panel"]
 self_modulate = Color(0.0980392, 0.101961, 0.156863, 1)
 position = Vector2(94, 24)
 scale = Vector2(1.5, 1.5)
@@ -279,23 +369,16 @@ texture = ExtResource("12_ary5q")
 region_enabled = true
 region_rect = Rect2(656, 256, 16, 16)
 
-[node name="Menue_Button" type="Button" parent="UI/Control/GUI/Settings_Panel/Sprite2D"]
-offset_left = -7.0
-offset_top = -7.0
-offset_right = 7.0
-offset_bottom = 7.0
-theme = ExtResource("11_1jkot")
-flat = true
-text_direction = 1
-metadata/_edit_lock_ = true
+[node name="Home_Button" type="TextureButton" parent="UI/GUI/Settings_Panel/Sprite2D"]
+offset_left = -6.66667
+offset_top = -9.33333
+offset_right = 9.33333
+offset_bottom = 6.66667
+texture_normal = SubResource("AtlasTexture_e4uwa")
+texture_pressed = SubResource("AtlasTexture_idqtt")
+texture_hover = SubResource("AtlasTexture_g7v1o")
 
-[node name="Fade Left2" type="Sprite2D" parent="UI/Control/GUI/Settings_Panel"]
-position = Vector2(-46, 24)
-texture = ExtResource("11_gto2j")
-region_enabled = true
-region_rect = Rect2(820, 708, 96, 22)
-
-[node name="Home_Menu" type="Control" parent="UI/Control/GUI"]
+[node name="Home_Menu" type="Control" parent="UI/GUI"]
 process_mode = 3
 visible = false
 layout_mode = 2
@@ -304,27 +387,37 @@ offset_right = 1728.0
 offset_bottom = 960.0
 script = ExtResource("11_dr7di")
 
-[node name="Panel" type="Panel" parent="UI/Control/GUI/Home_Menu"]
+[node name="Panel" type="Panel" parent="UI/GUI/Home_Menu"]
 layout_mode = 0
-offset_right = 600.0
-offset_bottom = 450.0
-theme = ExtResource("25_fykvu")
+offset_left = 199.0
+offset_top = 70.0
+offset_right = 445.0
+offset_bottom = 324.0
+theme = ExtResource("4_n3cl7")
+theme_override_styles/panel = SubResource("StyleBoxTexture_dy1r4")
 
-[node name="Menue_Container" type="VBoxContainer" parent="UI/Control/GUI/Home_Menu"]
+[node name="Menue_Container" type="VBoxContainer" parent="UI/GUI/Home_Menu"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 250.0
-offset_top = 128.0
-offset_right = 355.0
-offset_bottom = 195.0
+offset_left = 251.0
+offset_top = 103.0
+offset_right = 389.0
+offset_bottom = 215.0
+alignment = 1
 
-[node name="Exit" type="Button" parent="UI/Control/GUI/Home_Menu/Menue_Container"]
+[node name="Exit" type="Button" parent="UI/GUI/Home_Menu/Menue_Container"]
 layout_mode = 2
-theme = ExtResource("11_1jkot")
+theme = ExtResource("4_n3cl7")
 text = "Quit"
 
-[node name="Hauptmenue" type="Button" parent="UI/Control/GUI/Home_Menu/Menue_Container"]
+[node name="Fun_Button" type="Button" parent="UI/GUI/Home_Menu/Menue_Container"]
 layout_mode = 2
+theme = ExtResource("4_n3cl7")
+text = "Press For Fun"
+
+[node name="Hauptmenue" type="Button" parent="UI/GUI/Home_Menu/Menue_Container"]
+layout_mode = 2
+theme = ExtResource("4_n3cl7")
 text = "Main Menue"
 
 [node name="Audio" type="Node" parent="."]
@@ -385,21 +478,14 @@ unique_name_in_owner = true
 wait_time = 5.0
 one_shot = true
 
-[node name="Button" type="Button" parent="."]
-visible = false
-offset_left = 212.0
-offset_top = 175.0
-offset_right = 342.0
-offset_bottom = 206.0
-theme = ExtResource("25_fykvu")
-disabled = true
-
-[connection signal="pressed" from="UI/Control/GUI/Tower_Panel/Tower_1" to="." method="_on_tower_1_pressed"]
-[connection signal="pressed" from="UI/Control/GUI/Tower_Panel/Tower_2" to="." method="_on_tower_2_pressed"]
-[connection signal="pressed" from="UI/Control/GUI/Tower_Panel/Tower_3" to="." method="_on_tower_3_pressed"]
-[connection signal="pressed" from="UI/Control/GUI/Settings_Panel/Pause_Play" to="UI" method="_on_pause_play_pressed"]
-[connection signal="pressed" from="UI/Control/GUI/Settings_Panel/Speed_UP" to="UI" method="_on_speed_up_pressed"]
-[connection signal="pressed" from="UI/Control/GUI/Settings_Panel/Sprite2D/Menue_Button" to="UI/Control/GUI/Home_Menu" method="_on_menue_button_pressed"]
-[connection signal="pressed" from="UI/Control/GUI/Home_Menu/Menue_Container/Exit" to="UI/Control/GUI/Home_Menu" method="_on_exit_pressed"]
-[connection signal="pressed" from="UI/Control/GUI/Home_Menu/Menue_Container/Hauptmenue" to="UI/Control/GUI/Home_Menu" method="_on_hauptmenue_pressed"]
+[connection signal="pressed" from="UI/GUI/Tower_Panel/Tower_1" to="." method="_on_tower_1_pressed"]
+[connection signal="pressed" from="UI/GUI/Tower_Panel/Tower_2" to="." method="_on_tower_2_pressed"]
+[connection signal="pressed" from="UI/GUI/Tower_Panel/Tower_3" to="." method="_on_tower_3_pressed"]
+[connection signal="pressed" from="UI/GUI/Tower_Panel/Tower_4" to="." method="_on_tower_4_pressed"]
+[connection signal="pressed" from="UI/GUI/Settings_Panel/Pause_Play" to="UI" method="_on_pause_play_pressed"]
+[connection signal="pressed" from="UI/GUI/Settings_Panel/Speed_UP" to="UI" method="_on_speed_up_pressed"]
+[connection signal="pressed" from="UI/GUI/Settings_Panel/Sprite2D/Home_Button" to="UI/GUI/Home_Menu" method="_on_menue_button_pressed"]
+[connection signal="pressed" from="UI/GUI/Home_Menu/Menue_Container/Exit" to="UI/GUI/Home_Menu" method="_on_exit_pressed"]
+[connection signal="pressed" from="UI/GUI/Home_Menu/Menue_Container/Fun_Button" to="UI/GUI/Home_Menu" method="_on_fun_button_pressed"]
+[connection signal="pressed" from="UI/GUI/Home_Menu/Menue_Container/Hauptmenue" to="UI/GUI/Home_Menu" method="_on_hauptmenue_pressed"]
 [connection signal="timeout" from="next_wave_check" to="." method="_on_next_wave_check_timeout"]

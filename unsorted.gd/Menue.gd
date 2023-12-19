@@ -29,3 +29,9 @@ func _on_pause_play_pressed():
 		#AA.paused = false 
 	#else:
 		#AA.paused = true
+
+
+func _on_fun_button_pressed():
+	if self.visible:
+		self.visible = false
+	else: self.visible = true

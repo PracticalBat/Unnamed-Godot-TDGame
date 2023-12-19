@@ -1,7 +1,48 @@
-[gd_scene load_steps=3 format=3 uid="uid://dn6v7o45jkq77"]
+[gd_scene load_steps=8 format=3 uid="uid://dn6v7o45jkq77"]
 
 [ext_resource type="Script" path="res://unsorted.gd/credits.gd" id="1_14qds"]
-[ext_resource type="Theme" uid="uid://dwaociqi4fggd" path="res://Assets/Pixel_Theme.tres" id="1_vp5yq"]
+[ext_resource type="Theme" uid="uid://mhdwkcecl1i4" path="res://Assets/Theme/Fantasy_theme.tres" id="1_vp5yq"]
+[ext_resource type="FontFile" uid="uid://27idn2k1vkqn" path="res://Assets/Theme/Renogare-Regular.otf" id="3_1ups7"]
+[ext_resource type="Texture2D" uid="uid://cerv5iyfhkjvb" path="res://Assets/Aseprite_made_by_Bowz/FAT FUCKING BAT.png" id="3_028ih"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dwkyg"]
+font = ExtResource("3_1ups7")
+font_size = 8
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_2yr67"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FatFuckingBat:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, -2, 0.5),
+"update": 0,
+"values": [0.0, -0.349066, 0.349066]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FatFuckingBat2:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, -2, 0.5),
+"update": 0,
+"values": [0.0, 0.349066, -0.349066]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_woajx"]
+_data = {
+"Idle": SubResource("Animation_2yr67")
+}
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -22,10 +63,10 @@ color = Color(0, 0, 0.152941, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 89.0
-offset_right = 197.0
-offset_bottom = 224.0
+offset_left = 143.0
+offset_top = 48.0
+offset_right = 435.0
+offset_bottom = 252.0
 theme = ExtResource("1_vp5yq")
 text = "Assets: www.kenney.nl, Oscar Zeise
 
@@ -36,6 +77,8 @@ Idee : Oscar Zeise
 Level Design : Oscar Zeise
 
 Programmierung: Oscar Zeise"
+label_settings = SubResource("LabelSettings_dwkyg")
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
@@ -47,5 +90,21 @@ offset_bottom = 312.0
 theme = ExtResource("1_vp5yq")
 theme_override_font_sizes/font_size = 16
 text = "Hauptmenue"
+
+[node name="FatFuckingBat" type="Sprite2D" parent="."]
+position = Vector2(101, 155)
+rotation = -0.242059
+texture = ExtResource("3_028ih")
+
+[node name="FatFuckingBat2" type="Sprite2D" parent="."]
+position = Vector2(508, 167)
+rotation = 0.242059
+texture = ExtResource("3_028ih")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_woajx")
+}
+autoplay = "Idle"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

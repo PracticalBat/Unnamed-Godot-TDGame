@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1memwh0pqt3x"]
+
+[ext_resource type="PackedScene" uid="uid://bv4gega1vsimx" path="res://_Enemy/Basic.tscn" id="1_jk4yv"]
+[ext_resource type="PackedScene" uid="uid://b1d1q4s4fbegc" path="res://_Tower/Tower_4.tscn" id="2_gwj6y"]
+
+[sub_resource type="Curve2D" id="Curve2D_n0uvr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -30, 58, 0, 0, 0, 0, 190, 65, 0, 0, 0, 0, 179, 105, 0, 0, 0, 0, -76, 96, 0, 0, 0, 0, -64, 13, 0, 0, 0, 0, 228, 7, 0, 0, 0, 0, 78, 22, 0, 0, 0, 0, 199, 99, 0, 0, 0, 0, 265, 97)
+}
+point_count = 10
+
+[node name="Test_Room" type="Node2D"]
+
+[node name="Bow_T4_Leech" parent="." instance=ExtResource("2_gwj6y")]
+position = Vector2(80, 18)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_n0uvr")
+
+[node name="Basic" parent="Path2D" instance=ExtResource("1_jk4yv")]

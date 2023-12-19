@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=3 uid="uid://b6ltvadwssowd"]
+
+[ext_resource type="Script" path="res://Level and World Select/Scripts/level_icon.gd" id="1_0fdoe"]
+[ext_resource type="Theme" uid="uid://mhdwkcecl1i4" path="res://Assets/Theme/Fantasy_theme.tres" id="3_3io1e"]
+[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/Kenny/Tilemap/colored-transparent_packed.png" id="3_h2bvm"]
+[ext_resource type="FontFile" uid="uid://27idn2k1vkqn" path="res://Assets/Theme/Renogare-Regular.otf" id="4_irhkc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dwkyg"]
+font = ExtResource("4_irhkc")
+font_size = 8
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_f3rgl"]
+resource_name = "IDLE"
+length = 0.6
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4, -18), Vector2(4, -16)]
+}
+
+[sub_resource type="Animation" id="Animation_i1oum"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, -18)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jlfvc"]
+_data = {
+"IDLE": SubResource("Animation_f3rgl"),
+"RESET": SubResource("Animation_i1oum")
+}
+
+[node name="LevelIcon" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0fdoe")
+level_name = " 1"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_h2bvm")
+region_enabled = true
+region_rect = Rect2(656, 240, 16, 16)
+
+[node name="Label" type="Label" parent="."]
+self_modulate = Color(0.654902, 0.513726, 0.686275, 1)
+layout_mode = 0
+offset_left = 4.0
+offset_top = -18.0
+offset_right = 14.0
+offset_bottom = 2.0
+theme = ExtResource("3_3io1e")
+text = " 1"
+label_settings = SubResource("LabelSettings_dwkyg")
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jlfvc")
+}
+autoplay = "IDLE"

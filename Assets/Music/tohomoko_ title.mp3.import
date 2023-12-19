@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cshpi5e0qq8a3"
+path="res://.godot/imported/tohomoko_ title.mp3-605cf553a471874cb1e7567fae725b03.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/tohomoko_ title.mp3"
+dest_files=["res://.godot/imported/tohomoko_ title.mp3-605cf553a471874cb1e7567fae725b03.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
