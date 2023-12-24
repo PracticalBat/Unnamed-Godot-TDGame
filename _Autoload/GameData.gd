@@ -6,13 +6,28 @@ var enemys_alive = 0
 var money = 100
 var health_points = 10
 
-
+var Camera_in_Quadrant = 1
 
 #/   _\/ \/ ___\/   _\/  _ \
 #|  /  | ||    \|  /  | / \|
 #|  \__| |\___ ||  \_ | \_/|
 #\____/\_/\____/\____/\____/
 
+
+
+var projectile = {
+	
+	"freeze": {
+		"damage": 10,
+		"speed": 100,
+		"pierce": 3,
+},
+	"poison": {
+		"damage": 1,
+		"speed": 50,
+		"pierce": 0,
+},
+}
 
 # Tower Attributes
 var tower_data = {
@@ -30,9 +45,16 @@ var tower_data = {
 		"cost" : 150
 },
 	"Tower_4": {
-		"damage": 50,
+		"damage": 5,
 		"rof": 5,
 		"range": 100,
+		"cost" : 0
+		
+},
+	"Tower_5": {
+		"damage": 5,
+		"rof": 5,
+		"range": 600,
 		"cost" : 0
 		
 },
@@ -41,6 +63,9 @@ var tower_data = {
 		"rof": 2,
 		"range": 200,
 		"cost" : 100
+		
+		
+		
 }
 
 }

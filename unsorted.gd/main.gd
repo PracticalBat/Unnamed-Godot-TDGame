@@ -6,6 +6,10 @@ var build_valid : bool = false
 var build_type : String
 var build_tile 
 var build_location
+var u_sure: bool = false
+
+@export var Camera_Pivot: Marker2D
+
 
 @export_category("Code Refrence Nodes")
 @export var TowerExclusion: TileMap
@@ -20,20 +24,22 @@ var build_location
 
 @export_category("Extra Category")
 @export var next_wave_timer: Timer
+@export var WaveLabel: Label
 @export var HealthBar: TextureProgressBar
 @export var HealthLabel: Label
 
 @export_category("Wave Settings")
 @export var Stage_Data: Node
 @export var current_wave: int = 0
-@export var wave_num: int = 99
+@export var wave_num: int = 0
 
 
 func _ready() -> void:
 	wave_num = Stage_Data.get_wave_count()
 	update_healthbar()
+	_update_wave_label()
 
-func _process(delta):
+func _process(_delta):
 	if build_mode:
 		update_tower_preview()
 	update_healthbar()
@@ -41,33 +47,45 @@ func _process(delta):
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel") and build_mode == true:
 		cancel_build_mode()
-	if event.is_action_pressed("ui_accept") and build_mode == true:
+	if event.is_action_pressed("ui_accept") and build_mode == true and u_sure:
 		veryfy_and_build()
 		cancel_build_mode()
 
-func _on_tower_1_pressed():
-	var type = "Tower_1"
-	init_build_mode(type)
 
-func _on_tower_2_pressed():
-	var type = "Tower_2"
-	init_build_mode(type)
 
-func _on_tower_3_pressed():
-	var type = "Tower_3_Bee"
-	init_build_mode(type)
-	
-func _on_tower_4_pressed():
-	var type = "Tower_4"
-	init_build_mode(type)
+func _on_tower_button_pressed(Number):
+	#Each button sends a custum signal which gets selected here 
+	var Tower = {
+		1: {
+			type = "Tower_1"
+		},
+		2: {
+			type = "Tower_2"
+		},
+		3: {
+			type = "Tower_3_Bee"
+		},
+		4: {
+			type = "Tower_4"
+		},
+		5: {
+			type = "Tower_5"
+		},
+		
+	}
+	init_build_mode(Tower[Number].type)
+
+
 
 
 func init_build_mode(type):
 	if build_mode:
 		cancel_build_mode()
-	build_type = type
-	build_mode = true
-	get_node("UI").set_tower_preview(build_type,get_global_mouse_position())
+	if GameData.tower_data[type]["cost"] <= GameData.money:
+		build_type = type
+		build_mode = true
+		get_node("UI").set_tower_preview(build_type,get_global_mouse_position())
+	else : %"loud-incorrect-buzzer-lie-meme-sound-effect".play()
 
 func cancel_build_mode():
 	build_mode = false 
@@ -76,32 +94,38 @@ func cancel_build_mode():
 
 
 func update_tower_preview():
-	var mouseposition = get_global_mouse_position()
+	var mouseposition = get_local_mouse_position()
 	var current_tile = TowerExclusion.local_to_map(mouseposition)
 	var tile_position = TowerExclusion.map_to_local(current_tile) 
+	
+	var camera_correction = Vector2($Camera2D.limit_left , $Camera2D.limit_top)
+	var zoom = 1
+	if $Camera2D.zoom == Vector2(2,2):
+		zoom = 2
 
 #int get_cell_source_id(layer: int, coords: Vector2i, use_proxies: bool = false) const
 #Returns the tile source ID of the cell on layer layer at coordinates coords. Returns -1 if the cell does not exist.
 	if TowerExclusion.get_cell_source_id(0, current_tile, false) == -1: # Valid build location check
-		get_node("UI").update_tower_preview(tile_position, Color.GREEN)
-		build_valid = true
-		build_location = tile_position
+		get_node("UI").update_tower_preview(tile_position-camera_correction, Color.CADET_BLUE,zoom)
+		build_valid = true 
+		build_location = tile_position 
 		build_tile = current_tile
+		print("Place")
+		u_sure = true
 	else:
-		get_node("UI").update_tower_preview(tile_position, Color.RED)
-		build_valid = false 
+		u_sure = false
+		print("No Place")
+		get_node("UI").update_tower_preview(tile_position-camera_correction, Color.RED,zoom)
 
 func veryfy_and_build():
-	if GameData.tower_data[build_type]["cost"] <= GameData.money:
-		GameData.money -= GameData.tower_data[build_type]["cost"]
-		%Bump.play()
-		var new_tower = load("res://_Tower/"+build_type+".tscn").instantiate()
-		new_tower.position = build_location
-		new_tower.built = true
-		new_tower.type = build_type
-		get_node("Turrets").add_child(new_tower,true)
-		TowerExclusion.set_cell(0, build_tile,0,Vector2i(0,0),true)
-	else : print("DEBUG: not enought money ")
+	%Bump.play()
+	var new_tower = load("res://_Tower/"+build_type+".tscn").instantiate()
+	new_tower.position = build_location
+	new_tower.built = true
+	new_tower.type = build_type
+	get_node("Turrets").add_child(new_tower,true)
+	TowerExclusion.set_cell(0, build_tile,0,Vector2i(0,0),true)
+	GameData.money -= GameData.tower_data[build_type]["cost"]
 
 
 func get_wave_data():
@@ -109,7 +133,7 @@ func get_wave_data():
 	return wave_data
 
 func start_next_wave():
-	HealthLabel.text =  str("Wave: "+str(current_wave)+" / "+str(wave_num))
+	_update_wave_label()
 	var wave_data = get_wave_data()
 	await get_tree().create_timer(0.2).timeout
 	spawn_en(wave_data)
@@ -143,6 +167,9 @@ func update_healthbar():
 	HealthBar.set_value_no_signal(GameData.health_points * 10)
 	HealthLabel.text = str(GameData.health_points)
 
+func _update_wave_label():
+	WaveLabel.text = str(current_wave) + " / " + str(wave_num)
+
 
 func _on_next_wave_check_timeout():
 	print("DEBUG :next_wave_check timeout")
@@ -153,7 +180,7 @@ func _on_next_wave_check_timeout():
 			pass
 		else:
 			print("DEBUG : + 25 $ START NEXT WAVE")
-			GameData.money += 25
+			GameData.money += 50
 			current_wave += 1
 			start_next_wave()
 	else: next_wave_timer.start()

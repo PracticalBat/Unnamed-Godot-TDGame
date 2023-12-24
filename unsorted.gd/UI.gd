@@ -8,7 +8,7 @@ extends CanvasLayer
 @export var FF: TextureButton
 
 
-func _process(delta):
+func _process(_delta):
 	set_money()
 
 
@@ -17,7 +17,7 @@ func set_tower_preview(towertype, mouse_position):
 	%Click.play()
 	var drag_tower = load("res://_Tower/"+towertype+".tscn").instantiate()
 	drag_tower.set_name("DragTower")
-	drag_tower.modulate= Color.GREEN
+	drag_tower.modulate= Color.SKY_BLUE
 	var range_texture = Sprite2D.new()
 	range_texture.position = Vector2()
 	var scaling = GameData.tower_data[towertype]["range"] / 620
@@ -28,16 +28,26 @@ func set_tower_preview(towertype, mouse_position):
 	var control := Control.new()
 	control.add_child(drag_tower,true)
 	control.add_child(range_texture,true)
-	control.position = mouse_position
+	control.position = mouse_position 
 	control.set_name("TowerPreview")
 	add_child(control,true)
 #	move_child(get_node("TowerPreview"),0)
 
-func update_tower_preview(new_position, color):
-	get_node("TowerPreview").position = new_position
+func update_tower_preview(new_position, color, zoom):
+	#print(zoom)
+	var correction = Vector2(0,0)
+	#var quad =$"../Camera2D".get_quad()
+	match GameData.Camera_in_Quadrant:
+		1 : correction = Vector2(568,0)
+		2 : correction = Vector2(0,0)
+		3 : correction = Vector2(568,320)
+		4 : correction = Vector2(0,320)
+	
+	get_node("TowerPreview").position =( new_position - (correction)) * zoom
+	get_node("TowerPreview").scale = Vector2(zoom,zoom) 
 	if get_node("TowerPreview").modulate != Color(color):
 			get_node("TowerPreview").modulate = Color(color)
-			get_node("TowerPreview/Sprite2D").modulate = Color(color)
+
 
 
 

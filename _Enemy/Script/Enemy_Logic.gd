@@ -36,6 +36,45 @@ func rand_scale_pos():
 	Body.position = Vector2 (randf_range(-3, 3),(randf_range(-3, 3)))
 
 
+
+	#poison_timer = 10; // poison life
+	#alarm[0] = 1; // start poisoning right away
+	#
+#if poison_timer > 0 {
+	#poison_timer -= 1;
+	#hp -= posion_damage; // whatever damage you want
+	#alarm[0] = room_speed; // wait for 1 second before dealing poison damage again
+#} 
+
+#tick_wait_time , tick_ammount , damage
+
+func poison(tick_wait_time , tick_ammount , damage):
+
+	AnimP.speed_scale = 0.5
+	self.modulate = Color.GREEN_YELLOW
+
+	for i in tick_ammount:
+		on_hit(damage)
+		await get_tree().create_timer(tick_wait_time).timeout
+
+	self.modulate = Color.WHITE
+	AnimP.speed_scale = 1
+
+
+
+func freeze(freeze_time, damage):
+	
+	on_hit(damage)
+	
+	isdead = true
+	AnimP.pause()
+	self.modulate = Color.SKY_BLUE
+	await get_tree().create_timer(freeze_time).timeout
+	self.modulate = Color.WHITE
+	AnimP.play()
+	isdead = false
+
+
 #func _spawn() -> void:
 	#isdead = true 
 	#AnimP.play("SPAWN")

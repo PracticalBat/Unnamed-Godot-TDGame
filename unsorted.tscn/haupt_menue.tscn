@@ -39,14 +39,12 @@ layout_mode = 2
 [node name="Start Game" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_lqkpd")
-theme_type_variation = &"FlatButton"
 text = "Start Game
 "
 
 [node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_lqkpd")
-theme_type_variation = &"FlatButton"
 text = "Credits
 "
 

@@ -15,6 +15,7 @@ func _physics_process(delta):
 		enemy = null
 
 
+
 func select_e():
 	var enemy_progress_array =[]
 	for i in enemy_array:

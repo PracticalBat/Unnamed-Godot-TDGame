@@ -17,7 +17,7 @@ func _ready():
 	starting_positon = global_position
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if enemy_array.size() != 0 and built:
 		select_e()
 		if fire_ready:

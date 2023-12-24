@@ -18,15 +18,19 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/image="res://Assets/Aseprite_made_by_Bowz/Banner.png"
 config/icon="res://Assets/Aseprite_made_by_Bowz/FAT FUCKING BAT.png"
 
+[audio]
+
+buses/default_bus_layout=""
+
 [autoload]
 
 GameData="*res://_Autoload/GameData.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-window/stretch/scale=3.0
+window/size/viewport_width=1136
+window/size/viewport_height=640
+window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="res://Assets/Cursor_New_B.png"
 window/icon="res://Assets/Screenshot 2023-11-16 201340.png"
 window/version=""
@@ -57,6 +61,16 @@ click={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
+"Scroll Up"={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":4,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+"Scroll Down"={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":5,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
 
 [physics]
 
@@ -65,4 +79,5 @@ common/physics_ticks_per_second=30
 [rendering]
 
 textures/canvas_textures/default_texture_filter=3
+renderer/rendering_method="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.0980392, 0.101961, 0.156863, 1)

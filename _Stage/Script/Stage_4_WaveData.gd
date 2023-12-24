@@ -2,18 +2,36 @@ extends Node
 
 @export var money : int = 200
 
+# Dict explained 
+#0 = type 
+#1 = Time between next spawn
+#2 = lane spawn 
+
+
+# Enemys:
+#Spider_Basic 
+#Spider_Boss
+#Basic
+#Fast 
+#Bulky 
+#Tank 
+
+
 @export var wave_data = {
 	"Wave_1" = 
-	[["Spider_Boss",1,3],["Spider_Basic",1,1]],
+	[["Spider_Boss",1,1],["Spider_Boss",1,1],
+	["Spider_Boss",1,2],["Spider_Boss",1,2],
+	["Spider_Boss",1,1],["Spider_Boss",1,2]
+	],
 
 	"Wave_2" = 
-	[["Spider_Basic",1,1]],
+	[],
 
 	"Wave_3" = 
-	[["Spider_Basic",1,2]],
+	[],
 	
 	"Wave_4" = 
-	[["Spider_Basic",1,3]],
+	[],
 	}
 
 func get_wave_data():

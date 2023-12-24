@@ -14,21 +14,25 @@ var enemy
 
 
 
-func _physics_process(delta):
+
+func get_type():
+	return GameData.tower_data[type]["damage"]
+
+func _physics_process(_delta):
 	if enemy_array.size() != 0 and built:
 		select_e()
+		aim(enemy)
 		if fire_ready:
 			fire()
 	else:
 		enemy = null
 
 
-func aim(enemy):
+func aim(_enemy):
 	#if ray_cast.get_collider() == enemy
 	if enemy != null:
 		ray_cast.target_position = to_local(enemy.position).normalized()
-	else: return
-	
+	else: print("no enemy")
 
 
 func _shoot():
@@ -51,7 +55,9 @@ func select_e():
 func fire():
 	fire_ready = false
 	aim(enemy)
-	_shoot()
+	for i in 5: 
+		_shoot()
+		await get_tree().create_timer(0.2).timeout
 	var speedup = 2 * log(enemy_array.size())
 	await get_tree().create_timer(GameData.tower_data[type]["rof"]-speedup).timeout
 	fire_ready = true
