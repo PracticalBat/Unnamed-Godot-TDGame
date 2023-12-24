@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bfbt62rhaosdk"]
 
 [ext_resource type="Script" path="res://_Enemy/Script/Enemy_Logic.gd" id="1_0f17r"]
-[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/Kenny/Tilemap/colored-transparent_packed.png" id="2_6d8rt"]
+[ext_resource type="Texture2D" uid="uid://dg6a87wefj5ee" path="res://Assets/Aseprite_made_by_Bowz/Tank.png" id="2_awurj"]
 [ext_resource type="Texture2D" uid="uid://crwxqd0jdm6pb" path="res://Assets/HP.png" id="3_xpud1"]
 [ext_resource type="PackedScene" uid="uid://b4lu3ggo6k1af" path="res://unsorted.tscn/explosion.tscn" id="4_80wuy"]
 [ext_resource type="Animation" uid="uid://b5oe3di4pd4ng" path="res://_Enemy/Animation/DEATH.res" id="5_b3fr4"]
@@ -18,7 +18,6 @@ _data = {
 }
 
 [node name="Tank" type="PathFollow2D" node_paths=PackedStringArray("Healthbar", "AnimP", "HurtS", "DeathS", "Collision", "Body", "Sprite") groups=["enemy"]]
-rotates = false
 loop = false
 script = ExtResource("1_0f17r")
 Healthbar = NodePath("HealthBar")
@@ -27,18 +26,17 @@ HurtS = NodePath("Hurt")
 DeathS = NodePath("AudioStreamPlayer")
 Collision = NodePath("CharacterBody2D/CollisionShape2D")
 Body = NodePath("CharacterBody2D")
-Sprite = NodePath("CharacterBody2D/Sprite2D")
+Sprite = NodePath("")
 Type = "Tank"
 metadata/_edit_horizontal_guides_ = [-23.0]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(0, -1)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-texture = ExtResource("2_6d8rt")
-hframes = 3
-frame = 2
-region_enabled = true
-region_rect = Rect2(144, 320, 48, 16)
+[node name="Sprite" type="Sprite2D" parent="CharacterBody2D"]
+rotation = 1.5708
+texture = ExtResource("2_awurj")
+region_rect = Rect2(0, 0, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CircleShape2D_5dkrb")

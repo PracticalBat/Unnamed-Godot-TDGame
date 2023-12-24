@@ -104,7 +104,7 @@ func on_hit(damage):
 func is_dead_check() -> void:
 	if hp <= 0 and isdead == false:
 		isdead = true
-		Collision.disabled = true
+		#Collision.disabled = true
 		on_destroy()
 
 

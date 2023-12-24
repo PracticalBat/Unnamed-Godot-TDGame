@@ -71,7 +71,9 @@ func fire():
 	is_fire_ready = false
 	match damage_type:
 		"hitscan": enemy.on_hit(GameData.tower_data[type]["damage"])
-		"munition": for i in ammount_munition: _shoot()
+		"munition": for i in ammount_munition:
+						_shoot()
+						await get_tree().create_timer(0.2).timeout
 	await get_tree().create_timer(GameData.tower_data[type]["rof"]).timeout
 	
 	is_fire_ready = true

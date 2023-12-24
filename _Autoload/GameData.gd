@@ -22,6 +22,14 @@ var projectile = {
 		"speed": 100,
 		"pierce": 3,
 },
+
+	"bubble": {
+		"damage": 5,
+		"speed": 100,
+		"pierce": 3,
+},
+
+
 	"poison": {
 		"damage": 1,
 		"speed": 50,
@@ -56,6 +64,15 @@ var tower_data = {
 		"rof": 5,
 		"range": 600,
 		"cost" : 0
+		
+		
+},
+	"Tower_6": {
+		"damage": 5,
+		"rof": 2,
+		"range": 600,
+		"cost" : 0
+		
 		
 },
 	"Tower_3_Bee": {

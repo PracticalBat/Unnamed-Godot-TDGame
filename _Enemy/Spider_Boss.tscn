@@ -1,11 +1,19 @@
-[gd_scene load_steps=13 format=3 uid="uid://drypnsjcfctik"]
+[gd_scene load_steps=15 format=3 uid="uid://drypnsjcfctik"]
 
 [ext_resource type="Script" path="res://_Enemy/Script/Enemy_Logic.gd" id="1_sdbdl"]
+[ext_resource type="Shader" path="res://_Tower/Item_Shine.gdshader" id="2_ocxqt"]
 [ext_resource type="Texture2D" uid="uid://bqi71g3i1ctaq" path="res://Assets/Aseprite_made_by_Bowz/Spider_Boss.png" id="2_otda5"]
 [ext_resource type="PackedScene" uid="uid://b4lu3ggo6k1af" path="res://unsorted.tscn/explosion.tscn" id="4_w8ubk"]
 [ext_resource type="Animation" uid="uid://b5oe3di4pd4ng" path="res://_Enemy/Animation/DEATH.res" id="5_dc0it"]
 [ext_resource type="Animation" uid="uid://dbv7xj6pp75rx" path="res://_Enemy/Animation/Spider_Walk.res" id="5_p5h1f"]
 [ext_resource type="AudioStream" uid="uid://qmg8vcmuedow" path="res://Sounds/Crunch.wav" id="7_q37ra"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_flu42"]
+shader = ExtResource("2_ocxqt")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/shine_progress = 0.0
+shader_parameter/shine_size = 0.01
+shader_parameter/shine_angle = 45.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5dkrb"]
 radius = 7.0
@@ -48,6 +56,7 @@ metadata/_edit_horizontal_guides_ = [-23.0]
 scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+material = SubResource("ShaderMaterial_flu42")
 texture = ExtResource("2_otda5")
 region_rect = Rect2(416, 128, 16, 16)
 

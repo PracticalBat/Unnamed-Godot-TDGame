@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_x01ds"]
 radius = 120.0
 
-[node name="Tower_3_Bee" type="Node2D" node_paths=PackedStringArray("Projectile")]
+[node name="Bee" type="Node2D" node_paths=PackedStringArray("Projectile")]
 script = ExtResource("1_klhvc")
 Projectile = NodePath("Bee")
 

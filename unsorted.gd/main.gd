@@ -10,6 +10,7 @@ var u_sure: bool = false
 
 @export var Camera_Pivot: Marker2D
 
+@export var Stage_Name : String = "Test"
 
 @export_category("Code Refrence Nodes")
 @export var TowerExclusion: TileMap
@@ -35,6 +36,7 @@ var u_sure: bool = false
 
 
 func _ready() -> void:
+	$UI/GUI/StageName_Panel/Stage_Name.text = Stage_Name
 	wave_num = Stage_Data.get_wave_count()
 	update_healthbar()
 	_update_wave_label()
@@ -70,6 +72,9 @@ func _on_tower_button_pressed(Number):
 		},
 		5: {
 			type = "Tower_5"
+		},
+		6: {
+			type = "Tower_6"
 		},
 		
 	}

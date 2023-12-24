@@ -1,0 +1,24 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=3 format=3 uid="uid://ctgbraoxi6u0t"]
+
+[sub_resource type="Curve" id="Curve_jna76"]
+max_value = 3.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wwjmb"]
+curve = SubResource("Curve_jna76")
+
+[resource]
+particle_flag_disable_z = true
+angle_min = -123.5
+angle_max = 475.2
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -32.31
+linear_accel_max = 55.38
+radial_accel_min = 7.69
+radial_accel_max = 58.92
+tangential_accel_min = -36.37
+tangential_accel_max = 56.92
+scale_min = 0.5
+scale_over_velocity_curve = SubResource("CurveTexture_wwjmb")

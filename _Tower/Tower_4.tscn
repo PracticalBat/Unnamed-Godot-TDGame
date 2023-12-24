@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://b1d1q4s4fbegc"]
 
-[ext_resource type="Script" path="res://_Tower/Script/Modular_Logic.gd" id="1_l0c3s"]
+[ext_resource type="Script" path="res://_Tower/Script/Modular_Tower_Logic.gd" id="1_l0c3s"]
 [ext_resource type="Texture2D" uid="uid://cpmxs30skfr8r" path="res://Assets/Aseprite_made_by_Bowz/Tower_Sprites.png" id="2_3kf76"]
-[ext_resource type="PackedScene" uid="uid://chyvt3rslmmf7" path="res://_Tower/freeze.tscn" id="2_adh83"]
+[ext_resource type="PackedScene" uid="uid://chyvt3rslmmf7" path="res://_Tower/projectiles/freeze.tscn" id="2_adh83"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l72eo"]
 atlas = ExtResource("2_3kf76")
@@ -39,7 +39,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_i4ii7"]
 radius = 32.0
 
-[node name="Bow_T4_Leech" type="Node2D" node_paths=PackedStringArray("ray_cast") groups=["turret"]]
+[node name="Ice_freeze" type="Node2D" node_paths=PackedStringArray("ray_cast") groups=["turret"]]
 script = ExtResource("1_l0c3s")
 ray_cast = NodePath("RayCast2D")
 enemy_priority = "back"

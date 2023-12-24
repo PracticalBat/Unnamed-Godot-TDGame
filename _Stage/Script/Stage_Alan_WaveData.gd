@@ -20,7 +20,7 @@ extends Node
 @export var wave_data = {
 	"Wave_1" = 
 	[["Spider_Boss",1,1],["Spider_Boss",1,1],
-	["Spider_Boss",1,2],["Spider_Boss",1,2],
+	["Tank",1,2],["Tank",1,2],
 	["Tank",1,1],["Tank",1,2]
 	],
 

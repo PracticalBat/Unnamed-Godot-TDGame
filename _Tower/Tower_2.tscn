@@ -6,13 +6,13 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_x01ds"]
 radius = 50.0
 
-[node name="Tower_2" type="Node2D"]
+[node name="Tower_T2" type="Node2D"]
 script = ExtResource("1_56x3q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_2j3o2")
 region_enabled = true
-region_rect = Rect2(16, 0, 16, 16)
+region_rect = Rect2(0, 0, 16, 16)
 
 [node name="Range" type="Area2D" parent="."]
 
