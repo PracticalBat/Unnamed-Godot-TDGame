@@ -26,16 +26,17 @@ func get_tower_type() -> String:
 	return type
 
 func _physics_process(delta) -> void:
-	if enemy_array.size() != 0 and built:
-		if damage_type == "area":
-			area()
-		if damage_type != "area":
-			find_enemy()
-			aim(enemy)
-			if is_fire_ready:
-				fire()
-	else:
-		enemy = null
+	if not get_tree().paused:
+		if enemy_array.size() != 0 and built:
+			if damage_type == "area":
+				area()
+			if damage_type != "area":
+				find_enemy()
+				aim(enemy)
+				if is_fire_ready:
+					fire()
+		else:
+			enemy = null
 
 
 func find_enemy() -> void:
@@ -73,7 +74,7 @@ func fire():
 		"hitscan": enemy.on_hit(GameData.tower_data[type]["damage"])
 		"munition": for i in ammount_munition:
 						_shoot()
-						await get_tree().create_timer(0.2).timeout
+						await get_tree().create_timer(0.5).timeout
 	await get_tree().create_timer(GameData.tower_data[type]["rof"]).timeout
 	
 	is_fire_ready = true

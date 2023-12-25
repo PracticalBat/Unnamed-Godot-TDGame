@@ -1,19 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1d1q4s4fbegc"]
+[gd_scene load_steps=10 format=3 uid="uid://b1d1q4s4fbegc"]
 
-[ext_resource type="Script" path="res://_Tower/Script/Modular_Tower_Logic.gd" id="1_l0c3s"]
-[ext_resource type="Texture2D" uid="uid://cpmxs30skfr8r" path="res://Assets/Aseprite_made_by_Bowz/Tower_Sprites.png" id="2_3kf76"]
-[ext_resource type="PackedScene" uid="uid://chyvt3rslmmf7" path="res://_Tower/projectiles/freeze.tscn" id="2_adh83"]
+[ext_resource type="Script" path="res://_Tower/Script/Modular_Tower_Logic.gd" id="1_nqqe5"]
+[ext_resource type="PackedScene" uid="uid://chyvt3rslmmf7" path="res://_Tower/projectiles/freeze.tscn" id="2_2ta2l"]
+[ext_resource type="Texture2D" uid="uid://cpmxs30skfr8r" path="res://Assets/Aseprite_made_by_Bowz/Tower_Sprites.png" id="3_n6f03"]
+[ext_resource type="Texture2D" uid="uid://c3bufloj14d6g" path="res://Assets/2d_lights_and_shadows_neutral_point_light.png" id="4_egs1e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l72eo"]
-atlas = ExtResource("2_3kf76")
+atlas = ExtResource("3_n6f03")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_571vo"]
-atlas = ExtResource("2_3kf76")
+atlas = ExtResource("3_n6f03")
 region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q8uen"]
-atlas = ExtResource("2_3kf76")
+atlas = ExtResource("3_n6f03")
 region = Rect2(32, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fhha8"]
@@ -37,13 +38,14 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i4ii7"]
-radius = 32.0
+radius = 48.0416
 
-[node name="Ice_freeze" type="Node2D" node_paths=PackedStringArray("ray_cast") groups=["turret"]]
-script = ExtResource("1_l0c3s")
+[node name="Ice_freeze" type="Node2D" node_paths=PackedStringArray("ray_cast", "collision_shape") groups=["turret"]]
+script = ExtResource("1_nqqe5")
 ray_cast = NodePath("RayCast2D")
-enemy_priority = "back"
-munition = ExtResource("2_adh83")
+collision_shape = NodePath("Range/CollisionShape2D")
+munition = ExtResource("2_2ta2l")
+ammount_munition = 1
 damage_type = "munition"
 
 [node name="TowerSprite" type="AnimatedSprite2D" parent="."]
@@ -59,6 +61,12 @@ debug_color = Color(0, 0.6, 0.701961, 0)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, 8)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.172549, 0.909804, 0.960784, 1)
+shadow_enabled = true
+texture = ExtResource("4_egs1e")
+texture_scale = 0.4
 
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

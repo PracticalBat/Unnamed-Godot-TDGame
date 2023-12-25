@@ -18,12 +18,15 @@ func _ready():
 
 
 func _physics_process(_delta):
-	if enemy_array.size() != 0 and built:
-		select_e()
-		if fire_ready:
-			fire()
-	else:
-		enemy = null
+	
+	if not get_tree().paused:
+		
+		if enemy_array.size() != 0 and built:
+			select_e()
+			if fire_ready:
+				fire()
+		else:
+			enemy = null
 
 func tween_bullet():
 	var currentposition = enemy.global_position

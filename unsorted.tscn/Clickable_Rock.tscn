@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cvjyxcg3j8vph"]
 
-[ext_resource type="Script" path="res://unsorted.gd/gold_rock.gd" id="1_ox85f"]
+[ext_resource type="Script" path="res://unsorted.gd/clickable_Rock.gd" id="1_ox85f"]
 [ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/Kenny/Tilemap/colored-transparent_packed.png" id="2_nodrn"]
 [ext_resource type="AudioStream" uid="uid://dtse5f38d5rmn" path="res://Sounds/Hurt.wav" id="3_a54f2"]
 

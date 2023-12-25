@@ -14,7 +14,7 @@ func _physics_process(delta):
 
 func _on_body_entered(body):
 	in_body = true
-	while in_body and body != null and !get_tree().paused:
+	while in_body and body != null and not get_tree().paused:
 		var damage = GameData.projectile["bubble"]["damage"]
 		body.get_parent().on_hit(damage)
 		await get_tree().create_timer(damage_tick_time).timeout
@@ -24,16 +24,13 @@ func _on_body_exited(body: Node2D) -> void:
 
 
 
-
 func _on_visible_on_screen_screen_exited() -> void:
-	print("Projectile Out Of Bounds")
+	#print("Projectile Out Of Bounds")
 	destroy()
 
 
 func destroy() -> void:
 	queue_free()
-
-
 
 
 func _on_timer_timeout() -> void:

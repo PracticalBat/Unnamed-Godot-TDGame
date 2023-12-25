@@ -13,7 +13,7 @@ config_version=5
 config/name="Tower-Defense-Project"
 config/description="2D Tower Defense Game originally started out as a school project, but slowly turning into more than that x3
 "
-run/main_scene="res://unsorted.tscn/haupt_menue.tscn"
+run/main_scene="res://_Stage/Stage.tscn/Stage_Alan.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/image="res://Assets/Aseprite_made_by_Bowz/Banner.png"
 config/icon="res://Assets/Aseprite_made_by_Bowz/FAT FUCKING BAT.png"
@@ -35,6 +35,7 @@ mouse_cursor/custom_image="res://Assets/Cursor_New_B.png"
 window/icon="res://Assets/Screenshot 2023-11-16 201340.png"
 window/version=""
 window/description=""
+window/emulate_touch_from_mouse=false
 
 [gui]
 
@@ -71,6 +72,10 @@ click={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":5,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [physics]
 

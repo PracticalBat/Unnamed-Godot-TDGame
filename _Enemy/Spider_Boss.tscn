@@ -1,12 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://drypnsjcfctik"]
+[gd_scene load_steps=16 format=3 uid="uid://drypnsjcfctik"]
 
 [ext_resource type="Script" path="res://_Enemy/Script/Enemy_Logic.gd" id="1_sdbdl"]
-[ext_resource type="Shader" path="res://_Tower/Item_Shine.gdshader" id="2_ocxqt"]
+[ext_resource type="Shader" path="res://Shaders/Item_Shine.gdshader" id="2_ocxqt"]
 [ext_resource type="Texture2D" uid="uid://bqi71g3i1ctaq" path="res://Assets/Aseprite_made_by_Bowz/Spider_Boss.png" id="2_otda5"]
-[ext_resource type="PackedScene" uid="uid://b4lu3ggo6k1af" path="res://unsorted.tscn/explosion.tscn" id="4_w8ubk"]
+[ext_resource type="PackedScene" uid="uid://b4lu3ggo6k1af" path="res://Particles/explosion.tscn" id="4_w8ubk"]
 [ext_resource type="Animation" uid="uid://b5oe3di4pd4ng" path="res://_Enemy/Animation/DEATH.res" id="5_dc0it"]
 [ext_resource type="Animation" uid="uid://dbv7xj6pp75rx" path="res://_Enemy/Animation/Spider_Walk.res" id="5_p5h1f"]
 [ext_resource type="AudioStream" uid="uid://qmg8vcmuedow" path="res://Sounds/Crunch.wav" id="7_q37ra"]
+[ext_resource type="Texture2D" uid="uid://c3bufloj14d6g" path="res://Assets/2d_lights_and_shadows_neutral_point_light.png" id="8_gpm0l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_flu42"]
 shader = ExtResource("2_ocxqt")
@@ -91,3 +92,7 @@ volume_db = -33.016
 [node name="Hurt" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_q37ra")
 volume_db = -30.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.1875, 0.1875)
+texture = ExtResource("8_gpm0l")

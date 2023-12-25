@@ -15,23 +15,23 @@ outline_color = Color(0, 0, 0, 1)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_xv4bu")
-Level_Select = "res://Level and World Select/World_Select.tscn"
+Level_Select = "res://_Stage/Stage.tscn/Stage_Alan.tscn"
 
 [node name="Title" type="TextureRect" parent="."]
 layout_mode = 2
 offset_left = 2.0
 offset_top = 1.0
-offset_right = 642.0
-offset_bottom = 361.0
+offset_right = 1136.0
+offset_bottom = 640.0
 texture = ExtResource("2_vba7x")
 expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 432.0
-offset_top = 17.0
-offset_right = 628.0
-offset_bottom = 249.0
+offset_left = 817.0
+offset_top = 91.0
+offset_right = 1013.0
+offset_bottom = 323.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -55,14 +55,10 @@ theme_type_variation = &"FlatButton"
 text = "EXIT
 "
 
-[node name="_Version Number_" type="Label" parent="."]
-layout_mode = 0
-offset_left = 594.0
-offset_top = 190.0
-offset_right = 624.0
-offset_bottom = 200.0
+[node name="_Version Number_" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
 theme = ExtResource("4_lqkpd")
-text = " V 0.07"
+text = " V 0.09"
 label_settings = SubResource("LabelSettings_dwkyg")
 horizontal_alignment = 1
 vertical_alignment = 1

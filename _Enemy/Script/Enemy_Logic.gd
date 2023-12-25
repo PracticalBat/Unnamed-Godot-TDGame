@@ -5,7 +5,6 @@ var isdead: bool = false
 var onetime: bool = true 
 var onetime_progress: bool = true 
 
-
 @export var Healthbar: TextureProgressBar
 @export var AnimP: AnimationPlayer
 @export var HurtS: AudioStreamPlayer
@@ -14,13 +13,14 @@ var onetime_progress: bool = true
 @export var Body: CharacterBody2D
 @export var Sprite: Sprite2D
 
-
 @export var Type: String = "Basic"
 
 #onready 
 @onready var hp : int   = GameData.mob_data[Type]["hp"]
 @onready var speed: int = GameData.mob_data[Type]["speed"]
 @onready var money: int = GameData.mob_data[Type]["money"]
+
+# var that keeps track of what status effect it had and slowly returns to normal over lerp or tween 
 
 
 func _ready() -> void:
@@ -53,26 +53,27 @@ func poison(tick_wait_time , tick_ammount , damage):
 	AnimP.speed_scale = 0.5
 	self.modulate = Color.GREEN_YELLOW
 
-	for i in tick_ammount:
-		on_hit(damage)
-		await get_tree().create_timer(tick_wait_time).timeout
+	if not get_tree().paused:
+		for i in tick_ammount:
+			on_hit(damage)
+			await not get_tree().paused
+			await get_tree().create_timer(tick_wait_time).timeout
 
-	self.modulate = Color.WHITE
 	AnimP.speed_scale = 1
+	self.modulate = Color.WHITE
 
 
 
 func freeze(freeze_time, damage):
-	
 	on_hit(damage)
 	
 	isdead = true
 	AnimP.pause()
 	self.modulate = Color.SKY_BLUE
 	await get_tree().create_timer(freeze_time).timeout
-	self.modulate = Color.WHITE
 	AnimP.play()
 	isdead = false
+	self.modulate = Color.WHITE
 
 
 #func _spawn() -> void:
@@ -92,10 +93,10 @@ func _process(delta):
 			GameData.health_points -= 1
 			on_hit(99999)
 
-#Tower
+# How the ENEMY takes damage
 func on_hit(damage):
 	is_dead_check()
-	HurtS.set_pitch_scale(randf_range(0.1,2))
+	HurtS.set_pitch_scale(randf_range(0.1,2.0))
 	HurtS.play()
 	hp -= damage
 	Healthbar.value = hp

@@ -8,10 +8,6 @@ var hits: int = 0
 
 
 
-func _ready() -> void:
-	print(get_parent().get_tower_type)
-
-
 func _physics_process(delta):
 	position += direction * GameData.projectile["freeze"]["speed"] * delta
 
@@ -28,7 +24,7 @@ func _on_body_entered(body):
 
 
 func _on_visible_on_screen_screen_exited() -> void:
-	print("Projectile Out Of Bounds")
+	#print("Projectile Out Of Bounds")
 	destroy()
 
 func destroy() -> void:

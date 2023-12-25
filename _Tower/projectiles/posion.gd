@@ -5,11 +5,8 @@ var direction : Vector2
 var hits: int = 0
 
 @export var tick_ammount : int = 20
-@export var tick_wait_time: int = 1
+@export var tick_wait_time: float = 1.0
 
-
-func _ready() -> void:
-	print(get_parent().get_tower_type)
 
 
 func _physics_process(delta):
@@ -28,7 +25,7 @@ func _on_body_entered(body):
 
 
 func _on_visible_on_screen_screen_exited() -> void:
-	print("Projectile Out Of Bounds")
+	#print("Projectile Out Of Bounds")
 	destroy()
 
 

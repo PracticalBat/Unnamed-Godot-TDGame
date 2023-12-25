@@ -1,19 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1hd35et8ir15"]
 
-[ext_resource type="Script" path="res://_Tower/Script/Modular_Tower_Logic.gd" id="1_qv0rs"]
-[ext_resource type="Texture2D" uid="uid://cpmxs30skfr8r" path="res://Assets/Aseprite_made_by_Bowz/Tower_Sprites.png" id="2_mniw5"]
+[ext_resource type="Script" path="res://_Tower/Script/Modular_Tower_Logic.gd" id="1_o66up"]
+[ext_resource type="Texture2D" uid="uid://cpmxs30skfr8r" path="res://Assets/Aseprite_made_by_Bowz/Tower_Sprites.png" id="2_mp5uj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i4ii7"]
-radius = 100.0
+radius = 111.005
 
 [node name="Tower_T1" type="Node2D" node_paths=PackedStringArray("ray_cast", "collision_shape")]
-script = ExtResource("1_qv0rs")
+script = ExtResource("1_o66up")
 ray_cast = NodePath("RayCast2D")
 type = "Tower_1"
 collision_shape = NodePath("Range/CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_mniw5")
+texture = ExtResource("2_mp5uj")
 region_enabled = true
 region_rect = Rect2(16, 0, 16, 16)
 

@@ -17,6 +17,7 @@ width = 1
 
 [node name="Projectile" type="Area2D"]
 script = ExtResource("1_hdrou")
+freeze_time = 1
 
 [node name="Projectile_Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_libdl")

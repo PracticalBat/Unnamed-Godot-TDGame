@@ -28,23 +28,21 @@ func set_tower_preview(towertype, mouse_position):
 	var control := Control.new()
 	control.add_child(drag_tower,true)
 	control.add_child(range_texture,true)
-	control.position = mouse_position 
+	control.position = mouse_position
 	control.set_name("TowerPreview")
 	add_child(control,true)
 #	move_child(get_node("TowerPreview"),0)
 
-func update_tower_preview(new_position, color, zoom):
-	#print(zoom)
-	var correction = Vector2(0,0)
-	#var quad =$"../Camera2D".get_quad()
-	match GameData.Camera_in_Quadrant:
-		1 : correction = Vector2(568,0)
-		2 : correction = Vector2(0,0)
-		3 : correction = Vector2(568,320)
-		4 : correction = Vector2(0,320)
+func update_tower_preview(new_position, color, zoom, Correction):
 	
-	get_node("TowerPreview").position =( new_position - (correction)) * zoom
-	get_node("TowerPreview").scale = Vector2(zoom,zoom) 
+	
+	#print("Mouse POS : " +str(mousePOS))
+	#print("CAMERA POS : " +str(GameData.CameraPos))
+	#print("POS X : "+ str(get_node("TowerPreview").position.x))
+	#print("POS Y : "+ str(get_node("TowerPreview").position.y))
+	get_node("TowerPreview").global_position =(new_position+ zoom)
+
+	get_node("TowerPreview").scale = zoom
 	if get_node("TowerPreview").modulate != Color(color):
 			get_node("TowerPreview").modulate = Color(color)
 
@@ -53,16 +51,17 @@ func update_tower_preview(new_position, color, zoom):
 
 #function that is being used ehen activating the pause button
 func _on_pause_play_pressed():
+
 	if get_parent().build_mode:
 		get_parent().cancel_build_mode()
 		%Pause.play()
+
+
 	if get_tree().paused:
 		%Pause.play()
 		get_tree().paused = false 
-	elif get_parent().current_wave == 0:
-		%Monster_Scream.play()
-		get_parent().current_wave += 1
-		get_parent().start_next_wave()
+
+
 	else:
 		%Pause.play()
 		get_tree().paused = true
@@ -84,3 +83,12 @@ func _on_speed_up_pressed():
 func set_money():
 	MoneyLable.text = str(GameData.money)
 
+
+
+func _on_start_game_button_pressed() -> void:
+	if get_parent().current_wave == 0:
+		%Monster_Scream.play()
+		get_parent().current_wave += 1
+		get_parent().start_next_wave()
+		
+	$Start_Game_Button.queue_free()
