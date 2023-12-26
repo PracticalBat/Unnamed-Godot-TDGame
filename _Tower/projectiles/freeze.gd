@@ -4,21 +4,16 @@ var direction : Vector2
 
 var hits: int = 0
 
-@export var freeze_time : int = 5
-
-
+var damage = GameData.projectile["freeze"]["damage"]
+var pierce = GameData.projectile["freeze"]["pierce"]
+var stun_time = GameData.projectile["freeze"]["stun_time"]
 
 func _physics_process(delta):
 	position += direction * GameData.projectile["freeze"]["speed"] * delta
 
 func _on_body_entered(body):
 	hits += 1
-
-	var damage = GameData.projectile["freeze"]["damage"]
-	var pierce = GameData.projectile["freeze"]["pierce"]
-	#time
-	body.get_parent().freeze(freeze_time, damage)
-	
+	body.get_parent().freeze(stun_time, damage)
 	if pierce < hits:
 		destroy()
 

@@ -14,12 +14,12 @@ func _physics_process(delta):
 
 func _on_body_entered(body):
 	in_body = true
-	while in_body and body != null and not get_tree().paused:
+	while in_body and body != null:
 		var damage = GameData.projectile["bubble"]["damage"]
 		body.get_parent().on_hit(damage)
-		await get_tree().create_timer(damage_tick_time).timeout
+		await get_tree().create_timer(damage_tick_time,false).timeout
 
-func _on_body_exited(body: Node2D) -> void:
+func _on_body_exited(_body: Node2D) -> void:
 	in_body = false
 
 

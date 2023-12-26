@@ -18,9 +18,12 @@ func _process(delta: float) -> void:
 	
 	var inputX = int(Input.is_action_pressed("ui_right")) -int(Input.is_action_pressed("ui_left"))
 	var inputY = int(Input.is_action_pressed("ui_down")) -int(Input.is_action_pressed("ui_up"))
+	
 	var new_x = clamp(global_position.x, limit_left,limit_right)
 	var new_y = clamp(global_position.y, limit_top,limit_bottom)
+	
 	global_position = Vector2(new_x,new_y)
+	
 	position.x = lerp(position.x , position.x + inputX * Speed, Speed *delta)
 	position.y = lerp(position.y , position.y + inputY * Speed, Speed *delta)
 	

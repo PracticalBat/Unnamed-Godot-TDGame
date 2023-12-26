@@ -3,12 +3,42 @@ extends CanvasLayer
 
 
 @export_category("Settings")
+
+
+@export var HealthBar: TextureProgressBar
+@export var HealthLabel: Label
+
+@export var Stage_Name : String = "Test"
+@export var Stage_Name_Label: Label
+@export var WaveLabel: Label
+
+
 @export var MoneyLable: Label
+
 @export var Pause: TextureButton
-@export var FF: TextureButton
+
+
+func update_healthbar():
+	if GameData.health_points <= 0:
+		lose()
+	HealthBar.set_value_no_signal(GameData.health_points * 10)
+	HealthLabel.text = str(GameData.health_points)
+
+
+func lose():
+	get_tree().quit()
+
+func _update_wave_label():
+	WaveLabel.text = str(get_parent().current_wave) + " / " + str(get_parent().wave_num)
+
+
+func _ready() -> void:
+	_update_wave_label()
+	Stage_Name_Label.text = Stage_Name
 
 
 func _process(_delta):
+	_update_wave_label() # needs a singal instead (temp)
 	set_money()
 
 
@@ -33,15 +63,24 @@ func set_tower_preview(towertype, mouse_position):
 	add_child(control,true)
 #	move_child(get_node("TowerPreview"),0)
 
-func update_tower_preview(new_position, color, zoom, Correction):
+func update_tower_preview(new_position, color, zoom ):
 	
+#region Do NOT Open
 	
+	#print(str($"../Move_and_Zoom_Camera".get_position())+"\n"+str($"../Move_and_Zoom_Camera/Pivot_Bee".get_position()))
+	#
 	#print("Mouse POS : " +str(mousePOS))
 	#print("CAMERA POS : " +str(GameData.CameraPos))
 	#print("POS X : "+ str(get_node("TowerPreview").position.x))
 	#print("POS Y : "+ str(get_node("TowerPreview").position.y))
-	get_node("TowerPreview").global_position =(new_position+ zoom)
-
+	#print(center*zoom-$"../Move_and_Zoom_Camera/Pivot_Bee".get_position())
+	#get_node("TowerPreview").global_position = ((Vector2(568,318)+(position_mouse+zoom*2)-($"../Move_and_Zoom_Camera".get_position()-Vector2(568,318)))-Vector2(568,318))
+	#get_node("TowerPreview").global_position =get_viewport().get_mouse_position()#(((Vector2(568,318)+position_mouse-($"../Move_and_Zoom_Camera".get_position()-Vector2(568,318)))-Vector2(568,318))/2)
+	#/$"../Move_and_Zoom_Camera".get_position()#!!!!Vector2(500,500)#$"../Move_and_Zoom_Camera".get_position()+$"../Move_and_Zoom_Camera/Pivot_Bee".get_position()
+#endregion
+	
+	
+	get_node("TowerPreview").global_position = get_viewport().get_mouse_position()
 	get_node("TowerPreview").scale = zoom
 	if get_node("TowerPreview").modulate != Color(color):
 			get_node("TowerPreview").modulate = Color(color)
