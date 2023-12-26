@@ -16,10 +16,19 @@ var CameraPos : Vector2
 
 var projectile = {
 	
+	"ghost": {
+		"damage": 5,
+		"speed": 50,
+		"pierce": 0,
+		"send_back": 50,
+		"stun_time": 4
+},
+	
 	"freeze": {
 		"damage": 0,
 		"speed": 150,
 		"pierce": 2,
+		"stun_time": 3,
 },
 
 	"bubble": {
@@ -93,7 +102,13 @@ var tower_data = {
 		#projectile bubble
 		},
 		
-		
+	"Ghost_7": {
+		"damage": 5, #obsolet
+		"rof": 30,
+		"range": 200, #obsolet
+		"cost" : 300
+		#projectile bubble
+		},
 
 
 }
@@ -103,46 +118,5 @@ var tower_data = {
 # T : Tank
 # SB : Spider Basic
 # SBoss : Spider Boss 
-var mob_data = {
 
-# Planned another stat called resistance that lists the said resistances of the specific enemy
-# the resistance disables the func inside the enemy script 
-	"Basic": {
-		"speed" :20,
-		"hp": 100,
-		"money": 5,
-		},
-
-	"Fast": {
-		"speed": 75,
-		"hp": 15,
-		"money": 2,
-		},
-
-	"Heavy": {
-		"speed": 10,
-		"hp": 150,
-		"money": 5,
-		},
-
-	"Tank": {
-		"speed": 10,
-		"hp": 1000,
-		"money": 25,
-		},
-		
-
-	"Spider_Basic": {
-		"speed": 30,
-		"hp": 75,
-		"money": 5,
-		},
-
-	"Spider_Boss": {
-		"speed": 15,
-		"hp": 1200,
-		"money": 100,
-		}
-
-}
 

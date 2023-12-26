@@ -65,9 +65,7 @@ target_position = Vector2(0, 8)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(0.172549, 0.909804, 0.960784, 1)
-shadow_enabled = true
 texture = ExtResource("4_egs1e")
-texture_scale = 0.4
 
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

@@ -1,9 +1,9 @@
-[gd_resource type="ParticleProcessMaterial" load_steps=5 format=3 uid="uid://ctgbraoxi6u0t"]
+[gd_resource type="ParticleProcessMaterial" load_steps=5 format=3 uid="uid://c3omrfcjdidem"]
 
 [sub_resource type="Gradient" id="Gradient_rgpt7"]
-interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.321429, 0.75, 0.917857)
-colors = PackedColorArray(0.689378, 0.299339, 0.64363, 1, 0.460195, 0.541082, 0.985073, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.274021, 0.686833)
+colors = PackedColorArray(0.709804, 0.313726, 0.533333, 1, 0.407843, 0.219608, 0.423529, 1, 0.0941176, 0.0784314, 0.145098, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_vd5ff"]
 gradient = SubResource("Gradient_rgpt7")

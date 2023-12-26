@@ -13,7 +13,7 @@ config_version=5
 config/name="Tower-Defense-Project"
 config/description="2D Tower Defense Game originally started out as a school project, but slowly turning into more than that x3
 "
-run/main_scene="res://_Stage/Stage.tscn/Stage_Alan.tscn"
+run/main_scene="res://Stage/Stage.tscn/Stage_Alan.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/image="res://Assets/Aseprite_made_by_Bowz/Banner.png"
 config/icon="res://Assets/Aseprite_made_by_Bowz/FAT FUCKING BAT.png"
@@ -31,7 +31,7 @@ GameData="*res://_Autoload/GameData.gd"
 window/size/viewport_width=1136
 window/size/viewport_height=640
 window/stretch/mode="canvas_items"
-mouse_cursor/custom_image="res://Assets/Cursor_New_B.png"
+mouse_cursor/custom_image="res://Assets/Aseprite_made_by_Bowz/New_Cursor.png"
 window/icon="res://Assets/Screenshot 2023-11-16 201340.png"
 window/version=""
 window/description=""
@@ -84,5 +84,4 @@ common/physics_ticks_per_second=30
 [rendering]
 
 textures/canvas_textures/default_texture_filter=3
-renderer/rendering_method="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.0980392, 0.101961, 0.156863, 1)

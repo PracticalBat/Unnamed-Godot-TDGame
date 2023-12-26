@@ -14,48 +14,39 @@ var u_sure: bool = false
 
 @export var CAMERA : Camera2D
 
-
-@export var Stage_Name : String = "Test"
-@export var Stage_Name_Label: Label
+@export var UI: CanvasLayer
 
 
 @export_category("Code Refrence Nodes")
 @export var TowerExclusion: TileMap
 @export var Ground: TileMap
+
 @export_category("Path2D")
 @export var Path1: Path2D
 @export var Path2: Path2D
 @export var Path3: Path2D
-
-@export_category("Map")
-@onready var MAP
+@export var Path4: Path2D
+@export var Path5: Path2D
 
 @export_category("Extra Category")
 @export var next_wave_timer: Timer
-@export var WaveLabel: Label
-@export var HealthBar: TextureProgressBar
-@export var HealthLabel: Label
 
-@export_category("Wave Settings")
+@export_category("Wave Node")
 @export var Stage_Data: Node
-@export var current_wave: int = 0
-@export var wave_num: int = 0
+var current_wave: int = 0
+var wave_num: int = 0
 
 
 func _ready() -> void:
 	GameData.money = Stage_Data.money
 	
-	Stage_Name_Label.text = Stage_Name
 	wave_num = Stage_Data.get_wave_count()
-	update_healthbar()
-	_update_wave_label()
 
 func _process(_delta):
 	GameData.CameraPos = CAMERA.get_position()
 
 	if build_mode:
 		update_tower_preview()
-	update_healthbar()
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel") and build_mode == true:
@@ -87,6 +78,11 @@ func _on_tower_button_pressed(Number):
 		6: {
 			type = "Axolotl_6"
 		},
+		7: {
+			type = "Ghost_7"
+		},
+		
+		
 		
 	}
 	init_build_mode(Tower[Number].type)
@@ -100,13 +96,13 @@ func init_build_mode(type):
 	if GameData.tower_data[type]["cost"] <= GameData.money:
 		build_type = type
 		build_mode = true
-		get_node("UI").set_tower_preview(build_type,get_local_mouse_position())
+		UI.set_tower_preview(build_type,get_global_mouse_position())
 	else : %"loud-incorrect-buzzer-lie-meme-sound-effect".play()
 
 func cancel_build_mode():
 	build_mode = false 
 	build_valid = false
-	get_node("UI/TowerPreview").free() #nicht que free , da es zeit braucght wegen if build mode 
+	get_node("User_interface/TowerPreview").free() #nicht que free , da es zeit braucght wegen if build mode 
 
 
 func update_tower_preview():
@@ -115,12 +111,11 @@ func update_tower_preview():
 	var tile_position = TowerExclusion.map_to_local(current_tile) 
 	
 	var zoom = CAMERA.get_zoom()
-	var Correction = get_local_mouse_position()
 
 #int get_cell_source_id(layer: int, coords: Vector2i, use_proxies: bool = false) const
 #Returns the tile source ID of the cell on layer layer at coordinates coords. Returns -1 if the cell does not exist.
 	if TowerExclusion.get_cell_source_id(0, current_tile, false) == -1: # Valid build location check
-		get_node("UI").update_tower_preview(tile_position, Color.CADET_BLUE,zoom,Correction)
+		UI.update_tower_preview(tile_position, Color.CADET_BLUE,zoom)
 		build_valid = true 
 		build_location = tile_position 
 		build_tile = current_tile
@@ -129,7 +124,7 @@ func update_tower_preview():
 	else:
 		u_sure = false
 		print("No Place")
-		get_node("UI").update_tower_preview(tile_position, Color.RED,zoom,Correction)
+		UI.update_tower_preview(tile_position, Color.RED ,zoom)
 
 func veryfy_and_build():
 	%Bump.play()
@@ -147,51 +142,31 @@ func get_wave_data():
 	return wave_data
 
 func start_next_wave():
-	_update_wave_label()
 	var wave_data = get_wave_data()
 	await get_tree().create_timer(5).timeout
 	spawn_en(wave_data)
 
 func spawn_en(wave_data):
-	print("AAAA")
 	for i in wave_data:
-		#await get_tree().create_timer(0.1, false).timeout
 		GameData.enemys_alive += 1
-		print("AAAA")
-		var enemy = load("res://_Enemy/"+i[0]+".tscn").instantiate()
-		print("AAAA")
+		var enemy = load("res://Enemy/"+i[0]+".tscn").instantiate()
+
 		match i[2]: #Lane match
 			1: 
-				Path1.add_child(enemy, true)
-				print("AAAA")
+				Path1.add_child(enemy, false)
 			2:
-				Path2.add_child(enemy, true)
+				Path2.add_child(enemy, false)
 			3: 
-				Path3.add_child(enemy, true)
-				
-		await get_tree().create_timer(i[1]).timeout
-	print("DEBUG: Enemys Alive "+str(GameData.enemys_alive))
+				Path3.add_child(enemy, false)
+			4: 
+				Path4.add_child(enemy, false)
+			5: 
+				Path5.add_child(enemy, false)
+		await get_tree().create_timer(i[1], false).timeout
+
+	print("Enemys alive : = "+str(GameData.enemys_alive))
 	next_wave_timer.start()
 
-
-
-#func victory():
-	#MAP = "res://maps/map_2.tscn"
-	#init_map()
-
-
-func lose():
-	get_tree().quit()
-
-
-func update_healthbar():
-	if GameData.health_points <= 0:
-		lose()
-	HealthBar.set_value_no_signal(GameData.health_points * 10)
-	HealthLabel.text = str(GameData.health_points)
-
-func _update_wave_label():
-	WaveLabel.text = str(current_wave) + " / " + str(wave_num)
 
 
 func _on_next_wave_check_timeout():

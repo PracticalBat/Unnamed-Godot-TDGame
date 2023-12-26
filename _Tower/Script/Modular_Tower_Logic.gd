@@ -8,7 +8,7 @@ var built
 @export var collision_shape : CollisionShape2D
 
 var enemy_array: Array = []
-var enemy = null
+var enemy
 
 @export_category("front , back , pick_random")
 @export var enemy_priority : String = "front"
@@ -25,7 +25,7 @@ var enemy = null
 func get_tower_type() -> String:
 	return type
 
-func _physics_process(delta) -> void:
+func _physics_process(_delta) -> void:
 	if not get_tree().paused:
 		if enemy_array.size() != 0 and built:
 			if damage_type == "area":
