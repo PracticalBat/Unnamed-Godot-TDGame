@@ -41,6 +41,7 @@ animations = [{
 radius = 48.0416
 
 [node name="Ice_freeze" type="Node2D" node_paths=PackedStringArray("ray_cast", "collision_shape") groups=["turret"]]
+process_mode = 1
 script = ExtResource("1_nqqe5")
 ray_cast = NodePath("RayCast2D")
 collision_shape = NodePath("Range/CollisionShape2D")

@@ -43,6 +43,8 @@ var u_sure: bool = false
 
 
 func _ready() -> void:
+	GameData.money = Stage_Data.money
+	
 	Stage_Name_Label.text = Stage_Name
 	wave_num = Stage_Data.get_wave_count()
 	update_healthbar()
@@ -51,7 +53,6 @@ func _ready() -> void:
 func _process(_delta):
 	GameData.CameraPos = CAMERA.get_position()
 
-	
 	if build_mode:
 		update_tower_preview()
 	update_healthbar()
@@ -152,13 +153,22 @@ func start_next_wave():
 	spawn_en(wave_data)
 
 func spawn_en(wave_data):
+	print("AAAA")
 	for i in wave_data:
+		#await get_tree().create_timer(0.1, false).timeout
 		GameData.enemys_alive += 1
+		print("AAAA")
 		var enemy = load("res://_Enemy/"+i[0]+".tscn").instantiate()
+		print("AAAA")
 		match i[2]: #Lane match
-			1: Path1.add_child(enemy, true)
-			2: Path2.add_child(enemy, true)
-			3: Path3.add_child(enemy, true)
+			1: 
+				Path1.add_child(enemy, true)
+				print("AAAA")
+			2:
+				Path2.add_child(enemy, true)
+			3: 
+				Path3.add_child(enemy, true)
+				
 		await get_tree().create_timer(i[1]).timeout
 	print("DEBUG: Enemys Alive "+str(GameData.enemys_alive))
 	next_wave_timer.start()

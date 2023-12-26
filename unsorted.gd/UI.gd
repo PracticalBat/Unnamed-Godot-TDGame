@@ -92,3 +92,7 @@ func _on_start_game_button_pressed() -> void:
 		get_parent().start_next_wave()
 		
 	$Start_Game_Button.queue_free()
+
+
+func _on_money_button_pressed() -> void:
+	GameData.money += 50

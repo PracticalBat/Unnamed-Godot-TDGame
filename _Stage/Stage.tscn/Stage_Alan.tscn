@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://cnou6u87b171k" path="res://Tilesets/main.tres" id="1_wmwpg"]
 [ext_resource type="PackedScene" uid="uid://b5mqjtrue3qmf" path="res://Essential/Main_Stage.tscn" id="2_u6qgp"]
 [ext_resource type="Script" path="res://_Stage/Script/Stage_Alan_WaveData.gd" id="3_afh7g"]
-[ext_resource type="Shader" path="res://_Stage/Stage.tscn/rain.gdshader" id="4_db3i0"]
+[ext_resource type="Shader" path="res://Shaders/rain.gdshader" id="4_db3i0"]
 [ext_resource type="PackedScene" uid="uid://dttp7akou2ksh" path="res://unsorted.tscn/Npc.tscn" id="5_w88j2"]
 [ext_resource type="Texture2D" uid="uid://c3bufloj14d6g" path="res://Assets/2d_lights_and_shadows_neutral_point_light.png" id="6_sr1df"]
 [ext_resource type="Script" path="res://_Stage/Stage.tscn/Cursor_Light.gd" id="7_da8hn"]
@@ -149,12 +149,11 @@ texture = ExtResource("6_sr1df")
 texture_scale = 0.91
 
 [node name="MAIN" parent="." node_paths=PackedStringArray("TowerExclusion", "Ground", "Path1", "Path2", "Path3", "Stage_Data") instance=ExtResource("2_u6qgp")]
-process_mode = 3
 Stage_Name = "Stage Alan"
 TowerExclusion = NodePath("../Tilemap_Container_node/TowerExclusion")
 Ground = NodePath("../Tilemap_Container_node/Ground")
 Path1 = NodePath("../Path_Container_node/Path_1")
-Path2 = NodePath("../Path_Container_node/Path_2")
+Path2 = NodePath("../Path_Container_node/Path_1")
 Path3 = NodePath("../Path_Container_node/Path_1")
 Stage_Data = NodePath("../Stage_Wave_Data")
 

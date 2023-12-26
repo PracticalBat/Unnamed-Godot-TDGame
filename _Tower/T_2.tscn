@@ -7,6 +7,7 @@
 radius = 64.0703
 
 [node name="Tower_T2" type="Node2D" node_paths=PackedStringArray("ray_cast", "collision_shape")]
+process_mode = 1
 script = ExtResource("1_ua7kh")
 ray_cast = NodePath("RayCast2D")
 collision_shape = NodePath("Range/CollisionShape2D")

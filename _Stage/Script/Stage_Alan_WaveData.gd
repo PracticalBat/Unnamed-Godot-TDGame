@@ -22,26 +22,15 @@ extends Node
 	"Wave_1" = 
 	[
 	
-	["Basic",1,1],["Basic",1,1],["Basic",1,2],["Basic",10,2],
-	["Basic",1,1],["Basic",1,1],["Basic",1,2],["Basic",1,2],
+	["Basic",1,1],
 	
-	],
-
-
-
-	"Wave_2" = 
-	[
-		
-	["Spider_Basic",1,2],["Spider_Basic",1,2],["Spider_Basic",1,1],["Spider_Basic",1,1],
-	["Basic",1,1],["Basic",1,1],["Basic",1,2],["Basic",1,2],
-	
-	],
-
-
-
-	#"Wave_3" = 
+	#],
+#
+#
+#
+	#"Wave_2" = 
 	#[
-	#
+		#
 	#["Spider_Basic",1,2],["Spider_Basic",1,2],["Spider_Basic",1,1],["Spider_Basic",1,1],
 	#["Basic",1,1],["Basic",1,1],["Basic",1,2],["Basic",1,2],
 	#
@@ -49,66 +38,76 @@ extends Node
 #
 #
 #
+	##"Wave_3" = 
+	##[
+	##
+	##["Spider_Basic",1,2],["Spider_Basic",1,2],["Spider_Basic",1,1],["Spider_Basic",1,1],
+	##["Basic",1,1],["Basic",1,1],["Basic",1,2],["Basic",1,2],
+	##
+	##],
+##
+##
+##
+	##"Wave_4" = 
+	##[
+	##
+	##["Spider_Basic",1,2],["Spider_Basic",1,2],["Spider_Basic",1,1],["Spider_Basic",1,1],
+	##["Basic",1,1],["Basic",1,1],["Basic",1,2],["Basic",1,2],
+	##
+	##],
+	##
+	##"Wave_5" = 
+	##[
+	##
+	##["Spider_Basic",1,2],["Spider_Basic",1,2],["Spider_Basic",1,1],["Spider_Basic",1,1],
+	##["Basic",1,1],["Basic",1,1],["Basic",1,2],["Basic",1,2],
+	##
+	##],
+	##"Wave_6" = 
+	##[
+	##
+	##["Spider_Basic",1,2],["Spider_Basic",1,2],["Spider_Basic",1,1],["Spider_Basic",1,1],
+	##["Basic",1,1],["Basic",1,1],["Basic",1,2],["Basic",1,2],
+	##
+	##],
+	#
+	#"Wave_3" = 
+	#[
+	#
+	#["Fast",0.5,2],["Fast",0.5,1],["Fast",0.5,2],["Fast",0.5,1],["Fast",0.5,2],["Fast",0.5,1],["Fast",0.5,2],["Fast",0.5,1],
+	#["Fast",0.5,2],["Fast",0.5,1],["Fast",0.5,2],["Fast",0.5,1],["Spider_Boss",0.5,2],["Fast",0.5,1],["Fast",0.5,2],["Fast",0.5,1],
+	#["Fast",0.5,2],["Fast",0.5,1],["Fast",0.5,2],["Fast",0.5,1],["Fast",0.5,2],["Fast",0.5,1],["Fast",0.5,2],["Fast",0.5,1],
+	#
+	#
+	#],
+	#
 	#"Wave_4" = 
 	#[
 	#
-	#["Spider_Basic",1,2],["Spider_Basic",1,2],["Spider_Basic",1,1],["Spider_Basic",1,1],
-	#["Basic",1,1],["Basic",1,1],["Basic",1,2],["Basic",1,2],
+	#["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],
+	#["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],
+	#["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],
+	#["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],
+	#["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],
+	#["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],
+	#["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],
+	#["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],
 	#
 	#],
 	#
 	#"Wave_5" = 
 	#[
 	#
-	#["Spider_Basic",1,2],["Spider_Basic",1,2],["Spider_Basic",1,1],["Spider_Basic",1,1],
-	#["Basic",1,1],["Basic",1,1],["Basic",1,2],["Basic",1,2],
+	#["Tank",1,2],["Tank",1,2],["Tank",1,1],["Tank",1,1],
+	#["Tank",1,1],["Tank",1,1],["Tank",1,2],["Tank",1,2],
 	#
 	#],
+	#
 	#"Wave_6" = 
 	#[
 	#
-	#["Spider_Basic",1,2],["Spider_Basic",1,2],["Spider_Basic",1,1],["Spider_Basic",1,1],
-	#["Basic",1,1],["Basic",1,1],["Basic",1,2],["Basic",1,2],
+	#["Spider_Boss",5,2],["Spider_Boss",5,1],["Spider_Boss",5,1],["Spider_Boss",5,2],
 	#
-	#],
-	
-	"Wave_3" = 
-	[
-	
-	["Fast",0.5,2],["Fast",0.5,1],["Fast",0.5,2],["Fast",0.5,1],["Fast",0.5,2],["Fast",0.5,1],["Fast",0.5,2],["Fast",0.5,1],
-	["Fast",0.5,2],["Fast",0.5,1],["Fast",0.5,2],["Fast",0.5,1],["Spider_Boss",0.5,2],["Fast",0.5,1],["Fast",0.5,2],["Fast",0.5,1],
-	["Fast",0.5,2],["Fast",0.5,1],["Fast",0.5,2],["Fast",0.5,1],["Fast",0.5,2],["Fast",0.5,1],["Fast",0.5,2],["Fast",0.5,1],
-	
-	
-	],
-	
-	"Wave_4" = 
-	[
-	
-	["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],
-	["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],
-	["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],
-	["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],
-	["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],
-	["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],
-	["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],
-	["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],["Spider_Basic",0.8,1],["Spider_Basic",0.8,2],
-	
-	],
-	
-	"Wave_5" = 
-	[
-	
-	["Tank",1,2],["Tank",1,2],["Tank",1,1],["Tank",1,1],
-	["Tank",1,1],["Tank",1,1],["Tank",1,2],["Tank",1,2],
-	
-	],
-	
-	"Wave_6" = 
-	[
-	
-	["Spider_Boss",5,2],["Spider_Boss",5,1],["Spider_Boss",5,1],["Spider_Boss",5,2],
-	
 	
 	],
 	

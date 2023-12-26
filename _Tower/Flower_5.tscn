@@ -5,9 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://pwfbi5v8y4rl" path="res://Assets/Aseprite_made_by_Bowz/Flower.png" id="3_0f0t6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i4ii7"]
-radius = 128.016
+radius = 34.5254
 
 [node name="Flower_poison" type="Node2D" node_paths=PackedStringArray("ray_cast", "collision_shape") groups=["turret"]]
+process_mode = 1
 script = ExtResource("1_u1xg2")
 ray_cast = NodePath("RayCast2D")
 collision_shape = NodePath("Range/CollisionShape2D")

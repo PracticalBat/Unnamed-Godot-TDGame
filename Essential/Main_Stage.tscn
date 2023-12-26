@@ -158,7 +158,6 @@ atlas = ExtResource("11_wy2bc")
 region = Rect2(16, 32, 16, 16)
 
 [node name="Root" type="Node2D" node_paths=PackedStringArray("Turret_Container_node", "CAMERA", "Stage_Name_Label", "next_wave_timer", "WaveLabel", "HealthBar", "HealthLabel")]
-process_mode = 1
 script = ExtResource("1_f137u")
 Turret_Container_node = NodePath("Turret_Container_node")
 CAMERA = NodePath("Move_and_Zoom_Camera")
@@ -169,18 +168,16 @@ HealthBar = NodePath("UI/Graphical_user_interface/Stage_Stats_Panel/Health_Icon"
 HealthLabel = NodePath("UI/Graphical_user_interface/Stage_Stats_Panel/Health_Icon/Health_Number")
 
 [node name="Turret_Container_node" type="Node2D" parent="."]
-process_mode = 3
 metadata/_edit_lock_ = true
 
 [node name="Mouse_trail" parent="." instance=ExtResource("11_n2ubj")]
-process_mode = 3
 points = PackedVector2Array(517, 8)
 width = 3.0
 MAX_LENGHT = 100
 metadata/_edit_lock_ = true
 
 [node name="Move_and_Zoom_Camera" parent="." instance=ExtResource("3_hm3hj")]
-process_mode = 3
+anchor_mode = 0
 editor_draw_limits = false
 editor_draw_drag_margin = false
 
@@ -188,14 +185,12 @@ editor_draw_drag_margin = false
 texture = ExtResource("25_y55u1")
 
 [node name="UI" type="CanvasLayer" parent="." node_paths=PackedStringArray("MoneyLable", "Pause", "FF")]
-process_mode = 3
 script = ExtResource("4_s1bsp")
 MoneyLable = NodePath("Graphical_user_interface/Stage_Stats_Panel/Coin_Icon/Money_Label")
 Pause = NodePath("Graphical_user_interface/Settings_Panel/Pause_and_Play_Button")
 FF = NodePath("Graphical_user_interface/Settings_Panel/SpeedUP_Button")
 
 [node name="Graphical_user_interface" type="Control" parent="UI"]
-process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -572,8 +567,16 @@ offset_bottom = 115.0
 text = "Start
 "
 
+[node name="Money_Button" type="Button" parent="UI"]
+offset_left = 1008.0
+offset_top = 528.0
+offset_right = 1201.0
+offset_bottom = 590.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("4_n3cl7")
+text = "add + 50 Money"
+
 [node name="Soundeffects (Autoload soon)" type="Node" parent="."]
-process_mode = 3
 
 [node name="Theme_Song" type="AudioStreamPlayer" parent="Soundeffects (Autoload soon)"]
 unique_name_in_owner = true
@@ -646,4 +649,5 @@ one_shot = true
 [connection signal="pressed" from="UI/Graphical_user_interface/Menue_Panel/Menue_Container/Main_Menue_Button" to="UI/Graphical_user_interface/Menue_Panel" method="_on_main_menue_button_pressed"]
 [connection signal="pressed" from="UI/Graphical_user_interface/Menue_Panel/Menue_Container/Quit_Button" to="UI/Graphical_user_interface/Menue_Panel" method="_on_quit_button_pressed"]
 [connection signal="pressed" from="UI/Start_Game_Button" to="UI" method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="UI/Money_Button" to="UI" method="_on_money_button_pressed"]
 [connection signal="timeout" from="next_wave_check" to="." method="_on_next_wave_check_timeout"]
