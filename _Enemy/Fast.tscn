@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://t8a2tb8bafeb"]
+
+[ext_resource type="Script" path="res://_Enemy/Script/Enemy_Logic.gd" id="1_eso5a"]
+[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/Kenny/Tilemap/colored-transparent_packed.png" id="2_awyj3"]
+[ext_resource type="Texture2D" uid="uid://crwxqd0jdm6pb" path="res://Assets/HP.png" id="3_uuong"]
+[ext_resource type="PackedScene" uid="uid://0o17kiuexige" path="res://Particles/explosion.tscn" id="4_ncmnv"]
+[ext_resource type="Animation" uid="uid://b5oe3di4pd4ng" path="res://_Enemy/Animation/DEATH.res" id="5_qrvxe"]
+[ext_resource type="Animation" uid="uid://dbv7xj6pp75rx" path="res://_Enemy/Animation/Spider_Walk.res" id="6_myyq0"]
+[ext_resource type="AudioStream" uid="uid://qmg8vcmuedow" path="res://Sounds/Crunch.wav" id="7_l5j52"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5dkrb"]
+radius = 7.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yqla4"]
+_data = {
+"DEATH": ExtResource("5_qrvxe"),
+"WALK": ExtResource("6_myyq0")
+}
+
+[node name="Fast" type="PathFollow2D" node_paths=PackedStringArray("Healthbar", "AnimP", "HurtS", "DeathS", "Collision", "Body", "Sprite") groups=["enemy"]]
+rotates = false
+loop = false
+script = ExtResource("1_eso5a")
+Healthbar = NodePath("HealthBar")
+AnimP = NodePath("AnimationPlayer")
+HurtS = NodePath("Hurt")
+DeathS = NodePath("AudioStreamPlayer")
+Collision = NodePath("CharacterBody2D/CollisionShape2D")
+Body = NodePath("CharacterBody2D")
+Sprite = NodePath("CharacterBody2D/Sprite2D")
+Type = "Fast"
+metadata/_edit_horizontal_guides_ = [-23.0]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_awyj3")
+region_enabled = true
+region_rect = Rect2(416, 128, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_5dkrb")
+debug_color = Color(1, 0, 0.701961, 0)
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -6.0
+offset_top = -9.0
+offset_right = 6.0
+offset_bottom = -8.0
+nine_patch_stretch = true
+texture_under = ExtResource("3_uuong")
+texture_progress = ExtResource("3_uuong")
+tint_under = Color(0.117647, 0.0627451, 0.156863, 1)
+tint_progress = Color(1, 0.360784, 0.592157, 1)
+
+[node name="Explosion" parent="." instance=ExtResource("4_ncmnv")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yqla4")
+}
+autoplay = "WALK"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_l5j52")
+volume_db = -33.016
+
+[node name="Hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_l5j52")
+volume_db = -30.0
