@@ -1,9 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4uoigkwv2m35"]
+[gd_scene load_steps=10 format=3 uid="uid://c4uoigkwv2m35"]
+
+[ext_resource type="Texture2D" uid="uid://8wjh2v48lmpu" path="res://Assets/Aseprite_made_by_Bowz/Axolotl.png" id="1_r0vmb"]
+[ext_resource type="Texture2D" uid="uid://df4bvp1ifmf74" path="res://Assets/Aseprite_made_by_Bowz/bubble.png" id="1_ywnat"]
+[ext_resource type="Texture2D" uid="uid://ebi10vvuvcww" path="res://Assets/Aseprite_made_by_Bowz/Ghost.png" id="2_4hg24"]
+[ext_resource type="Texture2D" uid="uid://ba1qmri0hkh0v" path="res://Assets/DDefault.jpg" id="4_0ugwl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgvhs"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_jm2cg"]
+material = SubResource("StandardMaterial3D_sgvhs")
 
 [sub_resource type="Animation" id="Animation_wgrxx"]
 resource_name = "spin"
+length = 10.0
 loop_mode = 1
 tracks/0/type = "rotation_3d"
 tracks/0/imported = false
@@ -12,23 +21,142 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.5, 1, 0, 0.999991, 0, -0.00416261, 1, 1, 0, 0.0126795, 0, 0.99992)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Sprite3D:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5.1),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Sprite3D2:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5.1),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../Sprite3D3:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5.1),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Camera3D:rotation")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5, 10.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1uyor"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Sprite3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.02158, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m36ho"]
 _data = {
+"RESET": SubResource("Animation_1uyor"),
 "spin": SubResource("Animation_wgrxx")
 }
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000398442, 0, 0)
 
-[node name="GPUParticlesAttractorSphere3D" type="GPUParticlesAttractorSphere3D" parent="."]
-
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.992808, 0, -0.119721, 0, 1, 0, 0.119721, 0, -0.992808, 0, 0, -1.53514)
+transform = Transform3D(-0.992808, 0, -0.119721, 0, 1, 0, 0.119721, 0, -0.992808, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 42.3506)
+pixel_size = 1.0
+texture_filter = 0
+texture = ExtResource("1_r0vmb")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-0.513014, 0, 0.85838, 0, 1, 0, -0.85838, 0, -0.513014, 16.9429, 3.3334, 49.2567)
+transparency = 0.8
+pixel_size = 1.0
+texture_filter = 0
+texture = ExtResource("2_4hg24")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(-0.513014, 0, 0.85838, 0, 1, 0, -0.85838, 0, -0.513014, -16.3523, 8.16683, 42.1316)
+pixel_size = 1.0
+texture_filter = 0
+texture = ExtResource("1_ywnat")
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 22.7314, 13.3232, 23.1316)
+pixel_size = 1.0
+texture_filter = 0
+texture = ExtResource("1_ywnat")
+
+[node name="Sprite3D5" type="Sprite3D" parent="."]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 69.1432, 12.3232, -4.20914)
+pixel_size = 1.0
+texture_filter = 0
+texture = ExtResource("1_ywnat")
+
+[node name="Sprite3D6" type="Sprite3D" parent="."]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 46.1432, -11.6768, -97.2091)
+pixel_size = 1.0
+texture_filter = 0
+texture = ExtResource("1_ywnat")
+
+[node name="Sprite3D7" type="Sprite3D" parent="."]
+transform = Transform3D(-1, 0, -1.49012e-07, 0, 1, 0, 1.49012e-07, 0, -1, -3.26815, 0, -1341)
+pixel_size = 1.0
+texture_filter = 0
+texture = ExtResource("4_0ugwl")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CPUParticles3D"]
+transform = Transform3D(0.999982, 0, 0.00607482, 0, 1, 0, -0.00607482, 0, 0.999982, 0, 0, 0)
 mesh = SubResource("BoxMesh_jm2cg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
