@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://baanwvtls0ow7"]
+
+[ext_resource type="Script" path="res://unsorted.gd/zoom_and_move.gd" id="1_w45qt"]
+
+[node name="Move_and_Zoom" type="Camera2D"]
+position = Vector2(566, 326)
+limit_left = 0
+limit_top = 0
+limit_right = 1136
+limit_bottom = 640
+limit_smoothed = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = ExtResource("1_w45qt")

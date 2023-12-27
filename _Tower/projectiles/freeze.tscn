@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://chyvt3rslmmf7"]
+
+[ext_resource type="Script" path="res://_Tower/projectiles/freeze.gd" id="1_hdrou"]
+[ext_resource type="Texture2D" uid="uid://cpmxs30skfr8r" path="res://Assets/Aseprite_made_by_Bowz/Tower_Sprites.png" id="2_libdl"]
+[ext_resource type="Material" uid="uid://dk56cjw18qah2" path="res://Particles/explosion.tres" id="3_itkma"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e3812"]
+radius = 2.0
+
+[sub_resource type="Gradient" id="Gradient_dg5xe"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ahgsi"]
+gradient = SubResource("Gradient_dg5xe")
+width = 1
+
+[node name="Projectile" type="Area2D"]
+script = ExtResource("1_hdrou")
+
+[node name="Projectile_Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_libdl")
+region_enabled = true
+region_rect = Rect2(21, 19, 6, 6)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_e3812")
+debug_color = Color(0.827451, 0.396078, 0, 0)
+
+[node name="VisibleOnScreen" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-1.78814e-07, 0)
+scale = Vector2(0.4, 0.4)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 99
+process_material = ExtResource("3_itkma")
+texture = SubResource("GradientTexture1D_ahgsi")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreen" to="." method="_on_visible_on_screen_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

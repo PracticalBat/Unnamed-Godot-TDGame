@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cja8ogyb2pylx"]
+
+[ext_resource type="Texture2D" uid="uid://cc8s5edut5m06" path="res://Assets/Aseprite_made_by_Bowz/Spider.png" id="1_j6vok"]
+[ext_resource type="Script" path="res://TextureButton.gd" id="2_0uycu"]
+
+[node name="TextureButton" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_j6vok")
+expand_mode = 1
+script = ExtResource("2_0uycu")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2

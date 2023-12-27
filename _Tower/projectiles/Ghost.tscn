@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4qnp0nmfysob"]
+
+[ext_resource type="Script" path="res://_Tower/projectiles/Ghost.gd" id="1_pqv5u"]
+[ext_resource type="Texture2D" uid="uid://dpy2g6auhyr53" path="res://Assets/Aseprite_made_by_Bowz/Ghost_Bullet.png" id="2_uerhm"]
+[ext_resource type="Material" uid="uid://c3omrfcjdidem" path="res://Particles/ghost_particle.tres" id="3_oiy1o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e3812"]
+radius = 6.0
+
+[sub_resource type="Animation" id="Animation_e8y7m"]
+resource_name = "Rotate"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Projectile_Sprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_10ivt"]
+_data = {
+"Rotate": SubResource("Animation_e8y7m")
+}
+
+[node name="Projectile" type="Area2D"]
+script = ExtResource("1_pqv5u")
+
+[node name="Projectile_Sprite" type="Sprite2D" parent="."]
+rotation = 6.04926
+texture = ExtResource("2_uerhm")
+region_rect = Rect2(4, 6, 8, 5)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_e3812")
+debug_color = Color(0.537255, 0, 0.541176, 0)
+
+[node name="VisibleOnScreen" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-4.76837e-07, -0.25)
+scale = Vector2(0.55, 0.525)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 4
+process_material = ExtResource("3_oiy1o")
+lifetime = 0.8
+explosiveness = 0.27
+randomness = 0.89
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_10ivt")
+}
+autoplay = "Rotate"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="screen_exited" from="VisibleOnScreen" to="." method="_on_visible_on_screen_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

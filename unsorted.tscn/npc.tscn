@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dttp7akou2ksh"]
+
+[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/Kenny/Tilemap/colored-transparent_packed.png" id="1_tb2lx"]
+[ext_resource type="Script" path="res://unsorted.gd/npc_Movement.gd" id="2_7wfbb"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_tb2lx")
+region_enabled = true
+region_rect = Rect2(432, 112, 16, 16)
+script = ExtResource("2_7wfbb")

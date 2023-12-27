@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2sveifvvuhbm"]
+
+[ext_resource type="Script" path="res://unsorted.gd/mouse_Trail.gd" id="1_hpdmu"]
+
+[sub_resource type="Curve" id="Curve_xfr8x"]
+_data = [Vector2(0, 0.957295), 0.0, 0.0, 0, 0, Vector2(0.985577, 0.0177935), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_br8sa"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.337931, 0.344828, 0.703448)
+colors = PackedColorArray(0.599616, 0.794076, 0.651717, 1, 0.729822, 0.726525, 0.875241, 1, 0.994283, 0.637059, 0.553491, 1)
+
+[node name="Trail" type="Line2D"]
+width = 1.0
+width_curve = SubResource("Curve_xfr8x")
+gradient = SubResource("Gradient_br8sa")
+script = ExtResource("1_hpdmu")
+MAX_LENGHT = 10
