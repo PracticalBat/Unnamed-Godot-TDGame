@@ -25,6 +25,7 @@ buses/default_bus_layout=""
 [autoload]
 
 GameData="*res://_Autoload/GameData.gd"
+GlobalPass="*res://J_Main.tsn/Scripts/GlobalPass.gd"
 
 [display]
 

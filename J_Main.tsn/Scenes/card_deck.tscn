@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://7eljf7qrevfa"]
+
+[ext_resource type="PackedScene" uid="uid://bgcf2orwtigj4" path="res://J_Main.tsn/Scenes/objekt_dragging.tscn" id="1_st7ok"]
+[ext_resource type="PackedScene" uid="uid://ccnolhads75jh" path="res://J_Main.tsn/Scenes/deck_system.tscn" id="2_n107o"]
+
+[node name="Card Deck" type="Node2D"]
+
+[node name="Objekt" parent="." instance=ExtResource("1_st7ok")]
+position = Vector2(282, 143)
+
+[node name="DeckSystem" parent="." instance=ExtResource("2_n107o")]
+position = Vector2(389, 45)
+
+[node name="DeckSystem2" parent="." instance=ExtResource("2_n107o")]
+position = Vector2(337, 45)
+
+[node name="DeckSystem3" parent="." instance=ExtResource("2_n107o")]
+position = Vector2(285, 45)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(574, 320)
