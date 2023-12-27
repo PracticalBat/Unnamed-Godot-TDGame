@@ -78,13 +78,7 @@ click={
 
 pointing/emulate_touch_from_mouse=true
 
-[physics]
-
-common/physics_ticks_per_second=30
-
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-textures/decals/filter=0
-textures/light_projectors/filter=0
-environment/defaults/default_clear_color=Color(0.0980392, 0.101961, 0.156863, 1)
+environment/defaults/default_clear_color=Color(0.2, 0.133333, 0.2, 1)

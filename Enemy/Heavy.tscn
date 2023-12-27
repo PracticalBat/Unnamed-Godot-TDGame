@@ -38,6 +38,7 @@ debug_color = Color(1, 0, 0.701961, 0)
 
 [node name="HealthBar" type="TextureProgressBar" parent="CharacterBody2D"]
 unique_name_in_owner = true
+visible = false
 offset_left = -6.0
 offset_top = -9.0
 offset_right = 6.0
@@ -64,3 +65,4 @@ volume_db = -24.762
 
 [node name="Hurt" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_dgq7e")
+volume_db = -30.0

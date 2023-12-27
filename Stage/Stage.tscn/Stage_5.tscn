@@ -42,6 +42,7 @@ shader_parameter/slant = 0.581
 [node name="Root2" type="Node2D"]
 
 [node name="Nightmode" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.227451, 0.227451, 0.619608, 1)
 
 [node name="Cursor_Light" type="PointLight2D" parent="."]
