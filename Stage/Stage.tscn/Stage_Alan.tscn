@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b5mqjtrue3qmf" path="res://Essential/Main_Stage.tscn" id="2_u6qgp"]
 [ext_resource type="Script" path="res://Stage/Script/Stage_Alan_WaveData.gd" id="3_afh7g"]
 [ext_resource type="Shader" path="res://Shaders/rain.gdshader" id="4_db3i0"]
-[ext_resource type="PackedScene" uid="uid://dttp7akou2ksh" path="res://unsorted.tscn/Npc.tscn" id="5_w88j2"]
+[ext_resource type="PackedScene" uid="uid://dttp7akou2ksh" path="res://unsorted.tscn/npc.tscn" id="5_w88j2"]
 [ext_resource type="Texture2D" uid="uid://c3bufloj14d6g" path="res://Assets/2d_lights_and_shadows_neutral_point_light.png" id="6_sr1df"]
 [ext_resource type="Script" path="res://Stage/Stage.tscn/Cursor_Light.gd" id="7_da8hn"]
 

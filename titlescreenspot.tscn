@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4uoigkwv2m35"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jm2cg"]
+
+[sub_resource type="Animation" id="Animation_wgrxx"]
+resource_name = "spin"
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.5, 1, 0, 0.999991, 0, -0.00416261, 1, 1, 0, 0.0126795, 0, 0.99992)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m36ho"]
+_data = {
+"spin": SubResource("Animation_wgrxx")
+}
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000398442, 0, 0)
+
+[node name="GPUParticlesAttractorSphere3D" type="GPUParticlesAttractorSphere3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.992808, 0, -0.119721, 0, 1, 0, 0.119721, 0, -0.992808, 0, 0, -1.53514)
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CPUParticles3D"]
+mesh = SubResource("BoxMesh_jm2cg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../CPUParticles3D/MeshInstance3D")
+libraries = {
+"": SubResource("AnimationLibrary_m36ho")
+}
+autoplay = "spin"
