@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccnolhads75jh"]
+
+[ext_resource type="Script" path="res://J_Main.tsn/Scenes/Drop_area.gd" id="1_we74n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbkyi"]
+size = Vector2(40, 40)
+
+[node name="DeckSystem" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["drop"]]
+script = ExtResource("1_we74n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_sbkyi")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" groups=["drop"]]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0

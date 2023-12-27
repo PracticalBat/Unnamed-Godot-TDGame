@@ -63,6 +63,11 @@ theme = ExtResource("4_lqkpd")
 text = "Start Game
 "
 
+[node name="Deck" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_lqkpd")
+text = "Deck"
+
 [node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_lqkpd")
@@ -89,9 +94,10 @@ layout_mode = 2
 theme = ExtResource("4_lqkpd")
 theme_override_colors/font_color = Color(0.447059, 0.447059, 0.447059, 1)
 theme_override_font_sizes/font_size = 6
-text = "Build number: 23313"
+text = "Build number: 23323"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Deck" to="." method="_on_deck_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

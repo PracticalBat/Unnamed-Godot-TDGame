@@ -1,5 +1,8 @@
 extends Node
 
+#__________Jakob Stuff______________ (DO NOT TOUCH!!!)
+var is_dragging = false
+#__________Jakob Stuff______________(end)
 # just checking
 var enemys_alive = 0
 # Do you have stupid ? 
