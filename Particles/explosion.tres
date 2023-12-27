@@ -1,7 +1,9 @@
 [gd_resource type="ParticleProcessMaterial" load_steps=3 format=3 uid="uid://dk56cjw18qah2"]
 
 [sub_resource type="Gradient" id="Gradient_2jwwy"]
-colors = PackedColorArray(0.811765, 0.776471, 0.721569, 1, 0.811765, 0.776471, 0.721569, 0)
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.766854, 1)
+colors = PackedColorArray(0.2, 0.568627, 0.929412, 1, 0.337255, 0.827451, 0.968627, 1, 0.337255, 0.827451, 0.968627, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_vqgei"]
 gradient = SubResource("Gradient_2jwwy")
@@ -9,14 +11,17 @@ gradient = SubResource("Gradient_2jwwy")
 [resource]
 lifetime_randomness = 1.0
 particle_flag_disable_z = true
-angle_min = -465.2
-angle_max = 11.1
+emission_shape = 1
+emission_sphere_radius = 7.06
 direction = Vector3(0, -1, 0)
 spread = 180.0
 initial_velocity_min = 21.8
 initial_velocity_max = 66.9
-gravity = Vector3(0, 70, 0)
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -48.39
+radial_accel_max = 27.6
 scale_min = 0.0
+scale_max = 2.0
 color_ramp = SubResource("GradientTexture1D_vqgei")
 turbulence_noise_strength = 4.02
 turbulence_noise_speed_random = 2.94

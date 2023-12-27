@@ -37,7 +37,9 @@ var REACHED_END: bool = false
 # var that keeps track of what status effect it had and slowly returns to normal over lerp or tween 
 
 func _process(delta):
-
+	if HP != Data.HP:
+		Healthbar.visible = true
+	
 	if ALIVE:
 		progress += (SPEED * delta)
 
@@ -105,6 +107,8 @@ func freeze(freeze_time, damage):
 
 func go_home(send_back, damage, stun_time):
 	on_hit(damage)
+	change_color(Color.REBECCA_PURPLE,stun_time)
+	Movement_AnimationPlayer.pause()
 	var initP = get_progress()
 	if initP - send_back <= 0:
 		set_progress(0)
@@ -113,18 +117,21 @@ func go_home(send_back, damage, stun_time):
 		
 	ALIVE = false
 	await get_tree().create_timer(stun_time, false).timeout
+	Movement_AnimationPlayer.play()
 	ALIVE = true
 
 
 
 # How the ENEMY takes damage
 func on_hit(damage):
-	HurtSFX.play()
 	if HP <= 0:
 		is_dead_check()
 	HP -= damage
 	Healthbar.value = HP
 
+	if HurtSFX.playing == false:
+		HurtSFX.set_pitch_scale(randf_range(0.5,2.0))
+		HurtSFX.play()
 
 	FX_AnimationPlayer.queue("hit_flash")
 
