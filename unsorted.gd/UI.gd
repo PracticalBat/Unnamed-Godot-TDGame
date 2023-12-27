@@ -80,7 +80,7 @@ func update_tower_preview(new_position, color, zoom ):
 #endregion
 	
 	
-	get_node("TowerPreview").global_position = get_viewport().get_mouse_position()
+	get_node("TowerPreview").global_position = new_position
 	get_node("TowerPreview").scale = zoom
 	if get_node("TowerPreview").modulate != Color(color):
 			get_node("TowerPreview").modulate = Color(color)
