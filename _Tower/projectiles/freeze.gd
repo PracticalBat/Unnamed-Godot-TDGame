@@ -9,7 +9,7 @@ var pierce = GameData.projectile["freeze"]["pierce"]
 var stun_time = GameData.projectile["freeze"]["stun_time"]
 
 func _physics_process(delta):
-	position += direction * GameData.projectile["freeze"]["speed"] * delta 
+	position += direction * GameData.projectile["freeze"]["speed"] * delta
 
 func _on_body_entered(body):
 	hits += 1

@@ -73,7 +73,6 @@ shape = SubResource("CircleShape2D_5dkrb")
 debug_color = Color(1, 0, 0.701961, 0)
 
 [node name="HealthBar" type="TextureProgressBar" parent="CharacterBody2D"]
-visible = false
 offset_left = -6.0
 offset_top = -9.0
 offset_right = 6.0

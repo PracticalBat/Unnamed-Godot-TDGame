@@ -20,9 +20,6 @@ var enemy
 @export_category("damage_type : hitscan, munition, area")
 @export var damage_type : String = "hitscan"
 
-#func _ready() -> void:
-	#if built:
-		#$Place.emitting = true
 
 
 func get_tower_type() -> String:
@@ -64,9 +61,9 @@ func area():
 		
 	pass
 
-func aim(atenemy):
-	if atenemy != null:
-		ray_cast.target_position = to_local(atenemy.position)
+func aim(enemy):
+	if enemy != null:
+		ray_cast.target_position = to_local(enemy.position).normalized()
 	else: 
 		print("Enemy == null")
 		return 

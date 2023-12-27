@@ -10,9 +10,7 @@ texture = ExtResource("1_ynci7")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5jon"]
 texture = ExtResource("1_cyngn")
-0:0/next_alternative_id = 2
 0:0/0 = 0
-0:0/1 = 1
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0

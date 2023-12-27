@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bgxg0qrdopt0h" path="res://Assets/Aseprite_made_by_Bowz/Play&Pause_Button.png" id="11_wy2bc"]
 [ext_resource type="Texture2D" uid="uid://ebi10vvuvcww" path="res://Assets/Aseprite_made_by_Bowz/Ghost.png" id="13_utv0k"]
 [ext_resource type="AudioStream" uid="uid://jcm3hknna6df" path="res://Sounds/Pause.wav" id="14_1nhxf"]
+[ext_resource type="AudioStream" uid="uid://ch34iunsvgl4s" path="res://Assets/Music/tohomoko_grain.mp3" id="14_op65f"]
 [ext_resource type="AudioStream" uid="uid://dtse5f38d5rmn" path="res://Sounds/Hurt.wav" id="15_smxhu"]
 [ext_resource type="AudioStream" uid="uid://cplfoxemwuqqr" path="res://Sounds/Monster_Scream.wav" id="16_8dkql"]
 [ext_resource type="Script" path="res://unsorted.gd/Menue_Panel.gd" id="17_chlvj"]
@@ -25,7 +26,6 @@
 [ext_resource type="AudioStream" uid="uid://bqnw1p5t36x4g" path="res://Sounds/Menu_In.wav" id="18_6yfku"]
 [ext_resource type="AudioStream" uid="uid://cv8fna41s1fs7" path="res://Sounds/Click.wav" id="18_yunjg"]
 [ext_resource type="AudioStream" uid="uid://0plefw62au2w" path="res://Sounds/Menu_Out.wav" id="19_eoi36"]
-[ext_resource type="AudioStream" uid="uid://ner3yvl4r7sa" path="res://Assets/Music/tohomokosandcastles.mp3" id="19_ysbl4"]
 [ext_resource type="Texture2D" uid="uid://hxkk3tstip64" path="res://Assets/Aseprite_made_by_Bowz/Bee.png" id="25_y55u1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pis8j"]
@@ -600,8 +600,9 @@ text = "add + 50 Money"
 
 [node name="Theme_Song" type="AudioStreamPlayer" parent="Soundeffects (Autoload soon)"]
 unique_name_in_owner = true
-stream = ExtResource("19_ysbl4")
-volume_db = -10.777
+stream = ExtResource("14_op65f")
+volume_db = -49.835
+pitch_scale = 1.75
 autoplay = true
 
 [node name="Pause" type="AudioStreamPlayer" parent="Soundeffects (Autoload soon)"]
