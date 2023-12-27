@@ -1,0 +1,143 @@
+clearscreen.
+print "=====ANALOOL SCR LOADED=====".
+print "Vessel: "+SHIP:NAME.
+SET V0 TO GETVOICE(0).
+V0:PLAY( NOTE(400, 0.3) ).
+wait 0.3.
+V0:PLAY( NOTE(300, 0.3) ).
+wait 0.3.
+V0:PLAY( NOTE(500, 0.3) ).
+wait 0.3.
+stc().
+
+
+declare function stc {print "l : start lauch sequenz | a: abort lauch".
+V0:PLAY( NOTE(400, 0.15) ).
+wait 0.3.
+V0:PLAY( NOTE(400, 0.15) ).
+set ch to terminal:input:getchar().
+if ch = "l" {
+print "Starting launch srquenz...".
+V0:PLAY( NOTE(600, 0.3) ).
+lauc().}
+else if ch = "a" {
+print "abort".
+V0:PLAY( NOTE(200, 0.15) ).}
+else {
+print "wrong statemant".
+stc().}
+}
+
+declare function lauc {
+wait 0.3.
+V0:PLAY( NOTE(200, 0.3) ).
+wait 0.3.
+if TARGET = "" {
+print "no Target!".
+V0:PLAY( NOTE(600, 0.3) ).
+}
+else {
+print "calculating trajectory...".
+set wink to calc().
+wait 2.
+V0:PLAY( NOTE(800, 0.15)).
+print "calculation complete!".
+wait 1.
+print "Starting counter...".
+set countdown to 10.
+print "10s".
+lock STEERING TO HEADING(wink, 90).
+V0:PLAY( NOTE(100, 0.15) ).
+AG4 ON.
+wait 1.
+//
+print "9s".
+V0:PLAY( NOTE(100, 0.15) ).
+wait 1.
+//
+print "8s".
+V0:PLAY( NOTE(100, 0.15) ).
+SAS OFF.
+wait 1.
+//
+print "7s".
+V0:PLAY( NOTE(100, 0.15) ).
+wait 1.
+print "6s".
+//
+V0:PLAY( NOTE(100, 0.15) ).
+wait 1.
+print "5s".
+//
+V0:PLAY( NOTE(100, 0.15) ).
+wait 1.
+//
+print "4s".
+V0:PLAY( NOTE(100, 0.15) ).
+wait 1.
+//
+print "3s".
+V0:PLAY( NOTE(100, 0.15) ).
+lock THROTTLE to 1.
+wait 1.
+//
+print "2s".
+V0:PLAY( NOTE(100, 0.15) ).
+wait 1.
+//
+print "1s".
+V0:PLAY( NOTE(100, 0.15) ).
+wait 1.
+//
+print "START".
+V0:PLAY( NOTE(800, 0.15) ).
+print "stage". 
+stage.
+wait 2.
+lock THROTTLE to 0.
+SAS OFF.
+lock STEERING TO HEADING(wink, 90).
+wait 3.
+unlock STEERING.
+SAS ON.
+wait 3.
+lp().
+}
+}
+
+declare function lp {
+SAS off.
+lock STEERING TO HEADING(wink, 30).
+lock THROTTLE to 1.
+wait 5.
+lock THROTTLE to 0.
+unlock THROTTLE.
+
+wait until TARGET:POSITION:MAG < 7 or SHIP:GEOPOSITION:TERRAINHEIGHT<2.
+AG1 ON.
+}
+
+declare function calc {
+set rl to SHIP:FACING:ROLL.
+print rl.
+set xComponent to cos(rl).
+set yComponent to sin(rl).
+set rollVector to V(xComponent, yComponent, 0).
+print "Roll vector: " + rollVector.
+set tpos_x to TARGET:POSITION:X.
+set tpos_y to TARGET:POSITION:Y.
+set dt_x to tpos_x - SHIP:POSITION:X.
+set dt_y to tpos_y - SHIP:POSITION:Y.
+set dt_z to 0.
+set dt to V(dt_x, dt_y, dt_z).
+print "STützv:" + dt.
+set mroll to arccos(VDOT(dt,rollVector) / (dt:MAG * rollVector:MAG)).
+print mroll.
+if VDOT(dt,rollVector) / (dt:MAG * rollVector:MAG) > 0 {
+set troll to mroll * -1. }
+else {
+set troll to mroll * 1.
+}
+print troll.
+return troll.
+}
