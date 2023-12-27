@@ -1,13 +1,45 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctmcsasy70ruf"]
+[gd_scene load_steps=4 format=3 uid="uid://bpma5wedgtuos"]
 
-[ext_resource type="Script" path="res://Top_Down_Player.gd" id="1_8wdrx"]
 [ext_resource type="Texture2D" uid="uid://lbg7jj43qvke" path="res://Assets/Aseprite_made_by_Bowz/Skelleton.png" id="2_w0gl2"]
+
+[sub_resource type="GDScript" id="GDScript_gqheq"]
+script/source = "extends CharacterBody2D
+
+@onready var raycast := $RayCast2D
+
+var _smooth_mouse_pos: Vector2
+
+
+const inputs = {
+	\"ui_up\" : Vector2.UP,
+	\"ui_down\" : Vector2.DOWN,
+	\"ui_right\" : Vector2.RIGHT,
+	\"ui_left\" : Vector2.LEFT
+}
+
+const grid_size = 16 
+
+
+func _unhandled_input(event):
+	for action in inputs.keys():
+		if event.is_action_pressed(action):
+			move(action)
+
+
+func move(action):
+	var zielort = inputs[action] * grid_size
+	raycast.target_position = zielort
+	raycast.force_raycast_update()
+	position += zielort
+
+
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbwdx"]
 size = Vector2(16, 16)
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_8wdrx")
+script = SubResource("GDScript_gqheq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_w0gl2")

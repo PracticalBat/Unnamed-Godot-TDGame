@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj0ww1efwb525"
-path.s3tc="res://.godot/imported/sticker.png-c05211afd50c469c0274ea26708fc51f.s3tc.ctex"
+uid="uid://d33ratjeylpqa"
+path.s3tc="res://.godot/imported/sticker.png-14699786c43e8c676eab7655c9415bb2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/sticker.png"
-dest_files=["res://.godot/imported/sticker.png-c05211afd50c469c0274ea26708fc51f.s3tc.ctex"]
+source_file="res://sticker.png"
+dest_files=["res://.godot/imported/sticker.png-14699786c43e8c676eab7655c9415bb2.s3tc.ctex"]
 
 [params]
 
