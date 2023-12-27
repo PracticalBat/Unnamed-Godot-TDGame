@@ -167,7 +167,6 @@ volume_db = -24.762
 
 [node name="Hurt_SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_endy7")
-volume_db = -30.0
 
 [node name="Data" type="Node" parent="."]
 script = ExtResource("9_biv8e")

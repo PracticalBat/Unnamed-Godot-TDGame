@@ -124,14 +124,12 @@ func go_home(send_back, damage, stun_time):
 
 # How the ENEMY takes damage
 func on_hit(damage):
+	HurtSFX.play()
 	if HP <= 0:
 		is_dead_check()
 	HP -= damage
 	Healthbar.value = HP
 
-	if HurtSFX.playing == false:
-		HurtSFX.set_pitch_scale(randf_range(0.5,2.0))
-		HurtSFX.play()
 
 	FX_AnimationPlayer.queue("hit_flash")
 

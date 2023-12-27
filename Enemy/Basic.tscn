@@ -171,11 +171,9 @@ explosiveness = 0.0
 
 [node name="Death_SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_f06qn")
-volume_db = -40.0
 
 [node name="Hurt_SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_vytp6")
-volume_db = -10.0
 
 [node name="Data" type="Node" parent="."]
 script = ExtResource("10_y2j2a")
