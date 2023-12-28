@@ -106,16 +106,20 @@ func cancel_build_mode():
 
 
 func update_tower_preview():
+	
+	get_viewport().get_mouse_position()
+	
 	var mouseposition = get_global_mouse_position()
 	var current_tile = TowerExclusion.local_to_map(mouseposition)
 	var tile_position = TowerExclusion.map_to_local(current_tile) 
-	
+
+	var tile_position2 = TowerExclusion.map_to_local(TowerExclusion.local_to_map(get_viewport().get_mouse_position())) 
 	var zoom = CAMERA.get_zoom()
 
 #int get_cell_source_id(layer: int, coords: Vector2i, use_proxies: bool = false) const
 #Returns the tile source ID of the cell on layer layer at coordinates coords. Returns -1 if the cell does not exist.
 	if TowerExclusion.get_cell_source_id(0, current_tile, false) == -1: # Valid build location check
-		UI.update_tower_preview(tile_position, Color.CADET_BLUE,zoom)
+		UI.update_tower_preview(tile_position2 , Color.CADET_BLUE,zoom)
 		build_valid = true 
 		build_location = tile_position 
 		build_tile = current_tile
@@ -124,7 +128,7 @@ func update_tower_preview():
 	else:
 		u_sure = false
 		print("No Place")
-		UI.update_tower_preview(tile_position, Color.RED ,zoom)
+		UI.update_tower_preview(tile_position2, Color.RED ,zoom)
 
 func veryfy_and_build():
 	%Bump.play()

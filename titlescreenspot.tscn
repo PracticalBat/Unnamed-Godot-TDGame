@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://df4bvp1ifmf74" path="res://Assets/Aseprite_made_by_Bowz/bubble.png" id="1_ywnat"]
 [ext_resource type="Texture2D" uid="uid://ebi10vvuvcww" path="res://Assets/Aseprite_made_by_Bowz/Ghost.png" id="2_4hg24"]
 [ext_resource type="Texture2D" uid="uid://ba1qmri0hkh0v" path="res://Assets/DDefault.jpg" id="4_0ugwl"]
-[ext_resource type="Texture2D" uid="uid://dj0ww1efwb525" path="res://Assets/sticker.png" id="4_ywcti"]
+[ext_resource type="Texture2D" uid="uid://d33ratjeylpqa" path="res://sticker.png" id="4_ywcti"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgvhs"]
 

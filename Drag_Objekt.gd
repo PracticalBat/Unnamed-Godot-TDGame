@@ -4,7 +4,6 @@ var is_inside_dropble = false
 var body_ref
 var offset: Vector2
 var initial_pos: Vector2
-var dub = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -44,6 +43,7 @@ func _on_area_2d_mouse_exited():
 		scale = Vector2(1,1)
 	pass # Replace with function body.
 
+
 func _on_area_2d_body_entered(body):
 	if body.is_in_group('drop'):
 		is_inside_dropble = true
@@ -55,6 +55,8 @@ func _on_area_2d_body_entered(body):
 		#dub.global_position = body.position + Vector2(64,0)
 		dub.position = (body.position - dub.position) + Vector2(64,-1)
 		add_child(dub)
+		body.global_position
+		print(body)
 	pass # Replace with function body.
 
 
@@ -62,7 +64,4 @@ func _on_area_2d_body_exited(body):
 	if body.is_in_group('drop'):
 		is_inside_dropble = false
 		body.modulate = Color(Color.MEDIUM_BLUE,0.7)
-		if dub != null:
-			dub.queue_free()
-			dub = null
 	pass # Replace with function body.
