@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ds5impe6ap5rj"]
 
 [ext_resource type="Script" path="res://_Tower/projectiles/posion.gd" id="1_owb7m"]
-[ext_resource type="Texture2D" uid="uid://cu4akrxfm41i4" path="res://Assets/Aseprite_made_by_Bowz/leaf.png" id="2_j3vr8"]
+[ext_resource type="Texture2D" uid="uid://cu4akrxfm41i4" path="res://Game_Assets/Asesprite_Bowz/leaf.png" id="2_j3vr8"]
 [ext_resource type="Material" uid="uid://dk56cjw18qah2" path="res://Particles/explosion.tres" id="3_hf7yk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e3812"]

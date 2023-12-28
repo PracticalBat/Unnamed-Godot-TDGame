@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1hd35et8ir15"]
 
 [ext_resource type="Script" path="res://_Tower/Script/Modular_Tower_Logic.gd" id="1_o66up"]
-[ext_resource type="Texture2D" uid="uid://cpmxs30skfr8r" path="res://Assets/Aseprite_made_by_Bowz/Tower_Sprites.png" id="2_mp5uj"]
+[ext_resource type="Texture2D" uid="uid://cpmxs30skfr8r" path="res://Game_Assets/Asesprite_Bowz/Tower_Sprites.png" id="2_mp5uj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i4ii7"]
 radius = 111.005

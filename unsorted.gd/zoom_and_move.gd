@@ -18,9 +18,8 @@ func _process(delta: float) -> void:
 	
 	var inputX = int(Input.is_action_pressed("ui_right")) -int(Input.is_action_pressed("ui_left"))
 	var inputY = int(Input.is_action_pressed("ui_down")) -int(Input.is_action_pressed("ui_up"))
-	
-	var new_x = clamp(global_position.x, limit_left,limit_right)
-	var new_y = clamp(global_position.y, limit_top,limit_bottom)
+	var new_x = clamp(global_position.x, limit_right-limit_right/1.25,limit_right/1.25)
+	var new_y = clamp(global_position.y, limit_bottom-limit_bottom/1.25,limit_bottom/1.25)
 	
 	global_position = Vector2(new_x,new_y)
 	

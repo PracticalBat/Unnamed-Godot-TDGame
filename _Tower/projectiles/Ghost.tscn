@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c4qnp0nmfysob"]
 
 [ext_resource type="Script" path="res://_Tower/projectiles/Ghost.gd" id="1_pqv5u"]
-[ext_resource type="Texture2D" uid="uid://dpy2g6auhyr53" path="res://Assets/Aseprite_made_by_Bowz/Ghost_Bullet.png" id="2_uerhm"]
+[ext_resource type="Texture2D" uid="uid://dpy2g6auhyr53" path="res://Game_Assets/Asesprite_Bowz/Ghost_Bullet.png" id="2_uerhm"]
 [ext_resource type="Material" uid="uid://c3omrfcjdidem" path="res://Particles/ghost_particle.tres" id="3_oiy1o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e3812"]

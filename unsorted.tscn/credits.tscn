@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dn6v7o45jkq77"]
 
 [ext_resource type="Script" path="res://unsorted.gd/credits_tscn.gd" id="1_14qds"]
-[ext_resource type="Theme" uid="uid://mhdwkcecl1i4" path="res://Assets/Theme/Fantasy_theme.tres" id="1_vp5yq"]
-[ext_resource type="FontFile" uid="uid://27idn2k1vkqn" path="res://Assets/Theme/Renogare-Regular.otf" id="3_1ups7"]
-[ext_resource type="Texture2D" uid="uid://cerv5iyfhkjvb" path="res://Assets/Aseprite_made_by_Bowz/FAT FUCKING BAT.png" id="3_028ih"]
+[ext_resource type="Theme" uid="uid://mhdwkcecl1i4" path="res://Theme/Fantasy_theme.tres" id="1_vp5yq"]
+[ext_resource type="FontFile" uid="uid://27idn2k1vkqn" path="res://Theme/Renogare-Regular.otf" id="3_1ups7"]
+[ext_resource type="Texture2D" uid="uid://cerv5iyfhkjvb" path="res://Game_Assets/Asesprite_Bowz/FAT FUCKING BAT.png" id="3_028ih"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dwkyg"]
 font = ExtResource("3_1ups7")

@@ -15,8 +15,8 @@ config/description="2D Tower Defense Game originally started out as a school pro
 "
 run/main_scene="res://Stage/Stage.tscn/Stage_Alan.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-boot_splash/image="res://Assets/Aseprite_made_by_Bowz/Banner.png"
-config/icon="res://Assets/Aseprite_made_by_Bowz/FAT FUCKING BAT.png"
+boot_splash/image="res://Game_Assets/Asesprite_Bowz/Banner.png"
+config/icon="res://Game_Assets/Asesprite_Bowz/FAT FUCKING BAT.png"
 
 [audio]
 
@@ -32,7 +32,7 @@ GlobalPass="*res://J_Main.tsn/Scripts/GlobalPass.gd"
 window/size/viewport_width=1136
 window/size/viewport_height=640
 window/stretch/mode="canvas_items"
-mouse_cursor/custom_image="res://Assets/Aseprite_made_by_Bowz/New_Cursor.png"
+mouse_cursor/custom_image="res://Game_Assets/Asesprite_Bowz/New_Cursor.png"
 window/icon="res://Assets/Screenshot 2023-11-16 201340.png"
 window/version=""
 window/description=""

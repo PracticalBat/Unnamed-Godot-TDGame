@@ -2,20 +2,20 @@
 
 [ext_resource type="Script" path="res://Essential/main_Stage.gd" id="1_f137u"]
 [ext_resource type="PackedScene" uid="uid://baanwvtls0ow7" path="res://move_and_zoom.tscn" id="3_hm3hj"]
-[ext_resource type="Theme" uid="uid://mhdwkcecl1i4" path="res://Assets/Theme/Fantasy_theme.tres" id="4_n3cl7"]
+[ext_resource type="Theme" uid="uid://mhdwkcecl1i4" path="res://Theme/Fantasy_theme.tres" id="4_n3cl7"]
 [ext_resource type="Script" path="res://unsorted.gd/UI.gd" id="4_s1bsp"]
-[ext_resource type="Texture2D" uid="uid://cpmxs30skfr8r" path="res://Assets/Aseprite_made_by_Bowz/Tower_Sprites.png" id="5_corbn"]
+[ext_resource type="Texture2D" uid="uid://cpmxs30skfr8r" path="res://Game_Assets/Asesprite_Bowz/Tower_Sprites.png" id="5_corbn"]
 [ext_resource type="Script" path="res://unsorted.gd/hide_button.gd" id="5_hdxhj"]
-[ext_resource type="FontFile" uid="uid://27idn2k1vkqn" path="res://Assets/Theme/Renogare-Regular.otf" id="6_qubbl"]
-[ext_resource type="Texture2D" uid="uid://bwplsxqgug3s7" path="res://Assets/Kenny/Kenny Fantasy UI/fantasy-ui-borders.svg" id="7_3v510"]
-[ext_resource type="Texture2D" uid="uid://cpm1qnjtjfsvl" path="res://Assets/Aseprite_made_by_Bowz/Skull.png" id="8_6tojb"]
-[ext_resource type="Texture2D" uid="uid://pwfbi5v8y4rl" path="res://Assets/Aseprite_made_by_Bowz/Flower.png" id="8_a7qyv"]
-[ext_resource type="Texture2D" uid="uid://cfbc01ig1l8lj" path="res://Assets/Aseprite_made_by_Bowz/Dollar_Icon.png" id="9_3u1xu"]
-[ext_resource type="Texture2D" uid="uid://8wjh2v48lmpu" path="res://Assets/Aseprite_made_by_Bowz/Axolotl.png" id="9_wrer2"]
-[ext_resource type="Texture2D" uid="uid://c6axvvabni1oo" path="res://Assets/Aseprite_made_by_Bowz/Heart.png" id="10_je27x"]
+[ext_resource type="FontFile" uid="uid://27idn2k1vkqn" path="res://Theme/Renogare-Regular.otf" id="6_qubbl"]
+[ext_resource type="Texture2D" uid="uid://bwplsxqgug3s7" path="res://Game_Assets/Kenny/Kenny UI/fantasy-ui-borders.svg" id="7_3v510"]
+[ext_resource type="Texture2D" uid="uid://cpm1qnjtjfsvl" path="res://Game_Assets/Asesprite_Bowz/Skull.png" id="8_6tojb"]
+[ext_resource type="Texture2D" uid="uid://pwfbi5v8y4rl" path="res://Game_Assets/Asesprite_Bowz/Flower.png" id="8_a7qyv"]
+[ext_resource type="Texture2D" uid="uid://cfbc01ig1l8lj" path="res://Game_Assets/Asesprite_Bowz/Dollar_Icon.png" id="9_3u1xu"]
+[ext_resource type="Texture2D" uid="uid://8wjh2v48lmpu" path="res://Game_Assets/Asesprite_Bowz/Axolotl.png" id="9_wrer2"]
+[ext_resource type="Texture2D" uid="uid://c6axvvabni1oo" path="res://Game_Assets/Asesprite_Bowz/Heart.png" id="10_je27x"]
 [ext_resource type="PackedScene" uid="uid://b2sveifvvuhbm" path="res://unsorted.tscn/Mouse_trail.tscn" id="11_n2ubj"]
-[ext_resource type="Texture2D" uid="uid://bgxg0qrdopt0h" path="res://Assets/Aseprite_made_by_Bowz/Play&Pause_Button.png" id="11_wy2bc"]
-[ext_resource type="Texture2D" uid="uid://ebi10vvuvcww" path="res://Assets/Aseprite_made_by_Bowz/Ghost.png" id="13_utv0k"]
+[ext_resource type="Texture2D" uid="uid://bgxg0qrdopt0h" path="res://Game_Assets/Asesprite_Bowz/Play&Pause_Button.png" id="11_wy2bc"]
+[ext_resource type="Texture2D" uid="uid://ebi10vvuvcww" path="res://Game_Assets/Asesprite_Bowz/Ghost.png" id="13_utv0k"]
 [ext_resource type="AudioStream" uid="uid://jcm3hknna6df" path="res://Sounds/Pause.wav" id="14_1nhxf"]
 [ext_resource type="AudioStream" uid="uid://dtse5f38d5rmn" path="res://Sounds/Hurt.wav" id="15_smxhu"]
 [ext_resource type="AudioStream" uid="uid://cplfoxemwuqqr" path="res://Sounds/Monster_Scream.wav" id="16_8dkql"]
@@ -25,8 +25,8 @@
 [ext_resource type="AudioStream" uid="uid://bqnw1p5t36x4g" path="res://Sounds/Menu_In.wav" id="18_6yfku"]
 [ext_resource type="AudioStream" uid="uid://cv8fna41s1fs7" path="res://Sounds/Click.wav" id="18_yunjg"]
 [ext_resource type="AudioStream" uid="uid://0plefw62au2w" path="res://Sounds/Menu_Out.wav" id="19_eoi36"]
-[ext_resource type="AudioStream" uid="uid://ner3yvl4r7sa" path="res://Assets/Music/tohomokosandcastles.mp3" id="19_ysbl4"]
-[ext_resource type="Texture2D" uid="uid://hxkk3tstip64" path="res://Assets/Aseprite_made_by_Bowz/Bee.png" id="25_y55u1"]
+[ext_resource type="AudioStream" uid="uid://ner3yvl4r7sa" path="res://Game_Assets/Music/tohomokosandcastles.mp3" id="19_ysbl4"]
+[ext_resource type="Texture2D" uid="uid://hxkk3tstip64" path="res://Game_Assets/Asesprite_Bowz/Bee.png" id="25_y55u1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pis8j"]
 texture = ExtResource("7_3v510")
@@ -175,7 +175,6 @@ MAX_LENGHT = 100
 metadata/_edit_lock_ = true
 
 [node name="Move_and_Zoom_Camera" parent="." instance=ExtResource("3_hm3hj")]
-anchor_mode = 0
 editor_draw_limits = false
 editor_draw_drag_margin = false
 
@@ -601,7 +600,7 @@ text = "add + 50 Money"
 [node name="Theme_Song" type="AudioStreamPlayer" parent="Soundeffects (Autoload soon)"]
 unique_name_in_owner = true
 stream = ExtResource("19_ysbl4")
-volume_db = -10.777
+volume_db = -26.872
 autoplay = true
 
 [node name="Pause" type="AudioStreamPlayer" parent="Soundeffects (Autoload soon)"]
@@ -622,7 +621,7 @@ volume_db = -18.571
 [node name="loud-incorrect-buzzer-lie-meme-sound-effect" type="AudioStreamPlayer" parent="Soundeffects (Autoload soon)"]
 unique_name_in_owner = true
 stream = ExtResource("17_kj3g4")
-volume_db = -10.202
+volume_db = -18.869
 
 [node name="Monster_Scream" type="AudioStreamPlayer" parent="Soundeffects (Autoload soon)"]
 unique_name_in_owner = true

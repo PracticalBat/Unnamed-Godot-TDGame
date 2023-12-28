@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://cnou6u87b171k" path="res://Tilesets/main.tres" id="1_0lrfx"]
 [ext_resource type="PackedScene" uid="uid://b5mqjtrue3qmf" path="res://Essential/Main_Stage.tscn" id="2_bfeo0"]
 [ext_resource type="Script" path="res://Stage/Script/Stage_4_WaveData.gd" id="3_g572v"]
-[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/Kenny/Tilemap/colored-transparent_packed.png" id="4_6nlnl"]
+[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Game_Assets/Kenny/Kenny Tilemap/colored-transparent_packed.png" id="4_6nlnl"]
 
 [sub_resource type="Curve2D" id="Curve2D_wtt5t"]
 _data = {

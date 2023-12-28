@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d2un723p3oo5p"]
 
 [ext_resource type="Script" path="res://_Tower/projectiles/bubble.gd" id="1_46fcx"]
-[ext_resource type="Texture2D" uid="uid://df4bvp1ifmf74" path="res://Assets/Aseprite_made_by_Bowz/bubble.png" id="2_wr4l3"]
+[ext_resource type="Texture2D" uid="uid://df4bvp1ifmf74" path="res://Game_Assets/Asesprite_Bowz/bubble.png" id="2_wr4l3"]
 [ext_resource type="Material" uid="uid://ctgbraoxi6u0t" path="res://Particles/bubble_particle.tres" id="3_jqg6f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e3812"]

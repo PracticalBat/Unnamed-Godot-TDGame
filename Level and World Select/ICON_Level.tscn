@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://b6ltvadwssowd"]
 
 [ext_resource type="Script" path="res://Level and World Select/Scripts/level_icon.gd" id="1_0fdoe"]
-[ext_resource type="Theme" uid="uid://mhdwkcecl1i4" path="res://Assets/Theme/Fantasy_theme.tres" id="3_3io1e"]
-[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/Kenny/Tilemap/colored-transparent_packed.png" id="3_h2bvm"]
-[ext_resource type="FontFile" uid="uid://27idn2k1vkqn" path="res://Assets/Theme/Renogare-Regular.otf" id="4_irhkc"]
+[ext_resource type="Theme" uid="uid://mhdwkcecl1i4" path="res://Theme/Fantasy_theme.tres" id="3_3io1e"]
+[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Game_Assets/Kenny/Kenny Tilemap/colored-transparent_packed.png" id="3_h2bvm"]
+[ext_resource type="FontFile" uid="uid://27idn2k1vkqn" path="res://Theme/Renogare-Regular.otf" id="4_irhkc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dwkyg"]
 font = ExtResource("4_irhkc")

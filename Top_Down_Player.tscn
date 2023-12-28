@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bpma5wedgtuos"]
 
-[ext_resource type="Texture2D" uid="uid://lbg7jj43qvke" path="res://Assets/Aseprite_made_by_Bowz/Skelleton.png" id="2_w0gl2"]
+[ext_resource type="Texture2D" uid="uid://lbg7jj43qvke" path="res://Game_Assets/Asesprite_Bowz/Skelleton.png" id="2_w0gl2"]
 
 [sub_resource type="GDScript" id="GDScript_gqheq"]
 script/source = "extends CharacterBody2D

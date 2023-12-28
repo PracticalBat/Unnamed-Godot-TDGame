@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Level and World Select/Scripts/world_icon.gd" id="1_lh63k"]
 [ext_resource type="PackedScene" uid="uid://myfoj8vfgve6" path="res://Level and World Select/Level_1_Select.tscn" id="2_ot31k"]
 [ext_resource type="Theme" path="res://Assets/Pixel_Theme.tres" id="2_y5irf"]
-[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/Kenny/Tilemap/colored-transparent_packed.png" id="4_woo84"]
+[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Game_Assets/Kenny/Kenny Tilemap/colored-transparent_packed.png" id="4_woo84"]
 
 [node name="World Icon" type="Control"]
 layout_mode = 3

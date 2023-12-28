@@ -1,8 +1,8 @@
 [gd_resource type="TileSet" load_steps=7 format=3 uid="uid://cnou6u87b171k"]
 
-[ext_resource type="Texture2D" uid="uid://cm4dq42cbsagn" path="res://Assets/Kenny/Tilemap/colored_packed.png" id="1_cyngn"]
-[ext_resource type="Texture2D" uid="uid://d4hfu3qjv4ujf" path="res://Assets/Sprite-0004.png" id="1_ynci7"]
-[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/Kenny/Tilemap/colored-transparent_packed.png" id="2_ms34s"]
+[ext_resource type="Texture2D" uid="uid://cm4dq42cbsagn" path="res://Game_Assets/Kenny/Kenny Tilemap/colored_packed.png" id="1_cyngn"]
+[ext_resource type="Texture2D" uid="uid://d4hfu3qjv4ujf" path="res://Game_Assets/Sprite-0004.png" id="1_ynci7"]
+[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Game_Assets/Kenny/Kenny Tilemap/colored-transparent_packed.png" id="2_ms34s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rlp2h"]
 texture = ExtResource("1_ynci7")

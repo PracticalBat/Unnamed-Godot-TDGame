@@ -24,7 +24,10 @@ extends Node
 	"Wave_1" = 
 	[
 		
-	["Spider_Boss",1,2],["Fast",1,2],["Spider_Basic",1,2],["Spider_Basic",1,2],["Basic",1,2],
+	["Basic",1,2],["Basic",1,2],["Basic",1,2],["Basic",1,2],["Basic",1,2],
+	["Basic",1,2],["Basic",1,2],["Basic",1,2],["Basic",1,2],["Basic",1,2],
+	["Basic",1,2],["Basic",1,2],["Basic",1,2],["Basic",1,2],["Basic",1,2],
+	["Basic",1,2],["Basic",1,2],["Basic",1,2],["Basic",1,2],["Basic",1,2],
 	
 #
 #

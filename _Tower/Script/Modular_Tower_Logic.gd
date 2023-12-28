@@ -102,3 +102,11 @@ func _on_range_body_exited(body) -> void:
 	enemy_array.erase(body.get_parent())
 #	print("exited")
 #	print(enemy_array)
+
+
+func _on_mouse_area_mouse_entered() -> void:
+	print("Mouse_Enterd_Tower")
+
+
+func _on_mouse_area_mouse_exited() -> void:
+	print("Mouse_Exited_Tower")

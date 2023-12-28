@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://_Tower/Script/Modular_Tower_Logic.gd" id="1_nqqe5"]
 [ext_resource type="PackedScene" uid="uid://chyvt3rslmmf7" path="res://_Tower/projectiles/freeze.tscn" id="2_2ta2l"]
-[ext_resource type="Texture2D" uid="uid://cpmxs30skfr8r" path="res://Assets/Aseprite_made_by_Bowz/Tower_Sprites.png" id="3_n6f03"]
-[ext_resource type="Texture2D" uid="uid://c3bufloj14d6g" path="res://Assets/2d_lights_and_shadows_neutral_point_light.png" id="4_egs1e"]
+[ext_resource type="Texture2D" uid="uid://cpmxs30skfr8r" path="res://Game_Assets/Asesprite_Bowz/Tower_Sprites.png" id="3_n6f03"]
+[ext_resource type="Texture2D" uid="uid://c3bufloj14d6g" path="res://Game_Assets/2d_lights_and_shadows_neutral_point_light.png" id="4_egs1e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i4ii7"]
 radius = 48.0416

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cnjfm4mxg2fa7"]
 
-[ext_resource type="Texture2D" uid="uid://c3bufloj14d6g" path="res://Assets/2d_lights_and_shadows_neutral_point_light.png" id="1_0gmjo"]
+[ext_resource type="Texture2D" uid="uid://c3bufloj14d6g" path="res://Game_Assets/2d_lights_and_shadows_neutral_point_light.png" id="1_0gmjo"]
 [ext_resource type="Script" path="res://Stage/Stage.tscn/Cursor_Light.gd" id="2_chyfk"]
 [ext_resource type="TileSet" uid="uid://cnou6u87b171k" path="res://Tilesets/main.tres" id="3_qyk82"]
 [ext_resource type="PackedScene" uid="uid://b5mqjtrue3qmf" path="res://Essential/Main_Stage.tscn" id="5_tshal"]

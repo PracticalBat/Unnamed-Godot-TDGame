@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://_Tower/Script/Modular_Tower_Logic.gd" id="1_xbdyr"]
 [ext_resource type="PackedScene" uid="uid://c4qnp0nmfysob" path="res://_Tower/projectiles/Ghost.tscn" id="2_3iylp"]
-[ext_resource type="Texture2D" uid="uid://ebi10vvuvcww" path="res://Assets/Aseprite_made_by_Bowz/Ghost.png" id="3_0uhqu"]
+[ext_resource type="Texture2D" uid="uid://ebi10vvuvcww" path="res://Game_Assets/Asesprite_Bowz/Ghost.png" id="3_0uhqu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i4ii7"]
 radius = 56.0357

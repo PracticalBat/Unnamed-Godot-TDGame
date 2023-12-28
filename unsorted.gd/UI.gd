@@ -51,7 +51,7 @@ func set_tower_preview(towertype, mouse_position):
 	var range_texture = Sprite2D.new()
 	range_texture.position = Vector2()
 	var scaling = GameData.tower_data[towertype]["range"] / 620
-	var texture = load("res://Assets/range_overlay.png")
+	var texture = load("res://Game_Assets/range_overlay.png")
 	range_texture.texture = texture
 	range_texture.modulate = Color.GREEN
 	range_texture.scale = Vector2(scaling, scaling)
@@ -80,7 +80,7 @@ func update_tower_preview(new_position, color, zoom ):
 #endregion
 	
 	
-	get_node("TowerPreview").global_position = new_position
+	get_node("TowerPreview").global_position =new_position  - new_position / zoom
 	get_node("TowerPreview").scale = zoom
 	if get_node("TowerPreview").modulate != Color(color):
 			get_node("TowerPreview").modulate = Color(color)

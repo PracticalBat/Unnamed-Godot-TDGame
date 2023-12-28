@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bfbt62rhaosdk"]
 
 [ext_resource type="Script" path="res://Enemy/Script/_Global_Enemy_Script.gd" id="1_0f17r"]
-[ext_resource type="Texture2D" uid="uid://dg6a87wefj5ee" path="res://Assets/Aseprite_made_by_Bowz/Tank.png" id="2_awurj"]
-[ext_resource type="Texture2D" uid="uid://crwxqd0jdm6pb" path="res://Assets/HP.png" id="3_xpud1"]
+[ext_resource type="Texture2D" uid="uid://dg6a87wefj5ee" path="res://Game_Assets/Asesprite_Bowz/Tank.png" id="2_awurj"]
+[ext_resource type="Texture2D" uid="uid://crwxqd0jdm6pb" path="res://Game_Assets/HP.png" id="3_xpud1"]
 [ext_resource type="PackedScene" uid="uid://b4lu3ggo6k1af" path="res://Particles/explosion.tscn" id="4_80wuy"]
 [ext_resource type="Animation" uid="uid://b5oe3di4pd4ng" path="res://Enemy/Animation/DEATH.res" id="5_b3fr4"]
 [ext_resource type="Animation" uid="uid://dbv7xj6pp75rx" path="res://Enemy/Animation/Spider_Walk.res" id="6_7s8r2"]

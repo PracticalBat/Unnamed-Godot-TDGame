@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dnd000vbmygdw"]
 
 [ext_resource type="Script" path="res://_Tower/Script/Tower_3_Bee.gd" id="1_klhvc"]
-[ext_resource type="Texture2D" uid="uid://cpmxs30skfr8r" path="res://Assets/Aseprite_made_by_Bowz/Tower_Sprites.png" id="2_atfet"]
-[ext_resource type="Texture2D" uid="uid://hxkk3tstip64" path="res://Assets/Aseprite_made_by_Bowz/Bee.png" id="3_8wutd"]
+[ext_resource type="Texture2D" uid="uid://cpmxs30skfr8r" path="res://Game_Assets/Asesprite_Bowz/Tower_Sprites.png" id="2_atfet"]
+[ext_resource type="Texture2D" uid="uid://hxkk3tstip64" path="res://Game_Assets/Asesprite_Bowz/Bee.png" id="3_8wutd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x01ds"]
 radius = 120.0

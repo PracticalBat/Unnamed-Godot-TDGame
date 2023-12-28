@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://chyvt3rslmmf7"]
 
 [ext_resource type="Script" path="res://_Tower/projectiles/freeze.gd" id="1_hdrou"]
-[ext_resource type="Texture2D" uid="uid://cpmxs30skfr8r" path="res://Assets/Aseprite_made_by_Bowz/Tower_Sprites.png" id="2_libdl"]
+[ext_resource type="Texture2D" uid="uid://cpmxs30skfr8r" path="res://Game_Assets/Asesprite_Bowz/Tower_Sprites.png" id="2_libdl"]
 [ext_resource type="Material" uid="uid://dk56cjw18qah2" path="res://Particles/explosion.tres" id="3_itkma"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e3812"]
