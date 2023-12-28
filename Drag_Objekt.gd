@@ -4,7 +4,7 @@ var is_inside_dropble = false
 var body_ref
 var offset: Vector2
 var initial_pos: Vector2
-
+var dub 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
