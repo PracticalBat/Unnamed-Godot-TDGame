@@ -67,24 +67,24 @@ offset_top = 8.0
 offset_right = 983.0
 offset_bottom = 589.0
 theme = ExtResource("1_vp5yq")
-text = "Assets: 
-www.kenney.nl
+text = "Creativ Head:
 Oscar Zeise
 
-Musik:
-tohomoko
-
-Creativ Head:
+Programming: 
 Oscar Zeise
+ Jakob Rost
 
 Level Design:
 Oscar Zeise
 Alan Walker
 
-Programmierung: 
+Assets: 
+www.kenney.nl
 Oscar Zeise
- Jakob Rost
-"
+Jakob Rost
+
+Musik:
+tohomoko"
 label_settings = SubResource("LabelSettings_dwkyg")
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -1,5 +1,5 @@
-extends Node
-var is_dragging = false
+extends Node2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,6 +10,7 @@ func _ready():
 func _process(delta):
 	pass
 
-func _set_global_position(body,position):
-	body.get_viewport().set_postion(position)
-	pass
+
+func _on_button_2_pressed():
+	get_tree().change_scene_to_file("res://unsorted.tscn/haupt_menue.tscn")
+	pass # Replace with function body.

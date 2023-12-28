@@ -16,10 +16,10 @@ func _process(delta):
 	if draggable:
 		if Input.is_action_just_pressed("click"):
 			initial_pos = global_position
-			offset = get_global_mouse_position()
+			offset = get_viewport().get_mouse_position()
 			GlobalPass.is_dragging = true
 		if Input.is_action_pressed("click"):
-			global_position = get_global_mouse_position() #- offset
+			global_position = get_viewport().get_mouse_position()
 		elif Input.is_action_just_released("click"):
 			GlobalPass.is_dragging = false
 			var tween = get_tree().create_tween()
@@ -49,8 +49,11 @@ func _on_area_2d_body_entered(body):
 		is_inside_dropble = true
 		body.modulate = Color(Color.REBECCA_PURPLE,1)
 		body_ref = body
-		dub = body.duplicate()
-		dub.global_position = body.global_position + Vector2(64,0)
+		dub = body.duplicate() 
+		#print(body.position + Vector2(64,0))
+		#GlobalPass._set_global_position(dub,body.position + Vector2(64,0))
+		#dub.global_position = body.position + Vector2(64,0)
+		dub.position = (body.position - dub.position) + Vector2(64,-1)
 		add_child(dub)
 	pass # Replace with function body.
 
