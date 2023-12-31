@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://b4lu3ggo6k1af" path="res://Particles/explosion.tscn" id="4_ncmnv"]
 [ext_resource type="Animation" uid="uid://b5oe3di4pd4ng" path="res://Enemy/Animation/DEATH.res" id="5_qrvxe"]
 [ext_resource type="Animation" uid="uid://dbv7xj6pp75rx" path="res://Enemy/Animation/Spider_Walk.res" id="6_myyq0"]
-[ext_resource type="AudioStream" uid="uid://qmg8vcmuedow" path="res://Sounds/Crunch.wav" id="7_l5j52"]
-[ext_resource type="AnimationLibrary" uid="uid://tkbgryu2lipc" path="res://Animations/Key_Enemy_Animations.res" id="7_oi6xd"]
-[ext_resource type="AudioStream" uid="uid://b6kcgvewdq5jr" path="res://Sounds/Hurt_SFX.wav" id="8_ngqmx"]
+[ext_resource type="AudioStream" uid="uid://qmg8vcmuedow" path="res://SoundFX/Crunch.wav" id="7_l5j52"]
+[ext_resource type="AnimationLibrary" uid="uid://tkbgryu2lipc" path="res://Presets/Animations/Key_Enemy_Animations.res" id="7_oi6xd"]
+[ext_resource type="AudioStream" uid="uid://b6kcgvewdq5jr" path="res://SoundFX/Hurt_SFX.wav" id="8_ngqmx"]
 [ext_resource type="Script" path="res://Enemy/Script/Fast_Data.gd" id="10_gk5wi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jl45w"]

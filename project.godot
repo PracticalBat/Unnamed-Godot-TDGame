@@ -24,8 +24,9 @@ buses/default_bus_layout=""
 
 [autoload]
 
-GameData="*res://_Autoload/GameData.gd"
+GameData="*res://Autoload_scripts/GameData.gd"
 GlobalPass="*res://J_Main.tsn/Scripts/GlobalPass.gd"
+StageData="*res://Autoload_scripts/StageData.gd"
 
 [display]
 
@@ -37,6 +38,10 @@ window/icon="res://Assets/Screenshot 2023-11-16 201340.png"
 window/version=""
 window/description=""
 window/emulate_touch_from_mouse=false
+
+[editor]
+
+movie_writer/fps=120
 
 [gui]
 

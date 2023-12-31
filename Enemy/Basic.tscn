@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://crwxqd0jdm6pb" path="res://Game_Assets/HP.png" id="3_yn74v"]
 [ext_resource type="PackedScene" uid="uid://b4lu3ggo6k1af" path="res://Particles/explosion.tscn" id="4_vdcxg"]
 [ext_resource type="Animation" uid="uid://b5oe3di4pd4ng" path="res://Enemy/Animation/DEATH.res" id="5_e8r1a"]
-[ext_resource type="AnimationLibrary" uid="uid://tkbgryu2lipc" path="res://Animations/Key_Enemy_Animations.res" id="6_a6wm7"]
-[ext_resource type="AudioStream" uid="uid://qmg8vcmuedow" path="res://Sounds/Crunch.wav" id="6_f06qn"]
+[ext_resource type="AnimationLibrary" uid="uid://tkbgryu2lipc" path="res://Presets/Animations/Key_Enemy_Animations.res" id="6_a6wm7"]
+[ext_resource type="AudioStream" uid="uid://qmg8vcmuedow" path="res://SoundFX/Crunch.wav" id="6_f06qn"]
 [ext_resource type="Material" uid="uid://cn818p7xcrnua" path="res://Particles/Spread.tres" id="7_ohmms"]
-[ext_resource type="AudioStream" uid="uid://b6kcgvewdq5jr" path="res://Sounds/Hurt_SFX.wav" id="8_vytp6"]
+[ext_resource type="AudioStream" uid="uid://b6kcgvewdq5jr" path="res://SoundFX/Hurt_SFX.wav" id="8_vytp6"]
 [ext_resource type="Texture2D" uid="uid://p71lkxawnp3k" path="res://Game_Assets/Asesprite_Bowz/Death_particle.png" id="9_1ocu6"]
 [ext_resource type="Script" path="res://Enemy/Script/Basic_Data.gd" id="10_y2j2a"]
 [ext_resource type="Texture2D" uid="uid://bepdqiexjr0gr" path="res://Game_Assets/range_overlay.png" id="13_uuw0b"]
@@ -116,6 +116,7 @@ rotates = false
 loop = false
 script = ExtResource("1_wm4gu")
 Data = NodePath("Data")
+The_damage_the_enemy_does_to_the_player_when_he_reaches_the_end = 2
 Healthbar = NodePath("CharacterBody2D/HealthBar")
 Movement_AnimationPlayer = NodePath("Movement_Basic")
 FX_AnimationPlayer = NodePath("FX_AnimationPlayer")
@@ -126,7 +127,14 @@ HurtSFX = NodePath("Hurt_SFX")
 DeathSFX = NodePath("Death_SFX")
 metadata/_edit_horizontal_guides_ = [-23.0]
 
+[node name="DMG_Display_Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Damage_number_spawn_Pos" type="Marker2D" parent="CharacterBody2D"]
+position = Vector2(0, -8)
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 material = SubResource("ShaderMaterial_j2s5o")
@@ -150,6 +158,11 @@ tint_under = Color(0.117647, 0.0627451, 0.156863, 1)
 tint_progress = Color(1, 0.360784, 0.592157, 1)
 metadata/_edit_use_anchors_ = true
 
+[node name="Death_Circle" type="Sprite2D" parent="CharacterBody2D"]
+visible = false
+scale = Vector2(0.0258065, 0.0258065)
+texture = ExtResource("13_uuw0b")
+
 [node name="Movement_Basic" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_tybeg")
@@ -172,14 +185,9 @@ one_shot = false
 explosiveness = 1.0
 randomness = 0.0
 
-[node name="Death_Circle" type="Sprite2D" parent="."]
-visible = false
-scale = Vector2(0.0258065, 0.0258065)
-texture = ExtResource("13_uuw0b")
-
 [node name="Death_SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_f06qn")
-volume_db = -40.0
+volume_db = -20.0
 
 [node name="Hurt_SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_vytp6")
@@ -187,3 +195,5 @@ volume_db = -10.0
 
 [node name="Data" type="Node" parent="."]
 script = ExtResource("10_y2j2a")
+
+[connection signal="timeout" from="DMG_Display_Timer" to="." method="_on_damage_number_timer_timeout"]

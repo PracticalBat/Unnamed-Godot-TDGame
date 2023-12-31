@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b4lu3ggo6k1af" path="res://Particles/explosion.tscn" id="4_80wuy"]
 [ext_resource type="Animation" uid="uid://b5oe3di4pd4ng" path="res://Enemy/Animation/DEATH.res" id="5_b3fr4"]
 [ext_resource type="Animation" uid="uid://dbv7xj6pp75rx" path="res://Enemy/Animation/Spider_Walk.res" id="6_7s8r2"]
-[ext_resource type="AudioStream" uid="uid://qmg8vcmuedow" path="res://Sounds/Crunch.wav" id="7_hcf4i"]
+[ext_resource type="AudioStream" uid="uid://qmg8vcmuedow" path="res://SoundFX/Crunch.wav" id="7_hcf4i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5dkrb"]
 radius = 7.0

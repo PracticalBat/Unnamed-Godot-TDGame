@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://xfshwfkblkrl"]
 
-[ext_resource type="TileSet" uid="uid://cnou6u87b171k" path="res://Tilesets/main.tres" id="1_wmwpg"]
-[ext_resource type="PackedScene" uid="uid://b5mqjtrue3qmf" path="res://Essential/Main_Stage.tscn" id="2_u6qgp"]
-[ext_resource type="Script" path="res://Stage/Script/Stage_Alan_WaveData.gd" id="3_afh7g"]
+[ext_resource type="TileSet" uid="uid://cnou6u87b171k" path="res://Presets/Tilesets/main.tres" id="1_wmwpg"]
+[ext_resource type="PackedScene" uid="uid://b5mqjtrue3qmf" path="res://Essential/Game_Overlay_main.tscn" id="2_u6qgp"]
+[ext_resource type="Script" path="res://Stage/WaveData/Stage_Alan_WaveData.gd" id="3_afh7g"]
 [ext_resource type="Shader" path="res://Shaders/rain.gdshader" id="4_db3i0"]
 [ext_resource type="PackedScene" uid="uid://dttp7akou2ksh" path="res://unsorted.tscn/npc.tscn" id="5_w88j2"]
 [ext_resource type="Texture2D" uid="uid://c3bufloj14d6g" path="res://Game_Assets/2d_lights_and_shadows_neutral_point_light.png" id="6_sr1df"]
@@ -37,6 +37,7 @@ shader_parameter/slant = 0.581
 [node name="Root" type="Node2D"]
 
 [node name="Nightmode" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.227451, 0.227451, 0.619608, 1)
 
 [node name="Cursor_Light" type="PointLight2D" parent="."]
@@ -98,6 +99,7 @@ position = Vector2(-653, -337)
 region_rect = Rect2(400, 112, 16, 16)
 
 [node name="Lights" type="Node2D" parent="."]
+visible = false
 position = Vector2(795, 553)
 
 [node name="Flame_Light" type="PointLight2D" parent="Lights"]
@@ -136,7 +138,7 @@ color = Color(0.937255, 0.529412, 0.239216, 0.619608)
 texture = ExtResource("6_sr1df")
 texture_scale = 0.91
 
-[node name="Stage_Logic" parent="." node_paths=PackedStringArray("TowerExclusion", "Ground", "Path1", "Path2", "Path3", "Path4", "Path5", "Stage_Data") instance=ExtResource("2_u6qgp")]
+[node name="Stage_Logic" parent="." node_paths=PackedStringArray("TowerExclusion", "Ground", "Path1", "Path2", "Path3", "Path4", "Path5", "This_Stage_Data") instance=ExtResource("2_u6qgp")]
 TowerExclusion = NodePath("../Tilemaps/TowerExclusion")
 Ground = NodePath("../Tilemaps/Ground")
 Path1 = NodePath("../Paths/Path_1")
@@ -144,7 +146,7 @@ Path2 = NodePath("../Paths/Path_2")
 Path3 = NodePath("../Paths/Path_1")
 Path4 = NodePath("../Paths/Path_2")
 Path5 = NodePath("../Paths/Path_1")
-Stage_Data = NodePath("../Stage_Wave_Data")
+This_Stage_Data = NodePath("../Stage_Wave_Data")
 
 [node name="Rain_Effects" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_w3jsp")
@@ -152,7 +154,7 @@ offset_left = -116.0
 offset_top = -40.0
 offset_right = 1290.0
 offset_bottom = 716.0
-mouse_filter = 1
+mouse_filter = 2
 color = Color(1, 1, 1, 0)
 
 [node name="Stage_Wave_Data" type="Node" parent="."]
