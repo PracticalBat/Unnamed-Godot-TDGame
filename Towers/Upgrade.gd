@@ -24,6 +24,9 @@ func Upgrade_ROF(value: float, cost : int) -> void:
 	else: print("broke")
 
 func _process(delta: float) -> void:
-	$VBoxContainer/DMGLabel.text = "DMG: "+ str(get_parent().tower_damage)
-	$VBoxContainer/RofLabel.text = "ROF: " +str(get_parent().rate_of_fire)
-	$VBoxContainer/SellPriceLabel.text = "SellPrice: "+str(get_parent().tower_value * GameData.sell_percentage)
+	$Debug/DMGLabel.text = "DMG: "+ str(get_parent().tower_damage)
+	$Debug/RofLabel.text = "ROF: " +str(get_parent().rate_of_fire)
+	$Debug/SellPriceLabel.text = "SellPrice: "+str(get_parent().tower_value * GameData.sell_percentage)
+	
+	
+	

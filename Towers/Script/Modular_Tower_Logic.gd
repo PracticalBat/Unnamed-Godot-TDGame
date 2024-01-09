@@ -134,9 +134,16 @@ func _on_mouse_area_mouse_exited() -> void:
 	#print("Mouse_Exited_Tower")
 
 
+
 func _unhandled_input(event: InputEvent) -> void:
+
 	if event.is_action_pressed("click") and is_in_upgrade_area == true and built:
-			upgrade_toggle = !upgrade_toggle
-			print(upgrade_toggle)
-			$Upgrade.visible = upgrade_toggle 
-			$Upgrade/Range_Overlay.visible = upgrade_toggle
+		upgrade_toggle = !upgrade_toggle
+		#print(upgrade_toggle)
+
+		if upgrade_toggle: 
+			$UpgradeMenue.play("open")
+		elif upgrade_toggle == false:
+			$UpgradeMenue.play_backwards("open")
+
+
