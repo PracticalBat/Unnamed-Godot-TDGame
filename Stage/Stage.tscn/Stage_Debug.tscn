@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://diio3u3upvhyt"]
+
+[ext_resource type="TileSet" uid="uid://cnou6u87b171k" path="res://Presets/Tilesets/main.tres" id="3_wv1b5"]
+[ext_resource type="PackedScene" uid="uid://b5mqjtrue3qmf" path="res://Essential/Game_Overlay_main.tscn" id="4_n8xii"]
+[ext_resource type="Script" path="res://Stage/WaveData/Stage_Debug_WaveData.gd" id="5_lkr3x"]
+
+[sub_resource type="Curve2D" id="Curve2D_3l1qn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -16, 48, 0, 0, 0, 0, 80, 48, 0, 0, 0, 0, 80, 0)
+}
+point_count = 3
+
+[node name="Root" type="Node2D"]
+
+[node name="Tilemaps" type="Node2D" parent="."]
+
+[node name="Ground" type="TileMap" parent="Tilemaps"]
+visible = false
+tile_set = ExtResource("3_wv1b5")
+format = 2
+layer_0/name = "Ground"
+layer_0/tile_data = PackedInt32Array(131072, 720899, 1, 196608, 720899, 1, 196609, 720899, 1, 131073, 720899, 1, 131074, 720899, 1, 196610, 720899, 1, 131075, 720899, 1, 196611, 720899, 1, 196612, 720899, 1, 131076, 720899, 1, 196613, 720899, 1, 131077, 720899, 1, 65541, 720899, 1, 5, 720899, 1, 4, 720899, 1, 65540, 720899, 1)
+layer_1/name = "Above"
+layer_1/tile_data = PackedInt32Array()
+
+[node name="TowerExclusion" type="TileMap" parent="Tilemaps"]
+unique_name_in_owner = true
+tile_set = ExtResource("3_wv1b5")
+format = 2
+layer_0/name = "Base"
+layer_1/name = "Above"
+layer_1/tile_data = PackedInt32Array(131072, 720899, 1, 131073, 720899, 1, 131074, 720899, 1, 131075, 720899, 1, 131076, 720899, 1, 4, 720899, 1, 65540, 720899, 1, 196612, 720899, 1, 5, 720899, 1, 65541, 720899, 1, 131077, 720899, 1, 196613, 720899, 1, 196608, 720899, 1, 196609, 720899, 1, 196610, 720899, 1, 196611, 720899, 1)
+
+[node name="Paths" type="Node2D" parent="."]
+
+[node name="Path_1" type="Path2D" parent="Paths"]
+unique_name_in_owner = true
+self_modulate = Color(0.654902, 0.627451, 0, 1)
+
+[node name="Path_2" type="Path2D" parent="Paths"]
+unique_name_in_owner = true
+modulate = Color(1, 0.811765, 1, 1)
+
+[node name="Path_3" type="Path2D" parent="Paths"]
+unique_name_in_owner = true
+self_modulate = Color(0.654902, 0.627451, 0, 1)
+curve = SubResource("Curve2D_3l1qn")
+
+[node name="Stage_Logic" parent="." node_paths=PackedStringArray("TowerExclusion", "Ground", "Path1", "Path2", "Path3", "Path4", "Path5", "This_Stage_Data") instance=ExtResource("4_n8xii")]
+TowerExclusion = NodePath("../Tilemaps/TowerExclusion")
+Ground = NodePath("../Tilemaps/Ground")
+Path1 = NodePath("../Paths/Path_3")
+Path2 = NodePath("../Paths/Path_3")
+Path3 = NodePath("../Paths/Path_3")
+Path4 = NodePath("../Paths/Path_3")
+Path5 = NodePath("../Paths/Path_3")
+This_Stage_Data = NodePath("../Stage_Wave_Data")
+
+[node name="Stage_Wave_Data" type="Node" parent="."]
+script = ExtResource("5_lkr3x")

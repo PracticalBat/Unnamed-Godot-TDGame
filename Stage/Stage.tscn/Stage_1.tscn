@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cuncuiixgnlqp"]
 
-[ext_resource type="TileSet" uid="uid://cnou6u87b171k" path="res://Tilesets/main.tres" id="1_li3mn"]
-[ext_resource type="PackedScene" uid="uid://b5mqjtrue3qmf" path="res://Essential/Main_Stage.tscn" id="3_2g4nx"]
-[ext_resource type="Script" path="res://Stage/Script/Stage_1_WaveData.gd" id="3_kn57c"]
+[ext_resource type="TileSet" uid="uid://cnou6u87b171k" path="res://Presets/Tilesets/main.tres" id="1_li3mn"]
+[ext_resource type="PackedScene" uid="uid://b5mqjtrue3qmf" path="res://Essential/Game_Overlay_main.tscn" id="3_2g4nx"]
+[ext_resource type="Script" path="res://Stage/WaveData/Stage_1_WaveData.gd" id="3_kn57c"]
 
 [sub_resource type="Curve2D" id="Curve2D_16jji"]
 _data = {

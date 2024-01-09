@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://cueuq8hsaboy"]
 
 [ext_resource type="Script" path="res://Enemy/Script/_Global_Enemy_Script.gd" id="1_o4qqu"]
-[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/Kenny/Tilemap/colored-transparent_packed.png" id="2_5781b"]
-[ext_resource type="Texture2D" uid="uid://crwxqd0jdm6pb" path="res://Assets/HP.png" id="3_faeqk"]
+[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Game_Assets/Kenny/Kenny Tilemap/colored-transparent_packed.png" id="2_5781b"]
+[ext_resource type="Texture2D" uid="uid://crwxqd0jdm6pb" path="res://Game_Assets/HP.png" id="3_faeqk"]
 [ext_resource type="PackedScene" uid="uid://b4lu3ggo6k1af" path="res://Particles/explosion.tscn" id="4_bqn1w"]
 [ext_resource type="Animation" uid="uid://b5oe3di4pd4ng" path="res://Enemy/Animation/DEATH.res" id="5_76v3j"]
 [ext_resource type="Animation" uid="uid://dbv7xj6pp75rx" path="res://Enemy/Animation/Spider_Walk.res" id="6_voiic"]
-[ext_resource type="AudioStream" uid="uid://qmg8vcmuedow" path="res://Sounds/Crunch.wav" id="7_dgq7e"]
+[ext_resource type="AudioStream" uid="uid://qmg8vcmuedow" path="res://SoundFX/Crunch.wav" id="7_dgq7e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5dkrb"]
 radius = 7.0

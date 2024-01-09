@@ -1,32 +1,20 @@
 extends CanvasLayer
 
-
-
 @export_category("Settings")
 
-
-@export var HealthBar: TextureProgressBar
 @export var HealthLabel: Label
-
 @export var Stage_Name : String = "Test"
 @export var Stage_Name_Label: Label
 @export var WaveLabel: Label
-
 
 @export var MoneyLable: Label
 
 @export var Pause: TextureButton
 
 
-func update_healthbar():
-	if GameData.health_points <= 0:
-		lose()
-	HealthBar.set_value_no_signal(GameData.health_points * 10)
-	HealthLabel.text = str(GameData.health_points)
 
 
-func lose():
-	get_tree().quit()
+
 
 func _update_wave_label():
 	WaveLabel.text = str(get_parent().current_wave) + " / " + str(get_parent().wave_num)
@@ -35,23 +23,33 @@ func _update_wave_label():
 func _ready() -> void:
 	_update_wave_label()
 	Stage_Name_Label.text = Stage_Name
+	
+	
 
 
 func _process(_delta):
 	_update_wave_label() # needs a singal instead (temp)
-	set_money()
+	update_healthbar_label()
+	update_money_label()
 
+
+func update_healthbar_label():
+	HealthLabel.text = str(StageData.health_points)
+
+
+func update_money_label():
+	MoneyLable.text = str(round(StageData.money))
 
 
 func set_tower_preview(towertype, mouse_position):
 	%Click.play()
-	var drag_tower = load("res://_Tower/"+towertype+".tscn").instantiate()
+	var drag_tower = load("res://Towers/"+towertype+".tscn").instantiate()
 	drag_tower.set_name("DragTower")
 	drag_tower.modulate= Color.SKY_BLUE
 	var range_texture = Sprite2D.new()
 	range_texture.position = Vector2()
 	var scaling = GameData.tower_data[towertype]["range"] / 620
-	var texture = load("res://Assets/range_overlay.png")
+	var texture = load("res://Game_Assets/range_overlay.png")
 	range_texture.texture = texture
 	range_texture.modulate = Color.GREEN
 	range_texture.scale = Vector2(scaling, scaling)
@@ -80,7 +78,7 @@ func update_tower_preview(new_position, color, zoom ):
 #endregion
 	
 	
-	get_node("TowerPreview").global_position = new_position
+	get_node("TowerPreview").global_position = new_position # needs adjustments
 	get_node("TowerPreview").scale = zoom
 	if get_node("TowerPreview").modulate != Color(color):
 			get_node("TowerPreview").modulate = Color(color)
@@ -88,18 +86,16 @@ func update_tower_preview(new_position, color, zoom ):
 
 
 
-#function that is being used ehen activating the pause button
+#function that is being used when activating the pause button
 func _on_pause_play_pressed():
 
 	if get_parent().build_mode:
 		get_parent().cancel_build_mode()
 		%Pause.play()
 
-
 	if get_tree().paused:
 		%Pause.play()
 		get_tree().paused = false 
-
 
 	else:
 		%Pause.play()
@@ -108,19 +104,16 @@ func _on_pause_play_pressed():
 
 
 #function that is being used ehen activating the speed up button
-func _on_speed_up_pressed():
-	if get_parent().build_mode:
-		get_parent().cancel_build_mode()
-
-	if Engine.get_time_scale() == 1:
-		Engine.set_time_scale(2)
-	elif  Engine.get_time_scale() == 2:
-		Engine.set_time_scale(4)
-	else:
-		Engine.set_time_scale(1)
-
-func set_money():
-	MoneyLable.text = str(GameData.money)
+#func _on_speed_up_pressed():
+	#if get_parent().build_mode:
+		#get_parent().cancel_build_mode()
+#
+	#if Engine.get_time_scale() == 1:
+		#Engine.set_time_scale(2)
+	#elif  Engine.get_time_scale() == 2:
+		#Engine.set_time_scale(10)
+	#else:
+		#Engine.set_time_scale(1)
 
 
 
@@ -134,4 +127,19 @@ func _on_start_game_button_pressed() -> void:
 
 
 func _on_money_button_pressed() -> void:
-	GameData.money += 50
+	StageData.money += 50
+
+
+
+
+
+func _on_speed_up_button_button_down() -> void:
+	if get_parent().build_mode:
+		get_parent().cancel_build_mode()
+	Engine.set_time_scale(10)
+	pass # Replace with function body.
+
+
+func _on_speed_up_button_button_up() -> void:
+	Engine.set_time_scale(1)
+	pass # Replace with function body.

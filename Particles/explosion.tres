@@ -1,12 +1,19 @@
-[gd_resource type="ParticleProcessMaterial" load_steps=3 format=3 uid="uid://dk56cjw18qah2"]
+[gd_resource type="ParticleProcessMaterial" load_steps=5 format=3 uid="uid://dk56cjw18qah2"]
 
 [sub_resource type="Gradient" id="Gradient_2jwwy"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0, 0.766854, 1)
-colors = PackedColorArray(0.2, 0.568627, 0.929412, 1, 0.337255, 0.827451, 0.968627, 1, 0.337255, 0.827451, 0.968627, 0)
+colors = PackedColorArray(0.393806, 0.628804, 0.327289, 1, 0.580684, 0.834954, 0.553655, 1, 0.337255, 0.827451, 0.00392157, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_vqgei"]
 gradient = SubResource("Gradient_2jwwy")
+
+[sub_resource type="Curve" id="Curve_qwmta"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_0cofj"]
+curve = SubResource("Curve_qwmta")
 
 [resource]
 lifetime_randomness = 1.0
@@ -20,8 +27,8 @@ initial_velocity_max = 66.9
 gravity = Vector3(0, 0, 0)
 radial_accel_min = -48.39
 radial_accel_max = 27.6
-scale_min = 0.0
-scale_max = 2.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_0cofj")
 color_ramp = SubResource("GradientTexture1D_vqgei")
 turbulence_noise_strength = 4.02
 turbulence_noise_speed_random = 2.94

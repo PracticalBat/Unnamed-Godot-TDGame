@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfo7xxqwd8qel"]
+
+[ext_resource type="Script" path="res://Towers/Script/Modular_Tower_Logic.gd" id="1_ua7kh"]
+[ext_resource type="Texture2D" uid="uid://cpmxs30skfr8r" path="res://Game_Assets/Asesprite_Bowz/Tower_Sprites.png" id="2_ah6kn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x01ds"]
+radius = 64.0703
+
+[node name="Tower_T2" type="Node2D" node_paths=PackedStringArray("ray_cast", "collision_shape")]
+process_mode = 1
+script = ExtResource("1_ua7kh")
+ray_cast = NodePath("RayCast2D")
+collision_shape = NodePath("Range/CollisionShape2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ah6kn")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_x01ds")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

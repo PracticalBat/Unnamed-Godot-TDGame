@@ -1,0 +1,71 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://mhdwkcecl1i4"]
+
+[ext_resource type="FontFile" uid="uid://27idn2k1vkqn" path="res://Presets/Renogare-Regular.otf" id="1_10x1u"]
+[ext_resource type="Texture2D" uid="uid://bwplsxqgug3s7" path="res://Game_Assets/Kenny/Kenny UI/fantasy-ui-borders.svg" id="2_ub2o6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6f3b2"]
+texture_margin_left = 17.0
+texture_margin_top = 17.0
+texture_margin_right = 16.7562
+texture_margin_bottom = 17.0
+region_rect = Rect2(986, 226, 48, 48)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w1mfj"]
+texture = ExtResource("2_ub2o6")
+texture_margin_left = 17.0
+texture_margin_top = 17.0
+texture_margin_right = 16.7562
+texture_margin_bottom = 17.0
+region_rect = Rect2(986, 226, 48, 48)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vuf3o"]
+texture = ExtResource("2_ub2o6")
+texture_margin_left = 17.0
+texture_margin_top = 17.0
+texture_margin_right = 16.7562
+texture_margin_bottom = 17.0
+region_rect = Rect2(476, 486, 48, 48)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h7iqu"]
+texture = ExtResource("2_ub2o6")
+texture_margin_left = 17.0
+texture_margin_top = 17.0
+texture_margin_right = 16.7562
+texture_margin_bottom = 17.0
+region_rect = Rect2(986, 226, 48, 48)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ms2f3"]
+texture = ExtResource("2_ub2o6")
+texture_margin_left = 17.0
+texture_margin_top = 17.0
+texture_margin_right = 16.7562
+texture_margin_bottom = 17.0
+region_rect = Rect2(476, 226, 48, 48)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pev54"]
+texture = ExtResource("2_ub2o6")
+texture_margin_left = 23.0697
+texture_margin_top = 22.1922
+texture_margin_right = 22.3046
+texture_margin_bottom = 22.5982
+region_rect = Rect2(414, 424, 48, 48)
+modulate_color = Color(0.0941176, 0.0784314, 0.145098, 1)
+
+[resource]
+default_font = ExtResource("1_10x1u")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 0.647059)
+Button/colors/font_hover_pressed_color = Color(0.6, 0.6, 0.6, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_10x1u")
+Button/styles/disabled = SubResource("StyleBoxTexture_6f3b2")
+Button/styles/focus = SubResource("StyleBoxTexture_w1mfj")
+Button/styles/hover = SubResource("StyleBoxTexture_vuf3o")
+Button/styles/normal = SubResource("StyleBoxTexture_h7iqu")
+Button/styles/pressed = SubResource("StyleBoxTexture_ms2f3")
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 8
+Panel/styles/panel = SubResource("StyleBoxTexture_pev54")

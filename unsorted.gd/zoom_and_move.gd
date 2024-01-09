@@ -1,7 +1,7 @@
 extends Camera2D
 
 
-@export var Speed = 20.0
+@export var Speed = 1.0
 @export var Zoom_Speed = 40.0
 @export var Zoom_Mrgin = 1.0
 @export var Zoom_Min = 1.0
@@ -14,13 +14,16 @@ var mousePos = Vector2()
 
 func _process(delta: float) -> void:
 	
+	if zoom.x != 2.0:
+		position = get_viewport().get_mouse_position()
+	
+
 	#print(get_screen_center_position())
 	
 	var inputX = int(Input.is_action_pressed("ui_right")) -int(Input.is_action_pressed("ui_left"))
 	var inputY = int(Input.is_action_pressed("ui_down")) -int(Input.is_action_pressed("ui_up"))
-	
-	var new_x = clamp(global_position.x, limit_left,limit_right)
-	var new_y = clamp(global_position.y, limit_top,limit_bottom)
+	var new_x = clamp(global_position.x, limit_right-limit_right/1.25,limit_right/1.25)
+	var new_y = clamp(global_position.y, limit_bottom-limit_bottom/1.25,limit_bottom/1.25)
 	
 	global_position = Vector2(new_x,new_y)
 	

@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://Enemy/Script/_Global_Enemy_Script.gd" id="1_sdbdl"]
 [ext_resource type="Shader" uid="uid://e8lvcbmerfsm" path="res://Shaders/Hit_Flash.tres" id="2_vgdfe"]
-[ext_resource type="Texture2D" uid="uid://bqi71g3i1ctaq" path="res://Assets/Aseprite_made_by_Bowz/Spider_Boss.png" id="3_nxjce"]
+[ext_resource type="Texture2D" uid="uid://bqi71g3i1ctaq" path="res://Game_Assets/Asesprite_Bowz/Spider_Boss.png" id="3_nxjce"]
 [ext_resource type="PackedScene" uid="uid://b4lu3ggo6k1af" path="res://Particles/explosion.tscn" id="4_w8ubk"]
-[ext_resource type="Texture2D" uid="uid://crwxqd0jdm6pb" path="res://Assets/HP.png" id="4_yb6cj"]
-[ext_resource type="AnimationLibrary" uid="uid://tkbgryu2lipc" path="res://Animations/Key_Enemy_Animations.res" id="5_aaaiy"]
-[ext_resource type="AudioStream" uid="uid://qmg8vcmuedow" path="res://Sounds/Crunch.wav" id="7_q37ra"]
-[ext_resource type="AudioStream" uid="uid://b6kcgvewdq5jr" path="res://Sounds/Hurt_SFX.wav" id="8_fv101"]
+[ext_resource type="Texture2D" uid="uid://crwxqd0jdm6pb" path="res://Game_Assets/HP.png" id="4_yb6cj"]
+[ext_resource type="AnimationLibrary" uid="uid://tkbgryu2lipc" path="res://Presets/Animations/Key_Enemy_Animations.res" id="5_aaaiy"]
+[ext_resource type="AudioStream" uid="uid://qmg8vcmuedow" path="res://SoundFX/Crunch.wav" id="7_q37ra"]
+[ext_resource type="AudioStream" uid="uid://b6kcgvewdq5jr" path="res://SoundFX/Hurt_SFX.wav" id="8_fv101"]
 [ext_resource type="Script" path="res://Enemy/Script/Spider_Boss_Data.gd" id="9_d3lq3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cjjtu"]

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Level and World Select/Scripts/level_select.gd" id="1_wgwi4"]
 [ext_resource type="PackedScene" uid="uid://b6ltvadwssowd" path="res://Level and World Select/ICON_Level.tscn" id="2_iagtp"]
-[ext_resource type="Texture2D" uid="uid://cm4dq42cbsagn" path="res://Assets/Kenny/Tilemap/colored_packed.png" id="2_vqpom"]
-[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Assets/Kenny/Tilemap/colored-transparent_packed.png" id="3_hc28m"]
-[ext_resource type="Texture2D" uid="uid://c3bufloj14d6g" path="res://Assets/2d_lights_and_shadows_neutral_point_light.png" id="4_v66f7"]
+[ext_resource type="Texture2D" uid="uid://cm4dq42cbsagn" path="res://Game_Assets/Kenny/Kenny Tilemap/colored_packed.png" id="2_vqpom"]
+[ext_resource type="Texture2D" uid="uid://d3iw674ew76ad" path="res://Game_Assets/Kenny/Kenny Tilemap/colored-transparent_packed.png" id="3_hc28m"]
+[ext_resource type="Texture2D" uid="uid://c3bufloj14d6g" path="res://Game_Assets/2d_lights_and_shadows_neutral_point_light.png" id="4_v66f7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_07mh2"]
 texture = ExtResource("2_vqpom")

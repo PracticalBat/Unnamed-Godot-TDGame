@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://bljohf4oxf00w"]
 
 [ext_resource type="Script" path="res://unsorted.gd/haupt_menue.gd" id="1_xv4bu"]
-[ext_resource type="Texture2D" uid="uid://38yf3rrax3io" path="res://Assets/Aseprite_made_by_Bowz/BG_Title.png" id="2_vba7x"]
-[ext_resource type="Theme" uid="uid://mhdwkcecl1i4" path="res://Assets/Theme/Fantasy_theme.tres" id="4_lqkpd"]
+[ext_resource type="Texture2D" uid="uid://38yf3rrax3io" path="res://Game_Assets/Asesprite_Bowz/BG_Title.png" id="2_vba7x"]
+[ext_resource type="Theme" uid="uid://mhdwkcecl1i4" path="res://Presets/Fantasy_theme.tres" id="4_lqkpd"]
 [ext_resource type="PackedScene" uid="uid://c4uoigkwv2m35" path="res://titlescreenspot.tscn" id="5_0cvv8"]
-[ext_resource type="FontFile" uid="uid://27idn2k1vkqn" path="res://Assets/Theme/Renogare-Regular.otf" id="5_e6cyn"]
+[ext_resource type="FontFile" uid="uid://27idn2k1vkqn" path="res://Presets/Renogare-Regular.otf" id="5_e6cyn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dwkyg"]
 font = ExtResource("5_e6cyn")

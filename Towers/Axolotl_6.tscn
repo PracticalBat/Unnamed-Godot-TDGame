@@ -1,0 +1,180 @@
+[gd_scene load_steps=13 format=3 uid="uid://b1d1q4s4fbegc"]
+
+[ext_resource type="Script" path="res://Towers/Script/Modular_Tower_Logic.gd" id="1_l0c3s"]
+[ext_resource type="PackedScene" uid="uid://d2un723p3oo5p" path="res://Towers/projectiles/bubble.tscn" id="2_36q7b"]
+[ext_resource type="Script" path="res://Towers/Upgrade.gd" id="3_1y6ht"]
+[ext_resource type="Texture2D" uid="uid://8wjh2v48lmpu" path="res://Game_Assets/Asesprite_Bowz/Axolotl.png" id="3_fvdhb"]
+[ext_resource type="Texture2D" uid="uid://bepdqiexjr0gr" path="res://Game_Assets/range_overlay.png" id="4_ky8cy"]
+[ext_resource type="Theme" uid="uid://bhuf6fgxhbg3w" path="res://Presets/Upgrade_Button.tres" id="5_2khcf"]
+[ext_resource type="Theme" uid="uid://mhdwkcecl1i4" path="res://Presets/Fantasy_theme.tres" id="5_jpt5p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i4ii7"]
+radius = 56.0357
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hein"]
+size = Vector2(18, 18)
+
+[sub_resource type="Animation" id="Animation_is5a0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Upgrade:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_l5442"]
+resource_name = "open"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Upgrade:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.00124364, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, -2, -2),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.05, 1.05), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Upgrade:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.00133931, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7asdj"]
+_data = {
+"RESET": SubResource("Animation_is5a0"),
+"open": SubResource("Animation_l5442")
+}
+
+[node name="Axolotl" type="Node2D" node_paths=PackedStringArray("ray_cast", "collision_shape", "UpgradeAP") groups=["turret"]]
+process_mode = 1
+script = ExtResource("1_l0c3s")
+ray_cast = NodePath("RayCast2D")
+type = "Axolotl_6"
+collision_shape = NodePath("Range/CollisionShape2D")
+UpgradeAP = NodePath("UpgradeMenue")
+enemy_priority = "pick_random"
+munition = ExtResource("2_36q7b")
+damage_type = "munition"
+
+[node name="Upgrade" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("3_1y6ht")
+
+[node name="Range_Overlay" type="Sprite2D" parent="Upgrade"]
+modulate = Color(0.184314, 0.8, 0.262745, 0.368627)
+scale = Vector2(0.187097, 0.187097)
+texture = ExtResource("4_ky8cy")
+
+[node name="Upgrade_DMG" type="Button" parent="Upgrade"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = -64.0
+offset_right = 128.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("5_2khcf")
+text = "DMG
+"
+
+[node name="Sell" type="Button" parent="Upgrade"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = 38.0
+offset_right = 96.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("5_2khcf")
+text = "Sell
+"
+clip_text = true
+
+[node name="Upgrade_ROF" type="Button" parent="Upgrade"]
+layout_mode = 0
+offset_left = -80.0
+offset_top = -64.0
+offset_right = 16.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("5_2khcf")
+text = "ROF"
+clip_text = true
+
+[node name="Debug" type="VBoxContainer" parent="Upgrade"]
+layout_mode = 0
+offset_left = -22.0
+offset_top = -60.0
+offset_right = 27.0
+offset_bottom = -20.0
+theme = ExtResource("5_jpt5p")
+
+[node name="DMGLabel" type="Label" parent="Upgrade/Debug"]
+layout_mode = 2
+text = "DMG: 0
+"
+
+[node name="RofLabel" type="Label" parent="Upgrade/Debug"]
+layout_mode = 2
+text = "ROF: 0
+"
+
+[node name="SellPriceLabel" type="Label" parent="Upgrade/Debug"]
+layout_mode = 2
+text = "SellPrice: 0
+"
+
+[node name="TowerSprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_fvdhb")
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_i4ii7")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 8)
+
+[node name="Mouse_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse_area"]
+shape = SubResource("RectangleShape2D_6hein")
+debug_color = Color(0.792157, 0.427451, 0, 0)
+
+[node name="UpgradeMenue" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7asdj")
+}
+
+[connection signal="pressed" from="Upgrade/Upgrade_DMG" to="Upgrade" method="Upgrade_DMG" binds= [1.1, 10]]
+[connection signal="pressed" from="Upgrade/Sell" to="Upgrade" method="Sell_Tower"]
+[connection signal="pressed" from="Upgrade/Upgrade_ROF" to="Upgrade" method="Upgrade_ROF" binds= [1.0, 10.0]]
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
+[connection signal="input_event" from="Mouse_area" to="." method="_on_mouse_area_input_event"]
+[connection signal="mouse_entered" from="Mouse_area" to="." method="_on_mouse_area_mouse_entered"]
+[connection signal="mouse_exited" from="Mouse_area" to="." method="_on_mouse_area_mouse_exited"]

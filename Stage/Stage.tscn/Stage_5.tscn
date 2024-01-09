@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://cnjfm4mxg2fa7"]
 
-[ext_resource type="Texture2D" uid="uid://c3bufloj14d6g" path="res://Assets/2d_lights_and_shadows_neutral_point_light.png" id="1_0gmjo"]
+[ext_resource type="Texture2D" uid="uid://c3bufloj14d6g" path="res://Game_Assets/2d_lights_and_shadows_neutral_point_light.png" id="1_0gmjo"]
 [ext_resource type="Script" path="res://Stage/Stage.tscn/Cursor_Light.gd" id="2_chyfk"]
-[ext_resource type="TileSet" uid="uid://cnou6u87b171k" path="res://Tilesets/main.tres" id="3_qyk82"]
-[ext_resource type="PackedScene" uid="uid://b5mqjtrue3qmf" path="res://Essential/Main_Stage.tscn" id="5_tshal"]
+[ext_resource type="TileSet" uid="uid://cnou6u87b171k" path="res://Presets/Tilesets/main.tres" id="3_qyk82"]
+[ext_resource type="PackedScene" uid="uid://b5mqjtrue3qmf" path="res://Essential/Game_Overlay_main.tscn" id="5_tshal"]
 [ext_resource type="Shader" path="res://Shaders/rain.gdshader" id="6_kdcbe"]
-[ext_resource type="Script" path="res://Stage/Script/Stage_Alan_WaveData.gd" id="7_ylcjc"]
+[ext_resource type="Script" path="res://Stage/WaveData/Stage_Alan_WaveData.gd" id="7_ylcjc"]
 
 [sub_resource type="Curve2D" id="Curve2D_nef1y"]
 _data = {
@@ -86,7 +86,7 @@ unique_name_in_owner = true
 self_modulate = Color(0.654902, 0.627451, 0, 1)
 curve = SubResource("Curve2D_jxyex")
 
-[node name="Stage_Logic" parent="." node_paths=PackedStringArray("TowerExclusion", "Ground", "Path1", "Path2", "Path3", "Path4", "Path5", "Stage_Data") instance=ExtResource("5_tshal")]
+[node name="Stage_Logic" parent="." node_paths=PackedStringArray("TowerExclusion", "Ground", "Path1", "Path2", "Path3", "Path4", "Path5") instance=ExtResource("5_tshal")]
 TowerExclusion = NodePath("../Tilemaps/TowerExclusion")
 Ground = NodePath("../Tilemaps/Ground")
 Path1 = NodePath("../Paths/Path_1")
@@ -94,9 +94,9 @@ Path2 = NodePath("../Paths/Path_2")
 Path3 = NodePath("../Paths/Path_1")
 Path4 = NodePath("../Paths/Path_2")
 Path5 = NodePath("../Paths/Path_1")
-Stage_Data = NodePath("../Stage_Wave_Data")
 
 [node name="Rain_Effects" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_w3jsp")
 offset_left = -120.0
 offset_top = -40.0
